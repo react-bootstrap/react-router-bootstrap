@@ -2,7 +2,7 @@
   "name": "react-router-boostrap",
   "version": "0.0.0",
   "description": "react-router and react-bootstrap compatible components",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,5 +24,11 @@
   "peerDependencies": {
     "react-bootstrap": "^0.11.1",
     "react-router": "^0.5.1"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.7.1",
+    "gulp": "^3.8.7",
+    "gulp-cjsx": "^0.3.0",
+    "gulp-plumber": "^0.6.4"
   }
 }
