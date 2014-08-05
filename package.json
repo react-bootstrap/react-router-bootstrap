@@ -1,0 +1,24 @@
+{
+  "name": "react-router-boostrap",
+  "version": "0.0.0",
+  "description": "react-router and react-bootstrap compatible components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mtscout6/react-router-bootstrap.git"
+  },
+  "keywords": [
+    "react",
+    "react-router",
+    "react-bootstrap"
+  ],
+  "author": "Matt Smith <mtscout6@gmail.com>",
+  "license": "Apache2",
+  "bugs": {
+    "url": "https://github.com/mtscout6/react-router-bootstrap/issues"
+  },
+  "homepage": "https://github.com/mtscout6/react-router-bootstrap"
+}
