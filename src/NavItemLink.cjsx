@@ -5,10 +5,13 @@ NavItem = require 'react-bootstrap/NavItem'
 NavItemLink = React.createClass
   displayName: 'NavItemLink'
   mixins: [Router.ActiveState]
+  getInitialState: ->
+    active: false
   updateActiveState: ->
     @setState
-      isActive: NavItemLink.isActive(@props.to, @props.params, @props.query)
-  handleClick: ->
+      active: NavItemLink.isActive(@props.to, @props.params, @props.query)
+  handleClick: (e) ->
+    e.preventDefault()
     Router.transitionTo(@props.to, @props.params, @props.query)
   render: ->
     @transferPropsTo(
