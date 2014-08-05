@@ -33,6 +33,6 @@
     "gulp-plumber": "^0.6.4"
   },
   "files": [
-    "./lib"
+    "lib"
   ]
 }
