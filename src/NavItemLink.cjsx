@@ -21,6 +21,7 @@ NavItemLink = React.createClass
   render: ->
     @transferPropsTo(
       <NavItem
+        href={@getHref()}
         active={@state.isActive}
         onClick={@handleClick}>
         {@props.children}
