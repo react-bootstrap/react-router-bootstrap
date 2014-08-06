@@ -3,16 +3,9 @@ Router = require 'react-router'
 NavItem = require 'react-bootstrap/NavItem'
 withoutProperties = require 'react-router/modules/helpers/withoutProperties'
 makeHref = require 'react-router/modules/helpers/makeHref'
+LinkMixin = require './LinkMixin'
 
-isLeftClick = (event) -> event.button == 0
-isModifiedEvent = (event) -> !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey)
-
-RESERVED_PROPS =
-  to: true
-  className: true
-  activeClassName: true
-  query: true
-  children: true # ReactChildren
+ADDITIONAL_RESERVED_PROPS =
   active: true
   activeHref: true
   activeKey: true
@@ -23,36 +16,8 @@ RESERVED_PROPS =
 
 NavItemLink = React.createClass
   displayName: 'NavItemLink'
-  mixins: [Router.ActiveState]
-  statics:
-    getUnreservedProps: (props) -> withoutProperties(props, RESERVED_PROPS)
-  propTypes:
-    to: React.PropTypes.string.isRequired
-    query: React.PropTypes.object
-  getInitialState: ->
-    isActive: false
-  updateActiveState: ->
-    @setState
-      isActive: NavItemLink.isActive(@props.to, @props.params, @props.query)
-  getParams: ->
-    NavItemLink.getUnreservedProps(@props)
-  getHref: ->
-    makeHref(@props.to, @getParams(), @props.query)
-  componentWillReceiveProps: (nextProps) ->
-    params = NavItemLink.getUnreservedProps(nextProps)
-
-    @setState
-      isActive: NavItemLink.isActive(nextProps.to, params, nextProps.query)
-  updateActiveState: ->
-    @setState
-      isActive: NavItemLink.isActive(@props.to, @getParams(), @props.query)
-  handleClick: (event) ->
-    if (isModifiedEvent(event) || !isLeftClick(event))
-      return
-
-    event.preventDefault()
-
-    Router.transitionTo(@props.to, @getParams(), @props.query)
+  mixins: [ LinkMixin ]
+  additionalReservedProps: ADDITIONAL_RESERVED_PROPS
   render: ->
     @transferPropsTo(
       <NavItem
