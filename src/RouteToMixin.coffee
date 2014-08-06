@@ -1,15 +1,12 @@
 React = require 'react'
-ActiveState = require 'react-router/modules/mixins/ActiveState'
 makeHref = require 'react-router/modules/helpers/makeHref'
 transitionTo = require 'react-router/modules/helpers/transitionTo'
 withoutProperties = require 'react-router/modules/helpers/withoutProperties'
 mergeProperties = require 'react-router/modules/helpers/mergeProperties'
 
-
 # A map of component props that are reserved for use by the
 # router and/or React. All other props are used as params that are
 # interpolated into the link's path.
-
 RESERVED_PROPS = {
   to: true
   className: true
@@ -18,18 +15,13 @@ RESERVED_PROPS = {
   children: true # ReactChildren
 }
 
-LinkMixin =
-  mixins: [ ActiveState ]
-
+RouteToMixin =
   statics:
     getUnreservedProps: getUnreservedProps
 
   propTypes:
     to: React.PropTypes.string.isRequired
     query: React.PropTypes.object
-
-  getInitialState: ->
-    isActive: false
 
   # Returns a hash of URL parameters to use in this <Component>'s path.
   getParams: ->
@@ -39,17 +31,7 @@ LinkMixin =
   getHref: ->
     makeHref @props.to, @getParams(), @props.query
 
-  componentWillReceiveProps: (nextProps) ->
-    params = getUnreservedProps nextProps, @additionalReservedProps
-
-    @setState
-      isActive: ActiveState.statics.isActive nextProps.to, params, nextProps.query
-
-  updateActiveState: ->
-    @setState
-      isActive: ActiveState.statics.isActive @props.to, @getParams(), @props.query
-
-  handleClick: (event) ->
+  handleRouteTo: (event) ->
     if isModifiedEvent(event) or !isLeftClick(event)
       return
 
@@ -57,7 +39,6 @@ LinkMixin =
     transitionTo @props.to, @getParams(), @props.query
 
 isLeftClick = (event) -> event.button == 0
-
 isModifiedEvent = (event) -> !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey)
 
 getUnreservedProps = (props, additionalReservedProps) ->
@@ -69,4 +50,4 @@ getUnreservedProps = (props, additionalReservedProps) ->
 
   withoutProperties props, reservedProps
 
-module.exports = LinkMixin
+module.exports = RouteToMixin

@@ -1,6 +1,7 @@
 React = require 'react'
 NavItem = require 'react-bootstrap/NavItem'
-LinkMixin = require './LinkMixin'
+IsActiveMixin = require './IsActiveMixin'
+RouteToMixin = require './RouteToMixin'
 
 ADDITIONAL_RESERVED_PROPS =
   active: true
@@ -13,14 +14,17 @@ ADDITIONAL_RESERVED_PROPS =
 
 NavItemLink = React.createClass
   displayName: 'NavItemLink'
-  mixins: [ LinkMixin ]
+  mixins: [
+    IsActiveMixin
+    RouteToMixin
+  ]
   additionalReservedProps: ADDITIONAL_RESERVED_PROPS
   render: ->
     @transferPropsTo(
       <NavItem
         href={@getHref()}
         active={@state.isActive}
-        onClick={@handleClick}>
+        onClick={@handleRouteTo}>
         {@props.children}
       </NavItem>
     )
