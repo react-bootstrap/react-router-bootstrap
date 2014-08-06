@@ -1,8 +1,5 @@
 React = require 'react'
-Router = require 'react-router'
 NavItem = require 'react-bootstrap/NavItem'
-withoutProperties = require 'react-router/modules/helpers/withoutProperties'
-makeHref = require 'react-router/modules/helpers/makeHref'
 LinkMixin = require './LinkMixin'
 
 ADDITIONAL_RESERVED_PROPS =
