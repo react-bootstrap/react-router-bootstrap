@@ -9,7 +9,7 @@ IsActiveMixin =
     isActive: false
 
   componentWillReceiveProps: (nextProps) ->
-    params = getUnreservedProps nextProps, @additionalReservedProps
+    params = @getUnreservedProps nextProps, @additionalReservedProps
 
     @setState
       isActive: ActiveState.statics.isActive nextProps.to, params, nextProps.query

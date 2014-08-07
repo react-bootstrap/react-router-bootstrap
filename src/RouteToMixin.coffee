@@ -16,8 +16,7 @@ RESERVED_PROPS = {
 }
 
 RouteToMixin =
-  statics:
-    getUnreservedProps: getUnreservedProps
+  getUnreservedProps: getUnreservedProps
 
   propTypes:
     to: React.PropTypes.string.isRequired
