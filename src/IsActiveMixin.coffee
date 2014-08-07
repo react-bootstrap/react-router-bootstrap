@@ -1,8 +1,9 @@
 React = require 'react'
 ActiveState = require 'react-router/modules/mixins/ActiveState'
+RouteToMixin = require './RouteToMixin'
 
 IsActiveMixin =
-  mixins: [ ActiveState ]
+  mixins: [ ActiveState, RouteToMixin ]
 
   getInitialState: ->
     isActive: false
