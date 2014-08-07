@@ -15,6 +15,18 @@ RESERVED_PROPS = {
   children: true # ReactChildren
 }
 
+isLeftClick = (event) -> event.button == 0
+isModifiedEvent = (event) -> !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey)
+
+getUnreservedProps = (props, additionalReservedProps) ->
+  if (additionalReservedProps)
+    reservedProps = mergeProperties {}, RESERVED_PROPS
+    reservedProps = mergeProperties reservedProps, additionalReservedProps
+  else
+    reservedProps = RESERVED_PROPS
+
+  withoutProperties props, reservedProps
+
 RouteToMixin =
   getUnreservedProps: getUnreservedProps
 
@@ -36,17 +48,5 @@ RouteToMixin =
 
     event.preventDefault()
     transitionTo @props.to, @getParams(), @props.query
-
-isLeftClick = (event) -> event.button == 0
-isModifiedEvent = (event) -> !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey)
-
-getUnreservedProps = (props, additionalReservedProps) ->
-  if (additionalReservedProps)
-    reservedProps = mergeProperties {}, RESERVED_PROPS
-    reservedProps = mergeProperties reservedProps, additionalReservedProps
-  else
-    reservedProps = RESERVED_PROPS
-
-  withoutProperties props, reservedProps
 
 module.exports = RouteToMixin
