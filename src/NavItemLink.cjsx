@@ -14,10 +14,7 @@ ADDITIONAL_RESERVED_PROPS =
 
 NavItemLink = React.createClass
   displayName: 'NavItemLink'
-  mixins: [
-    IsActiveMixin
-    RouteToMixin
-  ]
+  mixins: [ IsActiveMixin ]
   additionalReservedProps: ADDITIONAL_RESERVED_PROPS
   render: ->
     @transferPropsTo(
