@@ -2,8 +2,7 @@ React = require 'react'
 makeHref = require 'react-router/modules/helpers/makeHref'
 transitionTo = require 'react-router/modules/helpers/transitionTo'
 withoutProperties = require 'react-router/modules/helpers/withoutProperties'
-mergeProperties = require 'react-router/modules/helpers/mergeProperties'
-
+copyProperties = require 'react/lib/copyProperties'
 # A map of component props that are reserved for use by the
 # router and/or React. All other props are used as params that are
 # interpolated into the link's path.
@@ -20,8 +19,8 @@ isModifiedEvent = (event) -> !!(event.metaKey || event.altKey || event.ctrlKey |
 
 getUnreservedProps = (props, additionalReservedProps) ->
   if (additionalReservedProps)
-    reservedProps = mergeProperties {}, RESERVED_PROPS
-    reservedProps = mergeProperties reservedProps, additionalReservedProps
+    reservedProps = copyProperties {}, RESERVED_PROPS
+    reservedProps = copyProperties reservedProps, additionalReservedProps
   else
     reservedProps = RESERVED_PROPS
 
