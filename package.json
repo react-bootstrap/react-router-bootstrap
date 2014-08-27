@@ -30,7 +30,8 @@
     "coffee-script": "^1.7.1",
     "gulp": "^3.8.7",
     "gulp-cjsx": "^0.3.0",
-    "gulp-plumber": "^0.6.4"
+    "gulp-plumber": "^0.6.4",
+    "gulp-rimraf": "^0.1.0"
   },
   "files": [
     "lib"
