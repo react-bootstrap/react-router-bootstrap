@@ -12,10 +12,10 @@ IsActiveMixin =
     params = @getUnreservedProps nextProps, @additionalReservedProps
 
     @setState
-      isActive: ActiveState.statics.isActive nextProps.to, params, nextProps.query
+      isActive: this.isActive nextProps.to, params, nextProps.query
 
   updateActiveState: ->
     @setState
-      isActive: ActiveState.statics.isActive @props.to, @getParams(), @props.query
+      isActive: this.isActive @props.to, @getParams(), @props.query
 
 module.exports = IsActiveMixin
