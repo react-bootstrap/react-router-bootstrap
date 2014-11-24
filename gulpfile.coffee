@@ -13,3 +13,5 @@ gulp.task 'clean', ->
   gulp.src('./lib', {read: false})
     .pipe plumber()
     .pipe rimraf()
+
+gulp.task 'default', ['build']
