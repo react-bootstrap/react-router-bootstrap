@@ -1,3 +1,4 @@
 NavItemLink = require './NavItemLink'
+ButtonLink = require './ButtonLink'
 
-module.exports = {NavItemLink}
+module.exports = {NavItemLink, ButtonLink}

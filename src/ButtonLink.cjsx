@@ -1,5 +1,6 @@
 React = require 'react'
-Button = require 'react-bootstrap/Button'
+ReactBootstrap = require 'react-bootstrap'
+Button = ReactBootstrap.Button
 RouteToMixin = require './RouteToMixin'
 assign = require 'react/lib/Object.assign'
 

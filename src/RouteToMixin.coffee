@@ -1,5 +1,6 @@
 React = require 'react'
-Navigation = require('react-router').Navigation;
+Router = require('react-router')
+Navigation = Router.Navigation;
 copyProperties = require 'react/lib/copyProperties'
 
 # A map of component props that are reserved for use by the
@@ -47,6 +48,7 @@ RouteToMixin =
       return
 
     event.preventDefault()
-    this.transitionTo @props.to, @getParams(), @props.query
+    allParams = withoutProperties @props, RESERVED_PROPS
+    this.transitionTo @props.to, allParams, @props.query
 
 module.exports = RouteToMixin
