@@ -1,6 +1,10 @@
 React = require 'react'
 Button = require 'react-bootstrap/Button'
 RouteToMixin = require './RouteToMixin'
+assign = require 'react/lib/Object.assign'
+
+if ! Object.assign
+  Object.assign = assign;
 
 ADDITIONAL_RESERVED_PROPS =
   key: true
@@ -11,12 +15,11 @@ ButtonLink = React.createClass
   mixins: [ RouteToMixin ]
   additionalReservedProps: ADDITIONAL_RESERVED_PROPS
   render: ->
-    @transferPropsTo(
-      <Button
-        href={@getHref()}
-        onClick={@handleRouteTo}>
-        {@props.children}
-      </Button>
-    )
+    <Button
+      {...@props}
+      href={@getHref()}
+      onClick={@handleRouteTo}>
+      {@props.children}
+    </Button>
 
 module.exports = ButtonLink
