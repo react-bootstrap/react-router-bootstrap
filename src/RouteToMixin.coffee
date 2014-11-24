@@ -1,7 +1,6 @@
 React = require 'react'
-withoutProperties = require 'react-router/modules/utils/withoutProperties'
-copyProperties = require 'react/lib/copyProperties'
 Navigation = require('react-router').Navigation;
+copyProperties = require 'react/lib/copyProperties'
 
 # A map of component props that are reserved for use by the
 # router and/or React. All other props are used as params that are
@@ -16,32 +15,32 @@ RESERVED_PROPS = {
 
 isLeftClick = (event) -> event.button == 0
 isModifiedEvent = (event) -> !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey)
-
-getUnreservedProps = (props, additionalReservedProps) ->
-  if (additionalReservedProps)
-    reservedProps = copyProperties {}, RESERVED_PROPS
-    reservedProps = copyProperties reservedProps, additionalReservedProps
-  else
-    reservedProps = RESERVED_PROPS
-
-  withoutProperties props, reservedProps
+withoutProperties = (object, properties) ->
+  result = {}
+  for property of object
+    result[property] = object[property]  if object.hasOwnProperty(property) and not properties[property]
+  result
 
 RouteToMixin =
-  mixins: [Navigation]
+  mixins: [Navigation],
 
-  getUnreservedProps: getUnreservedProps
+  getUnreservedProps: (props, additionalReservedProps) ->
+    if (additionalReservedProps)
+      reservedProps = copyProperties {}, RESERVED_PROPS
+      reservedProps = copyProperties reservedProps, additionalReservedProps
+    else
+      reservedProps = RESERVED_PROPS
+
+    withoutProperties props, reservedProps
 
   propTypes:
     to: React.PropTypes.string.isRequired
     query: React.PropTypes.object
 
-  # Returns a hash of URL parameters to use in this <Component>'s path.
-  getParams: ->
-    getUnreservedProps @props, @additionalReservedProps
-
   # Returns the value of the "href" attribute to use on the DOM element.
   getHref: ->
-    this.makeHref @props.to, @getParams(), @props.query
+    allParams = withoutProperties @props, RESERVED_PROPS
+    this.makeHref @props.to, allParams, @props.query
 
   handleRouteTo: (event) ->
     if isModifiedEvent(event) or !isLeftClick(event)
