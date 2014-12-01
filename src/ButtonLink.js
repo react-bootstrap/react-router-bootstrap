@@ -1,9 +1,9 @@
 var React = require('react');
 
-var Button = require('react-bootstrap/button');
+var Button = require('react-bootstrap/cjs/Button');
 
-var Navigation = require('react-router/mixins/Navigation');
-var State = require('react-router/mixins/State');
+var Navigation = require('react-router/modules/mixins/Navigation');
+var State = require('react-router/modules/mixins/State');
 
 var helpers = require('./helpers');
 
