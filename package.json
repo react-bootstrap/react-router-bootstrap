@@ -4,7 +4,7 @@
   "description": "react-router and react-bootstrap compatible components",
   "main": "./lib/index.js",
   "scripts": {
-    "prepublish": "./node_modules/gulp/bin/gulp.js build",
+    "prepublish": "./node_modules/jsx/bin/jsx -x js src lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,7 +16,10 @@
     "react-router",
     "react-bootstrap"
   ],
-  "author": "Matt Smith <mtscout6@gmail.com>",
+  "author": {
+    "name": "Matt Smith",
+    "email": "mtscout6@gmail.com"
+  },
   "license": "Apache2",
   "bugs": {
     "url": "https://github.com/mtscout6/react-router-bootstrap/issues"
@@ -27,11 +30,7 @@
     "react-router": ">=0.5.1"
   },
   "devDependencies": {
-    "coffee-script": "^1.7.1",
-    "gulp": "^3.8.7",
-    "gulp-cjsx": "^0.3.0",
-    "gulp-plumber": "^0.6.4",
-    "gulp-rimraf": "^0.1.0"
+    "jsx": "^0.9.89"
   },
   "files": [
     "lib"
