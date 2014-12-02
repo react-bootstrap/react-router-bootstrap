@@ -4,7 +4,7 @@
   "description": "react-router and react-bootstrap compatible components",
   "main": "./lib/index.js",
   "scripts": {
-    "prepublish": "./node_modules/jsx/bin/jsx -x js src lib",
+    "prepublish": "./node_modules/react-tools/bin/jsx -x js src lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -30,7 +30,7 @@
     "react-router": ">=0.5.1"
   },
   "devDependencies": {
-    "jsx": "^0.9.89"
+    "react-tools": "^0.12.1"
   },
   "files": [
     "lib"
