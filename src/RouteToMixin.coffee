@@ -1,8 +1,8 @@
 React = require 'react'
-makeHref = require 'react-router/modules/helpers/makeHref'
-transitionTo = require 'react-router/modules/helpers/transitionTo'
-withoutProperties = require 'react-router/modules/helpers/withoutProperties'
+withoutProperties = require 'react-router/modules/utils/withoutProperties'
 copyProperties = require 'react/lib/copyProperties'
+Navigation = require('react-router').Navigation;
+
 # A map of component props that are reserved for use by the
 # router and/or React. All other props are used as params that are
 # interpolated into the link's path.
@@ -27,6 +27,8 @@ getUnreservedProps = (props, additionalReservedProps) ->
   withoutProperties props, reservedProps
 
 RouteToMixin =
+  mixins: [Navigation]
+
   getUnreservedProps: getUnreservedProps
 
   propTypes:
@@ -39,13 +41,13 @@ RouteToMixin =
 
   # Returns the value of the "href" attribute to use on the DOM element.
   getHref: ->
-    makeHref @props.to, @getParams(), @props.query
+    this.makeHref @props.to, @getParams(), @props.query
 
   handleRouteTo: (event) ->
     if isModifiedEvent(event) or !isLeftClick(event)
       return
 
     event.preventDefault()
-    transitionTo @props.to, @getParams(), @props.query
+    this.transitionTo @props.to, @getParams(), @props.query
 
 module.exports = RouteToMixin
