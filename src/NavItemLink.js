@@ -59,9 +59,8 @@ var NavItemLink = React.createClass({
   },
 
   render: function() {
-    return (
+    return this.transferPropsTo(
       <NavItem
-        {...this.props}
         href={this.state.href}
         active={this.state.isActive}
         onClick={this.handleRouteTo}

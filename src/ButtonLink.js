@@ -49,9 +49,8 @@ var ButtonLink = React.createClass({
   },
 
   render: function () {
-    return (
+    return this.transferPropsTo(
       <Button
-        {...this.props}
         href={this.state.href}
         onClick={this.handleRouteTo}
         ref="button">
