@@ -1,6 +1,6 @@
 var React = require('react');
 
-var NavItem = require('react-bootstrap/cjs/NavItem')
+var NavItem = require('react-bootstrap/NavItem')
 
 var Navigation = require('react-router/modules/mixins/Navigation');
 var State = require('react-router/modules/mixins/State');
