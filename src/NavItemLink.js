@@ -3,7 +3,7 @@ var React = require('react');
 var NavItem = require('react-bootstrap/NavItem')
 
 var Navigation = require('react-router/modules/mixins/Navigation');
-var State = require('react-router/modules/mixins/State');
+var ActiveState = require('react-router/modules/mixins/ActiveState');
 
 var helpers = require('./helpers');
 
@@ -20,7 +20,7 @@ ADDITIONAL_RESERVED_PROPS = [
 ];
 
 var NavItemLink = React.createClass({
-  mixins: [State, Navigation],
+  mixins: [ActiveState, Navigation],
 
   additionalReservedProps: ADDITIONAL_RESERVED_PROPS,
 
