@@ -1,10 +1,10 @@
 var React = window.React = require('react');
 
 var ReactRouter = require('react-router')
-  , State = ReactRouter.State;
+  , ActiveState = ReactRouter.ActiveState;
 
 var Router = require('react-router')
-  , RouteHandler = Router.RouteHandler
+  , Routes = Router.Routes
   , Route = Router.Route;
 
 var ReactBootstrap = require('react-bootstrap')
@@ -16,6 +16,8 @@ var ReactRouterBootstrap = require('react-router-bootstrap')
 
 var App = React.createClass({
   render: function() {
+    var ActiveRouteHandler = this.props.activeRouteHandler;
+
     return (
       <div>
         <b>{'<NavItemLink to="destination" firstParam="hello" secondParam="world">Linky</NavItemLink>'}</b><br />
@@ -52,34 +54,34 @@ var App = React.createClass({
           query={{firstQuery: 'hello', secondQuery: 'buttonlinky'}}>
           Button linky with query params
         </ButtonLink><br />
-        <RouteHandler />
+        <ActiveRouteHandler />
       </div>
     );
   }
 });
 
 var Destination = React.createClass({
-  mixins: [State],
+  mixins: [ActiveState],
 
   render: function() {
     return (
       <div>
         <h1>Button seems to work! =)</h1>
-        <b>getParams</b><br />
-        {JSON.stringify(this.getParams())}<br />
-        <b>getQuery</b><br />
-        {JSON.stringify(this.getQuery())}
+        <b>getActiveParams</b><br />
+        {JSON.stringify(this.getActiveParams())}<br />
+        <b>getActiveQuery</b><br />
+        {JSON.stringify(this.getActiveQuery())}
       </div>
     );
   }
 });
 
 var routes = (
-  <Route handler={App} path="/">
-    <Route name="destination" path="destination/:firstParam/:secondParam" handler={Destination} />
-  </Route>
+  <Routes>
+    <Route handler={App} path="/">
+      <Route name="destination" path="destination/:firstParam/:secondParam" handler={Destination} />
+    </Route>
+  </Routes>
 );
 
-Router.run(routes, function (Handler) {
-  React.render(<Handler/>, document.body);
-});
+React.renderComponent(routes, document.body);
