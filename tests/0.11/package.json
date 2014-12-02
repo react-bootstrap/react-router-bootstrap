@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "react": "^0.11.2",
+    "react-bootstrap": "^0.11.0",
     "react-router": "^0.9.5",
     "react-router-bootstrap": "git+ssh://git@github.com:vespakoen/react-router-bootstrap.git#11",
     "reactify": "^0.17.1"
