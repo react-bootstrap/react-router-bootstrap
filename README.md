@@ -2,20 +2,46 @@
 
 Intregation between [react-router](https://github.com/rackt/react-router) and [react-bootstrap](https://github.com/react-bootstrap/react-bootstrap)
 
+This package gives you a `NavItemLink` and `ButtonLink` which are substitutes for react-router's `NavItem` and `Button`
+
+Turning this:
+
+```jsx
+React.createClass({
+  mixins: [State, Navigation],
+
+  render: function() {
+    var href = this.makeHref('destination', {some: 'params'}, {some: 'query param'});
+    var isActive = this.isActive('destination', {some: 'params'}, {some: 'query param'});
+    return <Button href={href} active={isActive}>;
+  }
+});
+```
+
+Into this
+
+```jsx
+React.createClass({
+  render: function() {
+    return <ButtonLink to="destination" some="params" query={{some: 'query param'}}>;
+  }
+});
+```
+
 ## Installation
 
 <table>
   <tr>
     <th>react 0.11.x</th>
-    <td>npm install --save react-router-bootstrap@~0.6</td>
+    <td>`npm install --save react-router-bootstrap@~0.6`</td>
   </tr>
   <tr>
     <th>react 0.12.x</th>
-    <td>npm install --save react-router-bootstrap@~0.7</td>
+    <td>`npm install --save react-router-bootstrap@~0.7`</td>
   </tr>
 </table>
 
-You will also (if you havn't already) want to install `react-router` and `react-bootstrap`
+You will also (if you haven't already) want to install `react-router` and `react-bootstrap`
 
 ```
 npm install --save react-router react-bootstrap
