@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/mtscout6/react-router-bootstrap",
   "peerDependencies": {
-    "react-bootstrap": ">=0.11",
+    "react-bootstrap": ">=0.12",
     "react-router": ">=0.5.1"
   },
   "devDependencies": {

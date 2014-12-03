@@ -3,14 +3,14 @@ var React = require('react');
 var Button = require('react-bootstrap/Button');
 
 var Navigation = require('react-router/modules/mixins/Navigation');
-var ActiveState = require('react-router/modules/mixins/ActiveState');
+var State = require('react-router/modules/mixins/State');
 
 var helpers = require('./helpers');
 
 ADDITIONAL_RESERVED_PROPS = ['key', 'ref'];
 
 var ButtonLink = React.createClass({
-  mixins: [ActiveState, Navigation],
+  mixins: [State, Navigation],
 
   additionalReservedProps: ADDITIONAL_RESERVED_PROPS,
 
@@ -49,8 +49,9 @@ var ButtonLink = React.createClass({
   },
 
   render: function () {
-    return this.transferPropsTo(
+    return (
       <Button
+        {...this.props}
         href={this.state.href}
         onClick={this.handleRouteTo}
         ref="button">
