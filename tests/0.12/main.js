@@ -19,15 +19,16 @@ var App = React.createClass({
     return (
       <div>
         <b>{'<NavItemLink to="destination" firstParam="hello" secondParam="navlinky">Linky</NavItemLink>'}</b><br />
-        <Nav>
+        <Nav bsStyle="pills">
           <NavItemLink
             to="destination"
             firstParam="hello"
             secondParam="navlinky">
             Test linky without query params
           </NavItemLink>
-        <br />
+        </Nav><br />
         <b>{'<NavItemLink to="destination" firstParam="hello" secondParam="navlinky-with-query-params" query={{firstQuery: \'hello\', secondQuery: \'navlinky\'}}>Linky</NavItemLink>'}</b><br />
+        <Nav bsStyle="pills">
           <NavItemLink
             to="destination"
             firstParam="hello"
