@@ -26,27 +26,27 @@ var NavItemLink = React.createClass({
 
   getInitialState: function() {
     return {
-      href: '#',
-      isActive: false
+      params: false
     }
   },
 
   componentDidMount: function() {
-    var params = this.getCleanedParams();
-    var href = this.makeHref(this.props.to, params, this.props.query || null);
-    var isActive = this.isActive(this.props.to, params, this.props.query || null);
-
     this.setState({
-      href: href,
-      isActive: isActive
+      params: this.getCleanedParams(this.props)
     });
   },
 
-  getCleanedParams: function() {
+  getCleanedParams: function(props) {
     var reserved = Object.keys(this.refs.navItem.constructor.propTypes)
       .concat(this.additionalReservedProps);
 
-    return helpers.withoutProperties(this.props, reserved || []);
+    return helpers.withoutProperties(props, reserved || []);
+  },
+
+  componentWillReceiveProps: function(nextProps) {
+    this.setState({
+      params: this.getCleanedParams(nextProps)
+    });
   },
 
   handleRouteTo: function (e) {
@@ -54,16 +54,23 @@ var NavItemLink = React.createClass({
       return;
     }
     e.preventDefault();
-    var params = this.getCleanedParams();
-    return this.transitionTo(this.props.to, params, this.props.query || null);
+    return this.transitionTo(this.props.to, this.state.params, this.props.query || null);
   },
 
   render: function() {
+   if (this.state.params !== false) {
+      var href = this.makeHref(this.props.to, this.state.params, this.props.query || null);
+      var active = this.isActive(this.props.to, this.state.params, this.props.query || null);
+    } else {
+      var href = "#";
+      var active = false;
+    }
+
     return (
       <NavItem
         {...this.props}
-        href={this.state.href}
-        active={this.state.isActive}
+        href={href}
+        active={active}
         onClick={this.handleRouteTo}
         ref="navItem">
           {this.props.children}
