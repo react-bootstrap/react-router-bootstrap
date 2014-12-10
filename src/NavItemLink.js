@@ -26,19 +26,16 @@ var NavItemLink = React.createClass({
 
   getInitialState: function() {
     return {
-      href: '#',
-      isActive: false
+      href: '#'
     }
   },
 
   componentDidMount: function() {
     var params = this.getCleanedParams();
     var href = this.makeHref(this.props.to, params, this.props.query || null);
-    var isActive = this.isActive(this.props.to, params, this.props.query || null);
 
     this.setState({
-      href: href,
-      isActive: isActive
+      href: href
     });
   },
 
@@ -63,7 +60,7 @@ var NavItemLink = React.createClass({
       <NavItem
         {...this.props}
         href={this.state.href}
-        active={this.state.isActive}
+        active={this.isActive(this.props.to)}
         onClick={this.handleRouteTo}
         ref="navItem">
           {this.props.children}
