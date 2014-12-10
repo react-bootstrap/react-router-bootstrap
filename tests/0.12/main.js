@@ -18,7 +18,7 @@ var App = React.createClass({
   render: function() {
     return (
       <div>
-        <b>{'<NavItemLink to="destination" firstParam="hello" secondParam="world">Linky</NavItemLink>'}</b><br />
+        <b>{'<NavItemLink to="destination" firstParam="hello" secondParam="navlinky">Linky</NavItemLink>'}</b><br />
         <Nav>
           <NavItemLink
             to="destination"
@@ -26,9 +26,8 @@ var App = React.createClass({
             secondParam="navlinky">
             Test linky without query params
           </NavItemLink>
-        </Nav><br />
-        <b>{'<NavItemLink to="destination" firstParam="hello" secondParam="world" query={{firstQuery: \'hello\', secondQuery: \'there\'}}>Linky</NavItemLink>'}</b><br />
-        <Nav>
+        <br />
+        <b>{'<NavItemLink to="destination" firstParam="hello" secondParam="navlinky-with-query-params" query={{firstQuery: \'hello\', secondQuery: \'navlinky\'}}>Linky</NavItemLink>'}</b><br />
           <NavItemLink
             to="destination"
             firstParam="hello"
@@ -37,14 +36,14 @@ var App = React.createClass({
             Test linky with query params
           </NavItemLink>
         </Nav><br />
-        <b>{'<ButtonLink to="destination" firstParam="hello" secondParam="world">Linky</ButtonLink>'}</b><br />
+        <b>{'<ButtonLink to="destination" firstParam="hello" secondParam="buttonlinky">Linky</ButtonLink>'}</b><br />
         <ButtonLink
           to="destination"
           firstParam="hello"
           secondParam="buttonlinky">
           Button linky without query params
         </ButtonLink><br />
-        <b>{'<ButtonLink to="destination" firstParam="hello" secondParam="world" query={{firstQuery: \'hello\', secondQuery: \'there\'}}>>Linky</ButtonLink>'}</b><br />
+        <b>{'<ButtonLink to="destination" firstParam="hello" secondParam="buttonlinky-with-query-params" query={{firstQuery: \'hello\', secondQuery: \'buttonlinky\'}}>>Linky</ButtonLink>'}</b><br />
         <ButtonLink
           to="destination"
           firstParam="hello"
