@@ -16,7 +16,8 @@ ADDITIONAL_RESERVED_PROPS = [
   'navItem',
   'onSelect',
   'ref',
-  'children'
+  'children',
+  'query'
 ];
 
 var NavItemLink = React.createClass({
