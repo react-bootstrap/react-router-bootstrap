@@ -4,7 +4,8 @@
   "description": "react-router and react-bootstrap compatible components",
   "main": "./lib/index.js",
   "scripts": {
-    "prepublish": "./node_modules/react-tools/bin/jsx -x js src lib",
+    "prepublish": "npm run build",
+    "build": "./node_modules/react-tools/bin/jsx -x js src lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
