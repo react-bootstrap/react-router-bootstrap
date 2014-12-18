@@ -17,8 +17,7 @@ ADDITIONAL_RESERVED_PROPS = [
   'menuItem',
   'ref',
   'children',
-  'query',
-  'divider'
+  'query'
 ];
 
 var MenuItemLink = React.createClass({displayName: 'MenuItemLink',
