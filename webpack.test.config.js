@@ -1,7 +1,9 @@
 var path = require('path');
 
 module.exports = {
-  entry: undefined,
+  entry: {
+    visual: ['./tests/visual.js']
+  },
 
   devtool: 'inline-source-map',
 
@@ -14,6 +16,9 @@ module.exports = {
   module: {
     loaders: [
       {test: /\.jsx?$/, loader: "jsx?harmony"},
+      {test: /\.less$/, loader: "style!css!less"},
+      {test:/\.woff$/, loader: "url?prefix=font/&limit=5000"},
+      {test:/\.eot$|\.ttf$|\.svg$/, loader: "file?prefix=font/"}
     ]
   },
 }
