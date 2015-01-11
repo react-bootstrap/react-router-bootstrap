@@ -5,7 +5,7 @@
   "main": "./lib/index.js",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "./node_modules/react-tools/bin/jsx -x js src lib && rm -rf lib/.module-cache",
+    "build": "./node_modules/react-tools/bin/jsx --harmony -x js src lib && rm -rf lib/.module-cache",
     "test": "xdg-open tests/0.11/index.html && xdg-open tests/0.12/index.html"
   },
   "repository": {

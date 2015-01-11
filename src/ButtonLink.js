@@ -1,55 +1,32 @@
 var React = require('react');
 
 var Button = require('react-bootstrap/Button');
-
-var Navigation = require('react-router/modules/mixins/Navigation');
-var State = require('react-router/modules/mixins/State');
-
-var helpers = require('./helpers');
-
-ADDITIONAL_RESERVED_PROPS = ['key', 'ref'];
+var { Navigation, State } = require('react-router');
+var LinkMixin = require('./LinkMixin');
 
 var ButtonLink = React.createClass({
-  mixins: [State, Navigation],
-
-  additionalReservedProps: ADDITIONAL_RESERVED_PROPS,
-
-  getInitialState: function() {
-    return {
-      href: '#'
-    }
-  },
-
-  componentDidMount: function() {
-    var params = this.getCleanedParams();
-    var href = this.makeHref(this.props.to, params, this.props.query || null);
-
-    this.setState({
-      href: href
-    });
-  },
-
-  getCleanedParams: function() {
-    var reserved = Object.keys(this.refs.button.constructor.propTypes)
-      .concat(ADDITIONAL_RESERVED_PROPS);
-
-    return helpers.withoutProperties(this.props, reserved || []);
-  },
-
-  handleRouteTo: function (e) {
-    if (helpers.isModifiedEvent(e) || !helpers.isLeftClick(e)) {
-      return;
-    }
-    e.preventDefault();
-    var params = this.getCleanedParams();
-    return this.transitionTo(this.props.to, params, this.props.query || null);
-  },
+  mixins: [
+    LinkMixin,
+    Navigation,
+    State
+  ],
 
   render: function () {
+    var {
+      to,
+      params,
+      query,
+      active,
+      ...props} = this.props;
+
+    if (this.props.active === undefined) {
+      active = this.isActive(to, params, query);
+    }
+
     return (
-      <Button
-        {...this.props}
-        href={this.state.href}
+      <Button {...props}
+        href={this.getHref()}
+        active={active}
         onClick={this.handleRouteTo}
         ref="button">
           {this.props.children}
