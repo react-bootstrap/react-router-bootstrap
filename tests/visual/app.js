@@ -14,9 +14,10 @@ var App = React.createClass({
 });
 
 var routes = (
-  <Route name='home' handler={App} path="/">
-    <DefaultRoute handler={require('./home')} />
+  <Route handler={App} path="/">
+    <Route name='home' path='/' handler={require('./home')} />
     <Route name='button' handler={require('./ButtonVisual')} />
+    <Route name='nav-item' handler={require('./NavItemVisual')} />
   </Route>
 );
 

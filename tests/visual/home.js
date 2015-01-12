@@ -7,7 +7,8 @@ var Home = React.createClass({
       <div>
         <h2>Index</h2>
         <ul>
-          <li><Link to='button'>Button Link</Link></li>
+          <li><Link to='button'>ButtonLink</Link></li>
+          <li><Link to='nav-item'>NavItemLink</Link></li>
         </ul>
       </div>
     );

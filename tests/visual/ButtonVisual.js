@@ -10,7 +10,7 @@ var ButtonVisual = React.createClass({
       <div>
         <Link to='home'>&lt;-- Back to Index</Link>
         <h2>ButtonLink</h2>
-        <h3>Baseline (Raw React-Router)</h3>
+        <h3>Baseline (Raw React-Bootstrap)</h3>
         <ButtonToolbar>
           <Button>Default</Button>
           <Button bsStyle="success">Success</Button>
