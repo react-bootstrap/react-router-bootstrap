@@ -18,6 +18,7 @@ var routes = (
     <Route name='home' path='/' handler={require('./home')} />
     <Route name='button' handler={require('./ButtonVisual')} />
     <Route name='nav-item' handler={require('./NavItemVisual')} />
+    <Route name='menu-item' handler={require('./MenuItemVisual')} />
   </Route>
 );
 

@@ -19,7 +19,7 @@ var NavItemVisual = React.createClass({
           <NavItem eventKey={2} title="Item">NavItem 2 content</NavItem>
           <NavItem eventKey={3} disabled={true}>NavItem 3 content</NavItem>
         </Nav>
-        <h3>ButtonLink</h3>
+        <h3>NavItemLink</h3>
         <Nav bsStyle="pills">
           <NavItemLink to='nav-item'>NavItemLink 1 content</NavItemLink>
           <NavItemLink to='home'>NavItemLink 2 content</NavItemLink>

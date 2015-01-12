@@ -1,7 +1,9 @@
-var NavItemLink = require('./NavItemLink');
 var ButtonLink = require('./ButtonLink');
+var MenuItemLink = require('./MenuItemLink');
+var NavItemLink = require('./NavItemLink');
 
 module.exports = {
-  NavItemLink: NavItemLink,
-  ButtonLink: ButtonLink
+  ButtonLink: ButtonLink,
+  MenuItemLink: MenuItemLink,
+  NavItemLink: NavItemLink
 };

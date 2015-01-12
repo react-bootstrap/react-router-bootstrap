@@ -9,6 +9,7 @@ var Home = React.createClass({
         <ul>
           <li><Link to='button'>ButtonLink</Link></li>
           <li><Link to='nav-item'>NavItemLink</Link></li>
+          <li><Link to='menu-item'>MenuItemLink</Link></li>
         </ul>
       </div>
     );

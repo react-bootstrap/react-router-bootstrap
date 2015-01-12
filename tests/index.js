@@ -9,4 +9,5 @@ global.assert = chai.assert;
 global.TestUtils = require('react/addons').addons.TestUtils;
 
 require('./ButtonLink.spec');
+require('./MenuItemLink.spec');
 require('./NavItemLink.spec');
