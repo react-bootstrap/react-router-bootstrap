@@ -1,3 +1,4 @@
+require('./phantom-shims');
 var mocha = require('mocha');
 
 var chai = require('chai');
@@ -8,6 +9,6 @@ global.assert = chai.assert;
 
 global.TestUtils = require('react/addons').addons.TestUtils;
 
-require('./ButtonLink.spec');
-require('./MenuItemLink.spec');
-require('./NavItemLink.spec');
+require('./ButtonLink.spec.js');
+require('./MenuItemLink.spec.js');
+require('./NavItemLink.spec.js');

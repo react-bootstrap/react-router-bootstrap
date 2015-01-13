@@ -1,5 +1,7 @@
 # react-router-bootstrap
 
+[![Build Status](https://travis-ci.org/mtscout6/react-router-bootstrap.svg?branch=master)](https://travis-ci.org/mtscout6/react-router-bootstrap)
+
 Intregation between [react-router](https://github.com/rackt/react-router) and [react-bootstrap](https://github.com/react-bootstrap/react-bootstrap)
 
 This package gives you react-router compatible substitutes for:
