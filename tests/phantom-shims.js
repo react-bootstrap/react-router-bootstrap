@@ -1,5 +1,3 @@
-(function() {
-
 var Ap = Array.prototype;
 var slice = Ap.slice;
 var Fp = Function.prototype;
@@ -31,5 +29,3 @@ if (!Fp.bind) {
     return bound;
   };
 }
-
-})();

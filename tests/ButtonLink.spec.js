@@ -1,3 +1,5 @@
+/* globals describe, it, assert, expect */
+
 var React = require('react/addons');
 var ButtonLink = require('../src/ButtonLink');
 var Router = require('react-router');

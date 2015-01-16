@@ -37,6 +37,7 @@
     "chai": "^1.10.0",
     "css-loader": "^0.9.1",
     "file-loader": "^0.8.1",
+    "jshint-loader": "^0.8.0",
     "jsx-loader": "^0.12.2",
     "karma": "^0.12.31",
     "karma-chrome-launcher": "^0.1.7",

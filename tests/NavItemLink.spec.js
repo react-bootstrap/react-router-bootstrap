@@ -1,3 +1,5 @@
+/* globals describe, it, assert, expect */
+
 var React = require('react/addons');
 var NavItemLink = require('../src/NavItemLink');
 var Router = require('react-router');

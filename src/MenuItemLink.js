@@ -1,7 +1,7 @@
 var React = require('react/addons');
 var { classSet } = React.addons;
 
-var MenuItem = require('react-bootstrap/MenuItem')
+var MenuItem = require('react-bootstrap/MenuItem');
 var { Navigation, State } = require('react-router');
 var LinkMixin = require('./LinkMixin');
 
