@@ -35,6 +35,9 @@ module.exports = function (config) {
     browsers: [ 'PhantomJS' ],
 
     captureTimeout: 60000,
+    browserDisconnectTimeout: 7000,
+    browserDisconnectTolerance: 1,
+    browserDisconnectNoActivityTimeout: 60000,
 
     singleRun: false
   });
