@@ -1,5 +1,5 @@
 var React = require('react');
-var Router = require('react-router')
+var Router = require('react-router');
 var { Route, DefaultRoute, RouteHandler } = Router;
 
 var App = React.createClass({
@@ -9,7 +9,7 @@ var App = React.createClass({
         <h1>React-Router-Bootstrap Module Visual Test</h1>
         <RouteHandler />
       </div>
-    )
+    );
   }
 });
 

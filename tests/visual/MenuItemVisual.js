@@ -7,7 +7,7 @@ var MenuItemLink = require('../../src/MenuItemLink');
 
 var MenuItemVisual = React.createClass({
   handleSelect: function handleSelect(selectedKey) {
-    alert('selected ' + selectedKey);
+    window.alert('selected ' + selectedKey);
   },
   render: function() {
     return (

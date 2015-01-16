@@ -6,7 +6,7 @@ var NavItemLink = require('../../src/NavItemLink');
 
 var NavItemVisual = React.createClass({
   handleSelect: function handleSelect(selectedKey) {
-    alert('selected ' + selectedKey);
+    window.alert('selected ' + selectedKey);
   },
   render: function() {
     return (
