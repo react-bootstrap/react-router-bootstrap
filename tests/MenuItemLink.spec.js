@@ -61,7 +61,7 @@ describe('A MenuItemLink', function () {
 
       function assertActive () {
         var li = div.querySelector('li');
-        expect(li.className.split(' ').sort().join(' ')).to.equal('dontKillMe');
+        expect(li.className.split(' ').sort().join(' ')).to.equal('active dontKillMe');
         var a = div.querySelector('a');
         expect(a.className.split(' ').sort().join(' ')).to.equal('');
       }
