@@ -1,0 +1,32 @@
+{
+  "name": "react-router-bootstrap",
+  "version": "0.8.2",
+  "description": "react-router and react-bootstrap compatible components",
+  "main": "lib/ReactRouterBootstrap.js",
+  "homepage": "https://github.com/mtscout6/react-router-bootstrap",
+  "author": {
+    "name": "Matt Smith",
+    "email": "mtscout6@gmail.com"
+  },
+  "license": "Apache2",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mtscout6/react-router-bootstrap.git"
+  },
+  "dependencies": {
+    "react-router": "^0.11.6",
+    "react-bootstrap": "^0.13.2"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "tests",
+    "src",
+    "CONTRIBUTING.md",
+    "karma.conf.js",
+    "package.json",
+    "webpack.config.js",
+    "webpack.test.config.js"
+  ]
+}

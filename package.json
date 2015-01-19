@@ -5,7 +5,7 @@
   "main": "./lib/index.js",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "./node_modules/react-tools/bin/jsx --harmony -x js src lib && rm -rf lib/.module-cache",
+    "build": "./node_modules/react-tools/bin/jsx --harmony -x js src lib && rm -rf lib/.module-cache && ./node_modules/.bin/webpack lib/index.js lib/ReactRouterBootstrap.js && COMPRESS=1 ./node_modules/.bin/webpack lib/index.js lib/ReactRouterBootstrap.min.js",
     "test": "./node_modules/.bin/karma start karma.conf.js --single-run",
     "tdd": "./node_modules/.bin/karma start karma.conf.js",
     "visual-test": "webpack-dev-server --config webpack.test.config"
