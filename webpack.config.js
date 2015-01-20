@@ -22,7 +22,6 @@ module.exports = {
 
   externals: {
     react: 'React',
-//    'react/lib/cx': 'React.addons.classSet',
     'react/lib/Object.assign': 'React.__spread',
     'react-router': 'ReactRouter',
     'react-bootstrap': 'ReactBootstrap',
