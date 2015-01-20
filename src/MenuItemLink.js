@@ -1,5 +1,5 @@
-var React = require('react/addons');
-var { classSet } = React.addons;
+var React = require('react');
+var classSet = require('react/lib/cx');
 
 var MenuItem = require('react-bootstrap/MenuItem');
 var { Navigation, State } = require('react-router');
