@@ -1,6 +1,6 @@
 {
   "name": "react-router-bootstrap",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "description": "react-router and react-bootstrap compatible components",
   "main": "lib/ReactRouterBootstrap.js",
   "homepage": "https://github.com/mtscout6/react-router-bootstrap",
