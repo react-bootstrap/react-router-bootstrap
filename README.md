@@ -29,7 +29,7 @@ Into this
 ```jsx
 React.createClass({
   render: function() {
-    return <ButtonLink to="destination" some="params" query={{some: 'query param'}}>;
+    return <ButtonLink to="destination" params={{ some: 'params' }} query={{some: 'query param'}}>;
   }
 });
 ```
@@ -86,7 +86,7 @@ var App = React.createClass({
         <Nav>
           <NavItemLink
             to="destination"
-            someparam="hello">
+            params={{ someparam: 'hello' }}>
             Linky!
           </NavItemLink>
         </Nav>
@@ -94,7 +94,7 @@ var App = React.createClass({
         ButtonLink<br />
         <ButtonLink
           to="destination"
-          someparam="hello">
+          params={{ someparam: 'hello' }}>
           Linky!
         </ButtonLink>
         <RouteHandler />

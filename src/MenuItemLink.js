@@ -5,7 +5,7 @@ var MenuItem = require('react-bootstrap/lib/MenuItem');
 var { Navigation, State } = require('react-router');
 var LinkMixin = require('./LinkMixin');
 
-var joinClasses = require('react-bootstrap/lib/utils/joinClasses');
+var joinClasses = require('react/lib/joinClasses');
 
 var MenuItemLink = React.createClass({
   mixins: [
