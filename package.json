@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/mtscout6/react-router-bootstrap",
   "peerDependencies": {
-    "react-bootstrap": ">=0.12",
+    "react-bootstrap": ">=0.15",
     "react-router": ">=0.5.1"
   },
   "devDependencies": {
@@ -51,7 +51,7 @@
     "mocha": "^2.1.0",
     "phantomjs": "^1.9.13",
     "react": "^0.12.2",
-    "react-bootstrap": ">=0.12",
+    "react-bootstrap": ">=0.15",
     "react-router": ">=0.5.1",
     "react-tools": "^0.12.1",
     "style-loader": "^0.8.2",

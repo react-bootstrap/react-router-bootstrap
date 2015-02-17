@@ -1,6 +1,6 @@
 var React = require('react');
 
-var Button = require('react-bootstrap/Button');
+var Button = require('react-bootstrap/lib/Button');
 var { Navigation, State } = require('react-router');
 var LinkMixin = require('./LinkMixin');
 
