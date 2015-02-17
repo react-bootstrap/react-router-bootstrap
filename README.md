@@ -36,13 +36,22 @@ React.createClass({
 
 ## Installation
 
+###React 0.11
 <table>
   <tr>
-    <th>react 0.11.x</th>
+    <th>react-bootstrap &lt; 0.15</th>
     <td>`npm install --save react-router-bootstrap@~0.6`</td>
   </tr>
+</table>
+
+###React 0.12
+<table>
   <tr>
-    <th>react 0.12.x</th>
+    <th>react-bootstrap &lt; 0.15</th>
+    <td>`npm install --save react-router-bootstrap@~0.8`</td>
+  </tr>
+  <tr>
+    <th>react-bootstrap &gt;= 0.15</th>
     <td>`npm install --save react-router-bootstrap`</td>
   </tr>
 </table>
