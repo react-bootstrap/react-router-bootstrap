@@ -1,8 +1,8 @@
 var React = require('react');
 var {Link} = require('react-router');
-var ButtonToolbar = require('react-bootstrap/ButtonToolbar');
-var SplitButton = require('react-bootstrap/SplitButton');
-var MenuItem = require('react-bootstrap/MenuItem');
+var ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar');
+var SplitButton = require('react-bootstrap/lib/SplitButton');
+var MenuItem = require('react-bootstrap/lib/MenuItem');
 var MenuItemLink = require('../../src/MenuItemLink');
 
 var MenuItemVisual = React.createClass({

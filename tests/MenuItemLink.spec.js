@@ -5,7 +5,7 @@ var MenuItemLink = require('../src/MenuItemLink');
 var Router = require('react-router');
 var { Route, RouteHandler } = Router;
 var { Foo, Bar } = require('./TestHandlers');
-var TestLocation = require('react-router/modules/locations/TestLocation');
+var TestLocation = new require('react-router/lib/locations/TestLocation');
 var { click } = React.addons.TestUtils.Simulate;
 
 describe('A MenuItemLink', function () {
