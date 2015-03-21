@@ -1,7 +1,7 @@
 var React = require('react');
 var {Link} = require('react-router');
-var ButtonToolbar = require('react-bootstrap/ButtonToolbar');
-var Button = require('react-bootstrap/Button');
+var ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar');
+var Button = require('react-bootstrap/lib/Button');
 var ButtonLink = require('../../src/ButtonLink');
 
 var ButtonVisual = React.createClass({

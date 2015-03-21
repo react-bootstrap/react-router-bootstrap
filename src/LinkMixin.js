@@ -1,6 +1,5 @@
 var React = require('react');
 var classSet = require('react/lib/cx');
-var assign = require('react/lib/Object.assign');
 
 function isLeftClickEvent(event) {
   return event.button === 0;

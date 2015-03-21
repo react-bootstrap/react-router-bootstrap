@@ -1,7 +1,7 @@
 var React = require('react');
 var {Link} = require('react-router');
-var Nav = require('react-bootstrap/Nav');
-var NavItem = require('react-bootstrap/NavItem');
+var Nav = require('react-bootstrap/lib/Nav');
+var NavItem = require('react-bootstrap/lib/NavItem');
 var NavItemLink = require('../../src/NavItemLink');
 
 var NavItemVisual = React.createClass({
