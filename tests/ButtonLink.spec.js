@@ -5,7 +5,7 @@ var ButtonLink = require('../src/ButtonLink');
 var Router = require('react-router');
 var { Route, RouteHandler } = Router;
 var { Foo, Bar } = require('./TestHandlers');
-var TestLocation = new require('react-router/lib/locations/TestLocation');
+var TestLocation = require('react-router/lib/locations/TestLocation');
 var { click } = React.addons.TestUtils.Simulate;
 
 describe('A ButtonLink', function () {
@@ -23,9 +23,10 @@ describe('A ButtonLink', function () {
       ];
 
       var div = document.createElement('div');
-      TestLocation.history = ['/link'];
+      var testLocation = new TestLocation();
+      testLocation.history = ['/link'];
 
-      Router.run(routes, TestLocation, function (Handler) {
+      Router.run(routes, testLocation, function (Handler) {
         React.render(<Handler/>, div, function () {
           var a = div.querySelector('a');
           expect(a.getAttribute('href')).to.equal('/foo/baz?qux=quux');
@@ -60,7 +61,8 @@ describe('A ButtonLink', function () {
       );
 
       var div = document.createElement('div');
-      TestLocation.history = ['/foo'];
+      var testLocation = new TestLocation();
+      testLocation.history = ['/foo'];
       var steps = [];
 
       function assertActive () {
@@ -75,12 +77,12 @@ describe('A ButtonLink', function () {
 
       steps.push(() => {
         assertActive();
-        TestLocation.push('/bar');
+        testLocation.push('/bar');
       });
 
       steps.push(() => {
         assertInactive();
-        TestLocation.push('/foo');
+        testLocation.push('/foo');
       });
 
       steps.push(() => {
@@ -88,7 +90,7 @@ describe('A ButtonLink', function () {
         done();
       });
 
-      Router.run(routes, TestLocation, function (Handler) {
+      Router.run(routes, testLocation, function (Handler) {
         React.render(<Handler/>, div, () => {
           steps.shift()();
         });
@@ -114,9 +116,10 @@ describe('A ButtonLink', function () {
         <Route name="link" handler={ButtonLinkHandler} />
       ];
       var div = document.createElement('div');
-      TestLocation.history = ['/link'];
+      var testLocation = new TestLocation();
+      testLocation.history = ['/link'];
 
-      Router.run(routes, TestLocation, function (Handler) {
+      Router.run(routes, testLocation, function (Handler) {
         React.render(<Handler/>, div, function () {
           click(div.querySelector('a'));
         });
@@ -125,7 +128,8 @@ describe('A ButtonLink', function () {
 
     it('transitions to the correct route', function (done) {
       var div = document.createElement('div');
-      TestLocation.history = ['/link'];
+      var testLocation = new TestLocation();
+      testLocation.history = ['/link'];
 
       var ButtonLinkHandler = React.createClass({
         handleClick: function () {
@@ -153,7 +157,7 @@ describe('A ButtonLink', function () {
         done();
       });
 
-      Router.run(routes, TestLocation, function (Handler) {
+      Router.run(routes, testLocation, function (Handler) {
         React.render(<Handler/>, div, function () {
           steps.shift()();
         });

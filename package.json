@@ -50,7 +50,7 @@
     "less-loader": "^2.0.0",
     "mocha": "^2.1.0",
     "phantomjs": "^1.9.13",
-    "react": "^0.12.2",
+    "react": "*",
     "react-bootstrap": ">=0.15",
     "react-router": ">=0.5.1",
     "react-tools": "^0.12.1",
