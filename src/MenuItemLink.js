@@ -2,17 +2,17 @@ var React = require('react');
 var classSet = require('react/lib/cx');
 
 var MenuItem = require('react-bootstrap/lib/MenuItem');
-var { Navigation, State } = require('react-router');
 var LinkMixin = require('./LinkMixin');
 
 var joinClasses = require('react/lib/joinClasses');
 
 var MenuItemLink = React.createClass({
   mixins: [
-    LinkMixin,
-    Navigation,
-    State
+    LinkMixin
   ],
+  contextTypes: {
+    router: React.PropTypes.func.isRequired
+  },
 
   render: function() {
     var {
@@ -25,7 +25,7 @@ var MenuItemLink = React.createClass({
       ...props} = this.props;
 
     if (this.props.active === undefined) {
-      active = this.isActive(to, params, query);
+      active = this.context.router.isActive(to, params, query);
     }
 
     return (
