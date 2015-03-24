@@ -1,15 +1,15 @@
 var React = require('react');
 
 var Button = require('react-bootstrap/lib/Button');
-var { Navigation, State } = require('react-router');
 var LinkMixin = require('./LinkMixin');
 
 var ButtonLink = React.createClass({
   mixins: [
-    LinkMixin,
-    Navigation,
-    State
+    LinkMixin
   ],
+  contextTypes: {
+    router: React.PropTypes.func.isRequired
+  },
 
   render: function () {
     var {
@@ -20,7 +20,7 @@ var ButtonLink = React.createClass({
       ...props} = this.props;
 
     if (this.props.active === undefined) {
-      active = this.isActive(to, params, query);
+      active = this.context.router.isActive(to, params, query);
     }
 
     return (
