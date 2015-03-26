@@ -36,35 +36,15 @@ React.createClass({
 
 ## Installation
 
-###React 0.11
-<table>
-  <tr>
-    <th>react-bootstrap &lt; 0.15</th>
-    <td>`npm install --save react-router-bootstrap@~0.6`</td>
-  </tr>
-</table>
-
-###React 0.12
-<table>
-  <tr>
-    <th>react-bootstrap &lt; 0.15</th>
-    <td>`npm install --save react-router-bootstrap@~0.8`</td>
-  </tr>
-  <tr>
-    <th>react-bootstrap &gt;= 0.15</th>
-    <td>`npm install --save react-router-bootstrap`</td>
-  </tr>
-</table>
-
-You will also (if you haven't already) want to install `react-router` and `react-bootstrap`
+You will also (if you haven't already) want to install `react-router`, `react-bootstrap`, and `classnames`
 
 ```
-npm install --save react-router react-bootstrap
+npm install --save react-router react-bootstrap classnames
 ```
 
 ## Usage
 
-A simple example for **react 0.12.x**
+A simple example
 
 ```jsx
 var Router = require('react-router')
