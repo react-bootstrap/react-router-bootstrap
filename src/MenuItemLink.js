@@ -1,5 +1,5 @@
 var React = require('react');
-var classSet = require('react/lib/cx');
+var classSet = require('classnames');
 
 var MenuItem = require('react-bootstrap/lib/MenuItem');
 var LinkMixin = require('./LinkMixin');
