@@ -10,6 +10,7 @@ var Home = React.createClass({
           <li><Link to='button'>ButtonLink</Link></li>
           <li><Link to='nav-item'>NavItemLink</Link></li>
           <li><Link to='menu-item'>MenuItemLink</Link></li>
+          <li><Link to='list-group-item'>ListGroupItemLink</Link></li>
         </ul>
       </div>
     );
