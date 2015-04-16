@@ -9,6 +9,7 @@ This package gives you react-router compatible substitutes for:
 - `NavItem` -> `NavItemLink`
 - `Button` -> `ButtonLink`
 - `MenuItem` -> `MenuItemLink`
+- `ListGroupItem` -> `ListGroupItemLink`
 
 Turning this:
 
@@ -52,11 +53,13 @@ var Router = require('react-router')
   , Route = Router.Route;
 
 var ReactBootstrap = require('react-bootstrap')
-  , Nav = ReactBootstrap.Nav;
+  , Nav = ReactBootstrap.Nav
+  , ListGroup = ReactBootstrap.ListGroup;
 
 var ReactRouterBootstrap = require('react-router-bootstrap')
   , NavItemLink = ReactRouterBootstrap.NavItemLink
-  , ButtonLink = ReactRouterBootstrap.ButtonLink;
+  , ButtonLink = ReactRouterBootstrap.ButtonLink
+  , ListGroupItemLink = ReactRouterBootstrap.ListGroupItemLink;
 
 var App = React.createClass({
   render: function() {
@@ -77,6 +80,14 @@ var App = React.createClass({
           params={{ someparam: 'hello' }}>
           Linky!
         </ButtonLink>
+        <br />
+        <ListGroup>
+          <ListGroupItemLink
+            to="destination"
+            params={{ someparam: 'hello' }}>
+            Linky!
+          </ListGroupItemLink>
+        </ListGroup>
         <RouteHandler />
       </div>
     );

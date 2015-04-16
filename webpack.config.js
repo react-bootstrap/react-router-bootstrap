@@ -67,6 +67,14 @@ module.exports = {
         commonjs: "react-bootstrap/lib/MenuItem",
         amd: "react-bootstrap/lib/MenuItem"
       }
+    },
+    {
+      "react-bootstrap/lib/ListGroupItem": {
+        root: ["ReactBootstrap", "ListGroupItem"],
+        commonjs2: "react-bootstrap/lib/ListGroupItem",
+        commonjs: "react-bootstrap/lib/ListGroupItem",
+        amd: "react-bootstrap/lib/ListGroupItem"
+      }
     }
   ],
 

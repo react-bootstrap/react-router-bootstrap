@@ -12,3 +12,4 @@ global.TestUtils = require('react/addons').addons.TestUtils;
 require('./ButtonLink.spec.js');
 require('./MenuItemLink.spec.js');
 require('./NavItemLink.spec.js');
+require('./ListGroupItemLink.spec.js');
