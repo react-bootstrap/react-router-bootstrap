@@ -15,7 +15,7 @@ Any substantial change should be reflected in the docs - (Currently just the rep
 
 # Build
 
-Please doe not include changes to the `lib` folder. We will do this when we prepare a release.
+Please do not include changes to the `lib` folder. We will do this when we prepare a release.
 
 # Other useful resources for debugging
 
