@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:mtscout6/react-router-bootstrap.git"
+    "url": "git@github.com:react-bootstrap/react-router-bootstrap.git"
   },
   "keywords": [
     "react",
@@ -25,9 +25,9 @@
   },
   "license": "Apache2",
   "bugs": {
-    "url": "https://github.com/mtscout6/react-router-bootstrap/issues"
+    "url": "https://github.com/react-bootstrap/react-router-bootstrap/issues"
   },
-  "homepage": "https://github.com/mtscout6/react-router-bootstrap",
+  "homepage": "https://github.com/react-bootstrap/react-router-bootstrap",
   "peerDependencies": {
     "react-bootstrap": ">=0.15",
     "react-router": ">=0.13.1",
