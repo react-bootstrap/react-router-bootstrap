@@ -1,9 +1,9 @@
 {
   "name": "react-router-bootstrap",
-  "version": "0.8.3",
+  "version": "0.13.2",
   "description": "react-router and react-bootstrap compatible components",
   "main": "lib/ReactRouterBootstrap.js",
-  "homepage": "https://github.com/mtscout6/react-router-bootstrap",
+  "homepage": "https://github.com/react-bootstrap/react-router-bootstrap",
   "author": {
     "name": "Matt Smith",
     "email": "mtscout6@gmail.com"
@@ -11,11 +11,11 @@
   "license": "Apache License, Version 2.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mtscout6/react-router-bootstrap.git"
+    "url": "git://github.com/react-bootstrap/react-router-bootstrap.git"
   },
   "dependencies": {
-    "react-router": "^0.11.6",
-    "react-bootstrap": "^0.13.2"
+    "react-bootstrap": ">=0.15",
+    "react-router": ">=0.13.1"
   },
   "ignore": [
     "**/.*",
