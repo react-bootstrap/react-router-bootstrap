@@ -56,7 +56,7 @@
     "react-router": ">=0.13.1",
     "classnames": ">=1.2.0",
     "react-tools": "^0.12.1",
-    "style-loader": "^0.8.2",
+    "style-loader": "^0.12.2",
     "url-loader": "^0.5.5",
     "webpack": "^1.4.15",
     "webpack-dev-server": "^1.7.0"
