@@ -124,6 +124,32 @@ describe('A NavItemLink', function () {
       });
     });
 
+    it('when disabled does not proceed', function () {
+      var NavItemLinkHandler = React.createClass({
+        handleClick: function (event) {
+          throw new Error('click should not be called');
+        },
+
+        render: function () {
+          return <NavItemLink to="foo" disabled onClick={this.handleClick}>NavItemLink</NavItemLink>;
+        }
+      });
+
+      var routes = [
+        <Route name="foo" handler={Foo} />,
+        <Route name="link" handler={NavItemLinkHandler} />
+      ];
+      var div = document.createElement('div');
+      var testLocation = new TestLocation();
+      testLocation.history = ['/link'];
+
+      Router.run(routes, testLocation, function (Handler) {
+        React.render(<Handler/>, div, function () {
+          click(div.querySelector('a'));
+        });
+      });
+    });
+
     it('transitions to the correct route', function (done) {
       var div = document.createElement('div');
       var testLocation = new TestLocation();
