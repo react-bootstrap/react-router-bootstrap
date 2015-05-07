@@ -63,6 +63,6 @@
     "lib"
   ],
   "dependencies": {
-    "classnames": "^1.2.2"
+    "classnames": "^2.0.0"
   }
 }
