@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/react-bootstrap/react-router-bootstrap",
   "peerDependencies": {
-    "react-bootstrap": ">=0.15",
+    "react-bootstrap": ">=0.22",
     "react-router": ">=0.13.1"
   },
   "devDependencies": {
