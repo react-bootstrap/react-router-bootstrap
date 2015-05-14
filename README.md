@@ -35,11 +35,6 @@ React.createClass({
 });
 ```
 
-It also defines modal and overlay triggers that forward router context:
-
-- `ModalTrigger` -> `RouterModalTrigger`
-- `OverlayTrigger` -> `RouterOverlayTrigger`
-
 ## Installation
 
 You will also (if you haven't already) want to install `react-router` and `react-bootstrap`
