@@ -49,7 +49,7 @@ module.exports = {
         root: ["ReactBootstrap", "Button"],
         commonjs2: "react-bootstrap/lib/Button",
         commonjs: "react-bootstrap/lib/Button",
-        amd: "react-bootstrap/lib/Button"
+        amd: "react-bootstrap/Button"
       }
     },
     {
@@ -57,7 +57,7 @@ module.exports = {
         root: ["ReactBootstrap", "NavItem"],
         commonjs2: "react-bootstrap/lib/NavItem",
         commonjs: "react-bootstrap/lib/NavItem",
-        amd: "react-bootstrap/lib/NavItem"
+        amd: "react-bootstrap/NavItem"
       }
     },
     {
@@ -65,7 +65,7 @@ module.exports = {
         root: ["ReactBootstrap", "MenuItem"],
         commonjs2: "react-bootstrap/lib/MenuItem",
         commonjs: "react-bootstrap/lib/MenuItem",
-        amd: "react-bootstrap/lib/MenuItem"
+        amd: "react-bootstrap/MenuItem"
       }
     },
     {
@@ -73,7 +73,7 @@ module.exports = {
         root: ["ReactBootstrap", "ListGroupItem"],
         commonjs2: "react-bootstrap/lib/ListGroupItem",
         commonjs: "react-bootstrap/lib/ListGroupItem",
-        amd: "react-bootstrap/lib/ListGroupItem"
+        amd: "react-bootstrap/ListGroupItem"
       }
     }
   ],
