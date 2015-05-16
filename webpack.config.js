@@ -75,6 +75,22 @@ module.exports = {
         commonjs: "react-bootstrap/lib/ListGroupItem",
         amd: "react-bootstrap/lib/ListGroupItem"
       }
+    },
+    {
+      "react-bootstrap/lib/ModalTrigger": {
+        root: ["ReactBootstrap", "ModalTrigger"],
+        commonjs2: "react-bootstrap/lib/ModalTrigger",
+        commonjs: "react-bootstrap/lib/ModalTrigger",
+        amd: "react-bootstrap/lib/ModalTrigger"
+      }
+    },
+    {
+      "react-bootstrap/lib/OverlayTrigger": {
+        root: ["ReactBootstrap", "OverlayTrigger"],
+        commonjs2: "react-bootstrap/lib/OverlayTrigger",
+        commonjs: "react-bootstrap/lib/OverlayTrigger",
+        amd: "react-bootstrap/lib/OverlayTrigger"
+      }
     }
   ],
 
