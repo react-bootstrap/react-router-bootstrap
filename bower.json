@@ -14,7 +14,7 @@
     "url": "git://github.com/react-bootstrap/react-router-bootstrap.git"
   },
   "dependencies": {
-    "react-bootstrap": ">=0.15",
+    "react-bootstrap": ">=0.22.4",
     "react-router": ">=0.13.1"
   },
   "ignore": [
