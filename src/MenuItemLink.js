@@ -20,20 +20,21 @@ var MenuItemLink = React.createClass({
       params,
       query,
       active,
-      className,
       onSelect, // Not going to use this, just stripping off the props!
       ...props} = this.props;
 
-    if (this.props.active === undefined) {
+    if (active === undefined) {
       active = this.context.router.isActive(to, params, query);
     }
 
     return (
-      <MenuItem {...props}
+      <MenuItem
+        {...props}
         href={this.getHref()}
-        className={ joinClasses(className, classSet({ active: active })) }
+        active={active}
         onClick={this.handleRouteTo}
-        ref="menuItem">
+        ref="menuItem"
+      >
         {this.props.children}
       </MenuItem>
     );
