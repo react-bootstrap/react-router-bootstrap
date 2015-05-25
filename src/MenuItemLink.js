@@ -4,8 +4,6 @@ var classSet = require('classnames');
 var MenuItem = require('react-bootstrap/lib/MenuItem');
 var LinkMixin = require('./LinkMixin');
 
-var joinClasses = require('react/lib/joinClasses');
-
 var MenuItemLink = React.createClass({
   mixins: [
     LinkMixin
