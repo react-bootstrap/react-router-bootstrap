@@ -59,6 +59,7 @@ module.exports = {
     var clickResult;
     
     if (this.props.disabled) {
+      event.preventDefault();
       return;
     }
 
