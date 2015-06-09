@@ -13,11 +13,24 @@ if (process.env.COMPRESS) {
 }
 
 module.exports = {
+  entry: {
+    'ReactRouterBootstrap': './src/index.js'
+  },
 
   output: {
+    path: './lib',
+    filename: process.env.COMPRESS ? '[name].min.js' : '[name].js',
     library: 'ReactRouterBootstrap',
     libraryTarget: 'umd'
   },
+
+  module: {
+    loaders: [
+      { test: /\.js/, loader: 'babel', exclude: /node_modules/ }
+    ]
+  },
+
+  devtool: process.env.COMPRESS && 'source-map',
 
   externals: [
     {
