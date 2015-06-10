@@ -51,7 +51,7 @@
     "mocha": "^2.1.0",
     "node-libs-browser": "^0.5.2",
     "phantomjs": "^1.9.13",
-    "react": "*",
+    "react": ">0.10.0",
     "react-bootstrap": ">=0.15",
     "react-router": ">=0.13.1",
     "style-loader": "^0.12.2",
