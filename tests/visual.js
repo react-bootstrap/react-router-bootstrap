@@ -1,2 +1,2 @@
-require('bootstrap/less/bootstrap.less');
-require('./visual/app');
+import 'bootstrap/less/bootstrap.less';
+import './visual/app';

@@ -1,9 +1,9 @@
-var React = require('react');
+import React from 'react';
 
-var NavItem = require('react-bootstrap/lib/NavItem');
-var LinkMixin = require('./LinkMixin');
+import NavItem from 'react-bootstrap/lib/NavItem';
+import LinkMixin from './LinkMixin';
 
-var NavItemLink = React.createClass({
+const NavItemLink = React.createClass({
   mixins: [
     LinkMixin
   ],
@@ -12,12 +12,13 @@ var NavItemLink = React.createClass({
   },
 
   render: function() {
-    var {
+    let {
       to,
       params,
       query,
       active,
-      ...props} = this.props;
+      ...props
+    } = this.props;
 
     if (this.props.active === undefined) {
       active = this.context.router.isActive(to, params, query);
@@ -35,4 +36,4 @@ var NavItemLink = React.createClass({
   }
 });
 
-module.exports = NavItemLink;
+export default NavItemLink;

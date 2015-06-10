@@ -1,9 +1,9 @@
-var React = require('react');
+import React from 'react';
 
-var ListGroupItem = require('react-bootstrap/lib/ListGroupItem');
-var LinkMixin = require('./LinkMixin');
+import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
+import LinkMixin from './LinkMixin';
 
-var LinkGroupItemLink = React.createClass({
+const LinkGroupItemLink = React.createClass({
   mixins: [
     LinkMixin
   ],
@@ -11,13 +11,14 @@ var LinkGroupItemLink = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
-  render: function() {
-    var {
+  render() {
+    let {
       to,
       params,
       query,
       active,
-      ...props} = this.props;
+      ...props
+    } = this.props;
 
     if (this.props.active === undefined) {
       active = this.context.router.isActive(to, params, query);
@@ -28,11 +29,11 @@ var LinkGroupItemLink = React.createClass({
         href={this.getHref()}
         active={active}
         onClick={this.handleRouteTo}
-        ref="listGroupItem">
+        ref='listGroupItem'>
         {this.props.children}
       </ListGroupItem>
     );
   }
 });
 
-module.exports = LinkGroupItemLink;
+export default LinkGroupItemLink;

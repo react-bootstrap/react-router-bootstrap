@@ -1,9 +1,8 @@
-var React = require('react');
-var Router = require('react-router');
-var { Route, DefaultRoute, RouteHandler } = Router;
+import React from 'react';
+import Router, { Route, RouteHandler } from 'react-router';
 
-var App = React.createClass({
-  render: function() {
+const App = React.createClass({
+  render() {
     return (
       <div>
         <h1>React-Router-Bootstrap Module Visual Test</h1>
@@ -13,7 +12,7 @@ var App = React.createClass({
   }
 });
 
-var routes = (
+const routes = (
   <Route handler={App} path="/">
     <Route name='home' path='/' handler={require('./home')} />
     <Route name='button' handler={require('./ButtonVisual')} />

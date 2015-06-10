@@ -1,0 +1,21 @@
+{
+  "env": {
+    "mocha": true
+  },
+  "globals": {
+    "assert": true,
+    "expect": true,
+    "sinon": true
+  },
+  "plugins": [
+    "mocha"
+  ],
+  "rules": {
+    "no-alert": 0,
+    "no-script-url": 0,
+    "no-unused-expressions": 0,
+    "react/no-multi-comp": 0,
+    "react/prop-types": 0,
+    "mocha/no-exclusive-tests": 2
+  }
+}

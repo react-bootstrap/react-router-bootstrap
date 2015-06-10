@@ -1,7 +1,7 @@
-var React = require('react');
+import React from 'react';
 
-var ModalTrigger = require('react-bootstrap/lib/ModalTrigger');
+import ModalTrigger from 'react-bootstrap/lib/ModalTrigger';
 
-module.exports = ModalTrigger.withContext({
+export default ModalTrigger.withContext({
   router: React.PropTypes.func
 });

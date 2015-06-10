@@ -1,8 +1,8 @@
 /* globals describe, it, expect */
 
-var React = require('react');
+import React from 'react';
 
-var RouterModalTrigger = require('../src/RouterModalTrigger');
+import RouterModalTrigger from '../src/RouterModalTrigger';
 
 describe('A RouterModalTrigger', function() {
   it('has the right contextTypes', function() {

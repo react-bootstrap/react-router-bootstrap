@@ -1,14 +1,14 @@
-var React = require('react');
-var {Link} = require('react-router');
-var Nav = require('react-bootstrap/lib/Nav');
-var NavItem = require('react-bootstrap/lib/NavItem');
-var NavItemLink = require('../../src/NavItemLink');
+import React from 'react';
+import {Link} from 'react-router';
+import Nav from 'react-bootstrap/lib/Nav';
+import NavItem from 'react-bootstrap/lib/NavItem';
+import NavItemLink from '../../src/NavItemLink';
 
-var NavItemVisual = React.createClass({
-  handleSelect: function handleSelect(selectedKey) {
+const NavItemVisual = React.createClass({
+  handleSelect(selectedKey) {
     window.alert('selected ' + selectedKey);
   },
-  render: function() {
+  render() {
     return (
       <div>
         <Link to='home'>&lt;-- Back to Index</Link>
@@ -30,4 +30,4 @@ var NavItemVisual = React.createClass({
   }
 });
 
-module.exports = NavItemVisual;
+export default NavItemVisual;

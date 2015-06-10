@@ -1,8 +1,8 @@
 /* globals describe, it, expect */
 
-var React = require('react');
+import React from 'react';
 
-var RouterOverlayTrigger = require('../src/RouterOverlayTrigger');
+import RouterOverlayTrigger from '../src/RouterOverlayTrigger';
 
 describe('A RouterOverlayTrigger', function() {
   it('has the right contextTypes', function() {

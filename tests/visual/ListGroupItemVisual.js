@@ -1,14 +1,14 @@
-var React = require('react');
-var {Link} = require('react-router');
-var ListGroup = require('react-bootstrap/lib/ListGroup');
-var ListGroupItem = require('react-bootstrap/lib/ListGroupItem');
-var ListGroupItemLink = require('../../src/ListGroupItemLink');
+import React from 'react';
+import {Link} from 'react-router';
+import ListGroup from 'react-bootstrap/lib/ListGroup';
+import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
+import ListGroupItemLink from '../../src/ListGroupItemLink';
 
-var NavItemVisual = React.createClass({
-  handleSelect: function handleSelect(selectedKey) {
+const NavItemVisual = React.createClass({
+  handleSelect(selectedKey) {
     window.alert('selected ' + selectedKey);
   },
-  render: function() {
+  render() {
     return (
       <div>
         <Link to='home'>&lt;-- Back to Index</Link>
@@ -38,4 +38,4 @@ var NavItemVisual = React.createClass({
   }
 });
 
-module.exports = NavItemVisual;
+export default NavItemVisual;

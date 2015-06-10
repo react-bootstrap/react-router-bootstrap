@@ -1,4 +1,5 @@
-var webpackConfig = require('./webpack.test.config.js');
+require('babel/register');
+var webpackConfig = require('./webpack.test.config.babel.js');
 delete webpackConfig.entry;
 
 module.exports = function (config) {
