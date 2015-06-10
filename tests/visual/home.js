@@ -1,8 +1,8 @@
-var React = require('react');
-var {Link} = require('react-router');
+import React from 'react';
+import {Link} from 'react-router';
 
-var Home = React.createClass({
-  render: function() {
+const Home = React.createClass({
+  render() {
     return (
       <div>
         <h2>Index</h2>
@@ -17,4 +17,4 @@ var Home = React.createClass({
   }
 });
 
-module.exports = Home;
+export default Home;

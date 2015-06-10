@@ -1,7 +1,7 @@
-var React = require('react');
+import React from 'react';
 
-var OverlayTrigger = require('react-bootstrap/lib/OverlayTrigger');
+import OverlayTrigger from 'react-bootstrap/lib/OverlayTrigger';
 
-module.exports = OverlayTrigger.withContext({
+export default OverlayTrigger.withContext({
   router: React.PropTypes.func
 });

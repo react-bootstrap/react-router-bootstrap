@@ -1,15 +1,15 @@
-var ButtonLink = require('./ButtonLink');
-var ListGroupItemLink = require('./ListGroupItemLink');
-var MenuItemLink = require('./MenuItemLink');
-var NavItemLink = require('./NavItemLink');
-var RouterModalTrigger = require('./RouterModalTrigger');
-var RouterOverlayTrigger = require('./RouterOverlayTrigger');
+import ButtonLink from './ButtonLink';
+import ListGroupItemLink from './ListGroupItemLink';
+import MenuItemLink from './MenuItemLink';
+import NavItemLink from './NavItemLink';
+import RouterModalTrigger from './RouterModalTrigger';
+import RouterOverlayTrigger from './RouterOverlayTrigger';
 
-module.exports = {
-  ButtonLink: ButtonLink,
-  ListGroupItemLink: ListGroupItemLink,
-  MenuItemLink: MenuItemLink,
-  NavItemLink: NavItemLink,
-  RouterModalTrigger: RouterModalTrigger,
-  RouterOverlayTrigger: RouterOverlayTrigger
+export default {
+  ButtonLink,
+  ListGroupItemLink,
+  MenuItemLink,
+  NavItemLink,
+  RouterModalTrigger,
+  RouterOverlayTrigger
 };

@@ -1,5 +1,5 @@
-var React = require('react');
-var classSet = require('classnames');
+import React from 'react';
+import classNames from 'classnames';
 
 function isLeftClickEvent(event) {
   return event.button === 0;
@@ -9,7 +9,7 @@ function isModifiedEvent(event) {
   return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
 }
 
-module.exports = {
+export default {
   propTypes: {
     activeClassName: React.PropTypes.string.isRequired,
     disabled: React.PropTypes.bool,
@@ -23,7 +23,7 @@ module.exports = {
   },
 
 
-  getDefaultProps: function () {
+  getDefaultProps() {
     return {
       activeClassName: 'active'
     };
@@ -32,7 +32,7 @@ module.exports = {
   /**
    * Returns the value of the "href" attribute to use on the DOM element.
    */
-  getHref: function () {
+  getHref() {
     return this.context.router.makeHref(this.props.to, this.props.params, this.props.query);
   },
 
@@ -40,24 +40,24 @@ module.exports = {
    * Returns the value of the "class" attribute to use on the DOM element, which contains
    * the value of the activeClassName property when this <Link> is active.
    */
-  getClassName: function () {
-    var classNames = {};
+  getClassName() {
+    let classSet = {};
 
     if (this.props.className) {
-      classNames[this.props.className] = true;
+      classSet[this.props.className] = true;
     }
 
     if (this.context.router.isActive(this.props.to, this.props.params, this.props.query)) {
       classNames[this.props.activeClassName] = true;
     }
 
-    return classSet(classNames);
+    return classNames(classSet);
   },
 
-  handleRouteTo: function (event) {
-    var allowTransition = true;
-    var clickResult;
-    
+  handleRouteTo(event) {
+    let allowTransition = true;
+    let clickResult;
+
     if (this.props.disabled) {
       event.preventDefault();
       return;

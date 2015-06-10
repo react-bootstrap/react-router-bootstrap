@@ -1,11 +1,11 @@
-var React = require('react');
-var {Link} = require('react-router');
-var ButtonToolbar = require('react-bootstrap/lib/ButtonToolbar');
-var Button = require('react-bootstrap/lib/Button');
-var ButtonLink = require('../../src/ButtonLink');
+import React from 'react';
+import {Link} from 'react-router';
+import ButtonToolbar from 'react-bootstrap/lib/ButtonToolbar';
+import Button from 'react-bootstrap/lib/Button';
+import ButtonLink from '../../src/ButtonLink';
 
-var ButtonVisual = React.createClass({
-  render: function() {
+const ButtonVisual = React.createClass({
+  render() {
     return (
       <div>
         <Link to='home'>&lt;-- Back to Index</Link>
@@ -33,4 +33,4 @@ var ButtonVisual = React.createClass({
   }
 });
 
-module.exports = ButtonVisual;
+export default ButtonVisual;

@@ -1,9 +1,9 @@
-var React = require('react');
+import React from 'react';
 
-var Button = require('react-bootstrap/lib/Button');
-var LinkMixin = require('./LinkMixin');
+import Button from 'react-bootstrap/lib/Button';
+import LinkMixin from './LinkMixin';
 
-var ButtonLink = React.createClass({
+const ButtonLink = React.createClass({
   mixins: [
     LinkMixin
   ],
@@ -11,13 +11,14 @@ var ButtonLink = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
-  render: function () {
-    var {
+  render() {
+    let {
       to,
       params,
       query,
       active,
-      ...props} = this.props;
+      ...props
+    } = this.props;
 
     if (this.props.active === undefined) {
       active = this.context.router.isActive(to, params, query);
@@ -28,11 +29,11 @@ var ButtonLink = React.createClass({
         href={this.getHref()}
         active={active}
         onClick={this.handleRouteTo}
-        ref="button">
+        ref='button'>
           {this.props.children}
       </Button>
     );
   }
 });
 
-module.exports = ButtonLink;
+export default ButtonLink;

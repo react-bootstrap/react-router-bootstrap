@@ -1,10 +1,9 @@
-var React = require('react');
-var classSet = require('classnames');
+import React from 'react';
 
-var MenuItem = require('react-bootstrap/lib/MenuItem');
-var LinkMixin = require('./LinkMixin');
+import MenuItem from 'react-bootstrap/lib/MenuItem';
+import LinkMixin from './LinkMixin';
 
-var MenuItemLink = React.createClass({
+const MenuItemLink = React.createClass({
   mixins: [
     LinkMixin
   ],
@@ -12,14 +11,15 @@ var MenuItemLink = React.createClass({
     router: React.PropTypes.func.isRequired
   },
 
-  render: function() {
-    var {
+  render() {
+    let {
       to,
       params,
       query,
       active,
-      onSelect, // Not going to use this, just stripping off the props!
-      ...props} = this.props;
+      onSelect, // eslint-disable-line no-unused-vars
+      ...props
+    } = this.props;
 
     if (active === undefined) {
       active = this.context.router.isActive(to, params, query);
@@ -39,4 +39,4 @@ var MenuItemLink = React.createClass({
   }
 });
 
-module.exports = MenuItemLink;
+export default MenuItemLink;

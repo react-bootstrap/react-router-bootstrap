@@ -1,7 +1,7 @@
-require('./phantom-shims');
-var mocha = require('mocha');
+import './phantom-shims';
+import 'mocha';
 
-var chai = require('chai');
+let chai = require('chai');
 chai.should();
 
 global.expect = chai.expect;
@@ -9,9 +9,9 @@ global.assert = chai.assert;
 
 global.TestUtils = require('react/addons').addons.TestUtils;
 
-require('./ButtonLink.spec.js');
-require('./ListGroupItemLink.spec.js');
-require('./MenuItemLink.spec.js');
-require('./NavItemLink.spec.js');
-require('./RouterModalTrigger.spec.js');
-require('./RouterOverlayTrigger.spec.js');
+import './ButtonLink.spec.js';
+import './ListGroupItemLink.spec.js';
+import './MenuItemLink.spec.js';
+import './NavItemLink.spec.js';
+import './RouterModalTrigger.spec.js';
+import './RouterOverlayTrigger.spec.js';
