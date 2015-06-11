@@ -7,32 +7,13 @@ const MenuItemLink = React.createClass({
   mixins: [
     LinkMixin
   ],
-  contextTypes: {
-    router: React.PropTypes.func.isRequired
-  },
 
   render() {
-    let {
-      to,
-      params,
-      query,
-      active,
-      onSelect, // eslint-disable-line no-unused-vars
-      ...props
-    } = this.props;
-
-    if (active === undefined) {
-      active = this.context.router.isActive(to, params, query);
-    }
+    let props = this.getLinkProps();
+    delete props.onSelect; // this is done on the copy of this.props
 
     return (
-      <MenuItem
-        {...props}
-        href={this.getHref()}
-        active={active}
-        onClick={this.handleRouteTo}
-        ref="menuItem"
-      >
+      <MenuItem {...props} ref="menuItem">
         {this.props.children}
       </MenuItem>
     );

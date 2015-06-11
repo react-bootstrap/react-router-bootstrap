@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 
 function isLeftClickEvent(event) {
   return event.button === 0;
@@ -11,6 +10,7 @@ function isModifiedEvent(event) {
 
 export default {
   propTypes: {
+    active: React.PropTypes.bool,
     activeClassName: React.PropTypes.string.isRequired,
     disabled: React.PropTypes.bool,
     to: React.PropTypes.string.isRequired,
@@ -22,7 +22,6 @@ export default {
     router: React.PropTypes.func.isRequired
   },
 
-
   getDefaultProps() {
     return {
       activeClassName: 'active'
@@ -30,28 +29,28 @@ export default {
   },
 
   /**
-   * Returns the value of the "href" attribute to use on the DOM element.
+   * Returns props except those used by this Mixin
+   * Gets "active" from router if needed.
+   * Gets the value of the "href" attribute to use on the DOM element.
+   * Sets "onClick" to "handleRouteTo".
    */
-  getHref() {
-    return this.context.router.makeHref(this.props.to, this.props.params, this.props.query);
-  },
+  getLinkProps() {
+    let {
+      to,
+      params,
+      query,
+      ...props // eslint-disable-line object-shorthand
+    } = this.props;
 
-  /**
-   * Returns the value of the "class" attribute to use on the DOM element, which contains
-   * the value of the activeClassName property when this <Link> is active.
-   */
-  getClassName() {
-    let classSet = {};
-
-    if (this.props.className) {
-      classSet[this.props.className] = true;
+    if (this.props.active === undefined) {
+      props.active = this.context.router.isActive(to, params, query);
     }
 
-    if (this.context.router.isActive(this.props.to, this.props.params, this.props.query)) {
-      classNames[this.props.activeClassName] = true;
-    }
+    props.href = this.context.router.makeHref(to, params, query);
 
-    return classNames(classSet);
+    props.onClick = this.handleRouteTo;
+
+    return props;
   },
 
   handleRouteTo(event) {

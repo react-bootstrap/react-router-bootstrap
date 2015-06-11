@@ -100,12 +100,12 @@ describe('A ButtonLink', function () {
   describe('when clicked', function () {
     it('calls a user defined click handler', function (done) {
       let ButtonLinkHandler = React.createClass({
-        handleClick: function (event) {
+        handleClick(event) {
           assert.ok(true);
           done();
         },
 
-        render: function () {
+        render() {
           return <ButtonLink to="foo" onClick={this.handleClick}>ButtonLink</ButtonLink>;
         }
       });
@@ -131,11 +131,11 @@ describe('A ButtonLink', function () {
       testLocation.history = ['/link'];
 
       let ButtonLinkHandler = React.createClass({
-        handleClick: function () {
+        handleClick() {
           // just here to make sure click handlers don't prevent it from happening
         },
 
-        render: function () {
+        render() {
           return <ButtonLink to="foo" onClick={this.handleClick}>ButtonLink</ButtonLink>;
         }
       });
