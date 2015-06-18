@@ -112,10 +112,6 @@ Router.run(routes, function (Handler) {
 
 ```
 
-## Browser support
-
-This package depends on classnames, which requires [a polyfill for non-ES5 capable browsers](https://github.com/JedWatson/classnames#polyfills-needed-to-support-older-browsers).
-
 ## Contributing
 
 See [CONTRIBUTING](CONTRIBUTING.md)

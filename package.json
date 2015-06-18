@@ -66,8 +66,5 @@
   },
   "files": [
     "lib"
-  ],
-  "dependencies": {
-    "classnames": "^2.0.0"
-  }
+  ]
 }
