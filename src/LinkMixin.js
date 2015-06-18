@@ -48,7 +48,7 @@ export default {
     }
 
     if (this.context.router.isActive(this.props.to, this.props.params, this.props.query)) {
-      classNames[this.props.activeClassName] = true;
+      classSet[this.props.activeClassName] = true;
     }
 
     return classNames(classSet);
