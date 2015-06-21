@@ -41,7 +41,7 @@
     "bootstrap": "^3.3.1",
     "chai": "^3.0.0",
     "css-loader": "^0.14.4",
-    "eslint": "^0.22.1",
+    "eslint": "^0.23.0",
     "eslint-plugin-babel": "^1.0.0",
     "eslint-plugin-mocha": "^0.2.2",
     "eslint-plugin-react": "^2.5.0",
