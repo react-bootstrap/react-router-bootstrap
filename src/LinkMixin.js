@@ -39,7 +39,7 @@ export default {
       to,
       params,
       query,
-      ...props // eslint-disable-line object-shorthand
+      ...props
     } = this.props;
 
     if (this.props.active === undefined) {
