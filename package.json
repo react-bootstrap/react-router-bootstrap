@@ -24,7 +24,7 @@
     "name": "Matt Smith",
     "email": "mtscout6@gmail.com"
   },
-  "license": "Apache2",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/react-bootstrap/react-router-bootstrap/issues"
   },
