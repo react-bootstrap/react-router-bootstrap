@@ -48,7 +48,7 @@
     "file-loader": "^0.8.1",
     "karma": "^0.12.31",
     "karma-cli": "0.0.4",
-    "karma-mocha": "^0.1.10",
+    "karma-mocha": "^0.2.0",
     "karma-mocha-reporter": "^1.0.2",
     "karma-phantomjs-launcher": "^0.2.0",
     "karma-webpack": "^1.5.0",
