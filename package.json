@@ -8,7 +8,7 @@
     "build": "babel src --out-dir=lib && webpack && COMPRESS=1 webpack",
     "test": "npm run lint && karma start --single-run",
     "tdd": "karma start",
-    "visual-test": "webpack-dev-server --config webpack.test.config",
+    "visual-test": "webpack-dev-server --config webpack.test.config.babel.js",
     "lint": "eslint ./"
   },
   "repository": {
