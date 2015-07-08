@@ -37,6 +37,10 @@ React.createClass({
 
 ## Installation
 
+```
+npm install --save react-router-bootstrap
+```
+
 You will also (if you haven't already) want to install `react-router` and `react-bootstrap`
 
 ```
