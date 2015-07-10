@@ -5,11 +5,12 @@
   "main": "./lib/index.js",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "babel src --out-dir=lib && webpack && COMPRESS=1 webpack",
+    "build": "babel src --out-dir=lib && webpack && COMPRESS=1 webpack && npm run bower-prepare",
     "test": "npm run lint && karma start --single-run",
     "tdd": "karma start",
     "visual-test": "webpack-dev-server --config webpack.test.config.babel.js",
-    "lint": "eslint ./"
+    "lint": "eslint ./",
+    "bower-prepare": "babel-node scripts/bower-prepare.js"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "babel-loader": "^5.1.4",
     "bootstrap": "^3.3.1",
     "chai": "^3.0.0",
+    "colors": "^1.1.2",
     "css-loader": "^0.14.4",
     "eslint": "^0.24.0",
     "eslint-plugin-babel": "^1.0.0",
@@ -54,16 +56,19 @@
     "karma-webpack": "^1.5.0",
     "less": "^2.2.0",
     "less-loader": "^2.0.0",
+    "lodash": "^3.10.0",
     "mocha": "^2.1.0",
     "node-libs-browser": "^0.5.2",
     "phantomjs": "^1.9.13",
     "react": ">0.10.0",
     "react-bootstrap": ">=0.15",
     "react-router": ">=0.13.1",
+    "shelljs": "^0.5.1",
     "style-loader": "^0.12.2",
     "url-loader": "^0.5.5",
     "webpack": "^1.4.15",
-    "webpack-dev-server": "^1.7.0"
+    "webpack-dev-server": "^1.7.0",
+    "yargs": "^3.15.0"
   },
   "files": [
     "lib"
