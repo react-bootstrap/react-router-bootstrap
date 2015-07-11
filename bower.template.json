@@ -1,0 +1,25 @@
+{
+  "name": "<%= pkg.name %>",
+  "version": "<%= pkg.version %>",
+  "homepage": "<%= pkg.homepage %>",
+  "author": <%= JSON.stringify(pkg.author) %>,
+  "license": "<%= pkg.license %>",
+  "main": "lib/ReactRouterBootstrap.js",
+  "bugs": <%= JSON.stringify(pkg.bugs) %>,
+  "keywords": [
+    <%= _.map(pkg.keywords, function(keyword) { return '"' + keyword + '"' }).join(',')%>
+  ],
+  "dependencies": <%= JSON.stringify(pkg.peerDependencies) %>,
+  "ignore": [
+    "**/.*",
+    "tests",
+    "src",
+    "CONTRIBUTING.md",
+    "karma.conf.js",
+    "package.json",
+    "webpack",
+    "scripts",
+    "webpack.config.babel.js",
+    "webpack.test.config.babel.js"
+  ]
+}
