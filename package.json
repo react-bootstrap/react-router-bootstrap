@@ -19,7 +19,6 @@
     "type": "git",
     "url": "git@github.com:react-bootstrap/react-router-bootstrap.git"
   },
-  "bowerRepo": "git@github.com:react-bootstrap/react-router-bootstrap-bower.git",
   "keywords": [
     "react",
     "react-router",
@@ -58,13 +57,13 @@
     "karma-webpack": "^1.5.0",
     "lodash": "^3.10.0",
     "mocha": "^2.1.0",
-    "mt-changelog": "^0.5.3",
+    "mt-changelog": "^0.6.1",
     "node-libs-browser": "^0.5.2",
     "phantomjs": "^1.9.13",
     "react": ">0.10.0",
     "react-bootstrap": ">=0.15",
     "react-router": ">=0.13.1",
-    "release-script": "^0.1.0",
+    "release-script": "^0.2.1",
     "shelljs": "^0.5.1",
     "webpack": "^1.4.15",
     "webpack-dev-server": "^1.7.0",
@@ -72,5 +71,8 @@
   },
   "files": [
     "lib"
-  ]
+  ],
+  "release-script": {
+    "bowerRepo": "git@github.com:react-bootstrap/react-router-bootstrap-bower.git"
+  }
 }
