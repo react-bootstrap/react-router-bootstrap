@@ -119,3 +119,7 @@ Router.run(routes, function (Handler) {
 ## Contributing
 
 See [CONTRIBUTING](CONTRIBUTING.md)
+
+Use `npm run visual-test` command to check components appearance in browser. It will open browser with a blank page. Then after `webpack-server` finishes its bundling, the browser automatically will refresh the page.
+
+URL for it: http://localhost:8080/public/visual#/
