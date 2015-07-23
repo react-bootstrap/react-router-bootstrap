@@ -1,6 +1,6 @@
 {
   "name": "react-router-bootstrap",
-  "version": "0.17.2",
+  "version": "0.18.0",
   "description": "react-router and react-bootstrap compatible components",
   "main": "./lib/index.js",
   "scripts": {
