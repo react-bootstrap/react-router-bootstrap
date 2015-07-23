@@ -1,15 +1,5 @@
-import ButtonLink from './ButtonLink';
-import ListGroupItemLink from './ListGroupItemLink';
-import MenuItemLink from './MenuItemLink';
-import NavItemLink from './NavItemLink';
-import RouterModalTrigger from './RouterModalTrigger';
-import RouterOverlayTrigger from './RouterOverlayTrigger';
-
-export default {
-  ButtonLink,
-  ListGroupItemLink,
-  MenuItemLink,
-  NavItemLink,
-  RouterModalTrigger,
-  RouterOverlayTrigger
-};
+export ButtonLink from './ButtonLink';
+export ListGroupItemLink from './ListGroupItemLink';
+export MenuItemLink from './MenuItemLink';
+export NavItemLink from './NavItemLink';
+export RouterOverlayTrigger from './RouterOverlayTrigger';

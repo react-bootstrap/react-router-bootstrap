@@ -13,6 +13,5 @@ import './ButtonLink.spec.js';
 import './ListGroupItemLink.spec.js';
 import './MenuItemLink.spec.js';
 import './NavItemLink.spec.js';
-import './RouterModalTrigger.spec.js';
 import './RouterOverlayTrigger.spec.js';
 import './bower-imports-module.spec.js';
