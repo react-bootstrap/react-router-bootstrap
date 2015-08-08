@@ -64,7 +64,7 @@
     "node-libs-browser": "^0.5.2",
     "phantomjs": "^1.9.13",
     "react": ">0.10.0",
-    "react-bootstrap": ">=0.15",
+    "react-bootstrap": ">=0.22.4",
     "react-router": ">=0.13.1",
     "release-script": "^0.2.1",
     "shelljs": "^0.5.1",

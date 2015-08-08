@@ -3,3 +3,4 @@ export ListGroupItemLink from './ListGroupItemLink';
 export MenuItemLink from './MenuItemLink';
 export NavItemLink from './NavItemLink';
 export RouterOverlayTrigger from './RouterOverlayTrigger';
+export ThumbnailLink from './ThumbnailLink';
