@@ -19,6 +19,7 @@ const routes = (
     <Route name='nav-item' handler={require('./NavItemVisual')} />
     <Route name='menu-item' handler={require('./MenuItemVisual')} />
     <Route name='list-group-item' handler={require('./ListGroupItemVisual')} />
+    <Route name='page-item' handler={require('./PageItemVisual')} />
     <Route name='thumbnail' handler={require('./ThumbnailVisual')} />
   </Route>
 );

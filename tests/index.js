@@ -13,6 +13,7 @@ import './ButtonLink.spec.js';
 import './ListGroupItemLink.spec.js';
 import './MenuItemLink.spec.js';
 import './NavItemLink.spec.js';
+import './PageItemLink.spec.js';
 import './RouterOverlayTrigger.spec.js';
 import './ThumbnailLink.spec.js';
 import './bower-imports-module.spec.js';

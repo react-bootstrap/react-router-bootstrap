@@ -10,6 +10,7 @@ This package gives you react-router compatible substitutes for:
 - `Button` -> `ButtonLink`
 - `MenuItem` -> `MenuItemLink`
 - `ListGroupItem` -> `ListGroupItemLink`
+- `PageItem` -> `PageItemLink`
 - `Thumbnail` -> `ThumbnailLink`
 
 Turning this:
