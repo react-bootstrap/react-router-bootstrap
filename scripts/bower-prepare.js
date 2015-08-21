@@ -1,5 +1,5 @@
 /* globals cat, config, cp, mkdir, rm, test */
-/* eslint curly: 0 */
+/* eslint curly: 0, no-console: 0 */
 import 'colors';
 import 'shelljs/global';
 import path from 'path';

@@ -9,7 +9,7 @@ const MenuItemLink = React.createClass({
   ],
 
   render() {
-    let props = this.getLinkProps();
+    const props = this.getLinkProps();
     delete props.onSelect; // this is done on the copy of this.props
 
     return (
