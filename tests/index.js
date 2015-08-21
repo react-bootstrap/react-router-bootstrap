@@ -1,7 +1,7 @@
 import './phantom-shims';
 import 'mocha';
 
-let chai = require('chai');
+const chai = require('chai');
 chai.should();
 
 global.expect = chai.expect;

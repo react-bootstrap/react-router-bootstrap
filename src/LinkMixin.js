@@ -35,7 +35,7 @@ export default {
    * Sets "onClick" to "handleRouteTo".
    */
   getLinkProps() {
-    let {
+    const {
       to,
       params,
       query,

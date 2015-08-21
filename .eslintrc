@@ -1,4 +1,5 @@
 {
+  "extends": ["eslint-config-airbnb"],
   "env": {
     "browser": true,
     "node": true
@@ -12,8 +13,11 @@
     "babel"
   ],
   "rules": {
+    "comma-dangle": 0,
     "comma-spacing": 1,
     "key-spacing": 0,
+    "no-eq-null": 0,
+    "no-param-reassign": 0,
     "no-underscore-dangle": 0,
     "no-unused-vars": [2, { "vars": "all", "args": "none" }],
     "no-var": 2,
@@ -21,6 +25,7 @@
     "quotes": [1, "single", "avoid-escape"],
     "react/display-name": 0,
     "react/jsx-no-undef": 2,
+    "react/jsx-quotes": 0,
     "react/jsx-uses-react": 2,
     "react/no-did-mount-set-state": 2,
     "react/no-did-update-set-state": 2,

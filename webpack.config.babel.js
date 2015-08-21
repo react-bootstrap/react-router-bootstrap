@@ -1,7 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 
-let plugins = [];
+const plugins = [];
 
 if (process.env.COMPRESS) {
   plugins.push(
