@@ -16,7 +16,8 @@ export default {
     to: React.PropTypes.string.isRequired,
     params: React.PropTypes.object,
     query: React.PropTypes.object,
-    onClick: React.PropTypes.func
+    onClick: React.PropTypes.func,
+    replaceWith: React.PropTypes.bool
   },
   contextTypes: {
     router: React.PropTypes.func.isRequired
@@ -56,6 +57,7 @@ export default {
   handleRouteTo(event) {
     let allowTransition = true;
     let clickResult;
+    let transitionTo;
 
     if (this.props.disabled) {
       event.preventDefault();
@@ -77,7 +79,13 @@ export default {
     event.preventDefault();
 
     if (allowTransition) {
-      this.context.router.transitionTo(this.props.to, this.props.params, this.props.query);
+      if (this.props.replaceWith) {
+        transitionTo = this.context.router.replaceWith;
+      } else {
+        transitionTo = this.context.router.transitionTo;
+      }
+
+      transitionTo(this.props.to, this.props.params, this.props.query);
     }
   }
 };
