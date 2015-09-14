@@ -19,7 +19,7 @@ export default {
     onClick: React.PropTypes.func
   },
   contextTypes: {
-    router: React.PropTypes.func.isRequired
+    history: React.PropTypes.object.isRequired
   },
 
   getDefaultProps() {
@@ -43,10 +43,10 @@ export default {
     } = this.props;
 
     if (this.props.active === undefined) {
-      props.active = this.context.router.isActive(to, params, query);
+      props.active = this.context.history.isActive(to, params, query);
     }
 
-    props.href = this.context.router.makeHref(to, params, query);
+    props.href = this.context.history.createHref(to, query);
 
     props.onClick = this.handleRouteTo;
 
@@ -76,8 +76,17 @@ export default {
 
     event.preventDefault();
 
+    const location = {
+        pathname: this.props.to,
+        search: '',
+        query: this.props.query,
+        state: null,
+        action: 'REPLACE',
+        key: null
+    };
+
     if (allowTransition) {
-      this.context.router.transitionTo(this.props.to, this.props.params, this.props.query);
+      this.context.history.transitionTo(location);
     }
   }
 };
