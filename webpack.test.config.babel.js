@@ -1,24 +1,11 @@
-import path from 'path';
-
-module.exports = {
-  entry: {
-    visual: ['./tests/visual.js']
-  },
-
-  devtool: 'inline-source-map',
-
+export default {
   output: {
-    path: path.join(__dirname, 'tests-served/'),
-    publicPath: '/public/',
-    filename: '[name].js'
+    pathinfo: true
   },
-
   module: {
     loaders: [
-      {test: /\.js/, loader: 'babel', exclude: /node_modules/},
-      {test: /\.less$/, loader: 'style!css!less'},
-      {test:/\.woff|\.woff2$/, loader: 'url?prefix=font/&limit=5000'},
-      {test:/\.eot$|\.ttf$|\.svg$/, loader: 'file?prefix=font/'}
+      {test: /\.js/, loader: 'babel', exclude: /node_modules/}
     ]
-  }
+  },
+  devtool: 'inline-source-map'
 };
