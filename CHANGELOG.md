@@ -1,3 +1,10 @@
+v0.19.0 - Tue, 15 Sep 2015 17:33:35 GMT
+---------------------------------------
+
+- [ac500c8](../../commit/ac500c8) [changed] Replace everything with LinkContainer
+
+
+
 v0.18.1 - Mon, 10 Aug 2015 21:56:38 GMT
 ---------------------------------------
 
