@@ -1,41 +1,7 @@
 {
-  "extends": ["eslint-config-airbnb"],
-  "env": {
-    "browser": true,
-    "node": true
-  },
-  "ecmaFeatures": {
-    "jsx": true
-  },
-  "parser": "babel-eslint",
-  "plugins": [
-    "react",
-    "babel"
-  ],
+  "extends": "airbnb",
   "rules": {
     "comma-dangle": 0,
-    "comma-spacing": 1,
-    "key-spacing": 0,
-    "no-eq-null": 0,
-    "no-param-reassign": 0,
-    "no-underscore-dangle": 0,
-    "no-undef": 2,
-    "no-unused-vars": [2, { "vars": "all", "args": "none" }],
-    "no-var": 2,
-    "babel/object-shorthand": 2,
-    "quotes": [1, "single", "avoid-escape"],
-    "react/display-name": 0,
-    "react/jsx-no-undef": 2,
-    "react/jsx-quotes": 0,
-    "react/jsx-uses-react": 2,
-    "react/no-did-mount-set-state": 2,
-    "react/no-did-update-set-state": 2,
-    "react/no-multi-comp": 2,
-    "react/prop-types": [1, { "ignore": ["children", "className"] }],
-    "react/react-in-jsx-scope": 2,
-    "react/self-closing-comp": 1,
-    "react/wrap-multilines": 2,
-    "react/jsx-uses-vars": 1,
-    "strict": 0
+    "no-eq-null": 0
   }
 }

@@ -1,36 +1,45 @@
 import React from 'react';
-import {Link} from 'react-router';
 import ButtonToolbar from 'react-bootstrap/lib/ButtonToolbar';
 import Button from 'react-bootstrap/lib/Button';
-import ButtonLink from '../../src/ButtonLink';
+import {Link} from 'react-router';
 
-const ButtonVisual = React.createClass({
-  render() {
-    return (
-      <div>
-        <Link to='home'>&lt;-- Back to Index</Link>
-        <h2>ButtonLink</h2>
-        <h3>Baseline (Raw React-Bootstrap)</h3>
-        <ButtonToolbar>
-          <Button>Default</Button>
-          <Button bsStyle="success">Success</Button>
-          <Button bsStyle="info">Info</Button>
-          <Button bsStyle="warning">Warning</Button>
-          <Button bsStyle="danger">Danger</Button>
-          <Button bsStyle="link">Link</Button>
-        </ButtonToolbar>
-        <h3>ButtonLink</h3>
-        <ButtonToolbar>
-          <ButtonLink to='home'>Default</ButtonLink>
-          <ButtonLink to='home' bsStyle="success">Success</ButtonLink>
-          <ButtonLink to='home' bsStyle="info">Info</ButtonLink>
-          <ButtonLink to='home' bsStyle="warning">Warning</ButtonLink>
-          <ButtonLink to='home' bsStyle="danger">Danger</ButtonLink>
-          <ButtonLink to='home' bsStyle="link">Link</ButtonLink>
-        </ButtonToolbar>
-      </div>
-    );
-  }
-});
+import LinkContainer from '../../src/LinkContainer';
 
-export default ButtonVisual;
+export default () => (
+  <div>
+    <Link to="home">Back to Index</Link>
+    <h2>Button</h2>
+
+    <h3>Baseline</h3>
+    <ButtonToolbar>
+      <Button>Default</Button>
+      <Button bsStyle="success">Success</Button>
+      <Button bsStyle="info">Info</Button>
+      <Button bsStyle="warning">Warning</Button>
+      <Button bsStyle="danger">Danger</Button>
+      <Button bsStyle="link">Link</Button>
+    </ButtonToolbar>
+
+    <h3>LinkContainer</h3>
+    <ButtonToolbar>
+      <LinkContainer to="/home">
+        <Button>Default</Button>
+      </LinkContainer>
+      <LinkContainer to="/home">
+        <Button bsStyle="success">Success</Button>
+      </LinkContainer>
+      <LinkContainer to="/home">
+        <Button bsStyle="info">Info</Button>
+      </LinkContainer>
+      <LinkContainer to="/home">
+        <Button bsStyle="warning">Warning</Button>
+      </LinkContainer>
+      <LinkContainer to="/home">
+        <Button bsStyle="danger">Danger</Button>
+      </LinkContainer>
+      <LinkContainer to="/home">
+        <Button bsStyle="link">Link</Button>
+      </LinkContainer>
+    </ButtonToolbar>
+  </div>
+);

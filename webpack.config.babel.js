@@ -1,44 +1,24 @@
-import path from 'path';
 import webpack from 'webpack';
+import yargs from 'yargs';
 
-const plugins = [];
-
-if (process.env.COMPRESS) {
-  plugins.push(
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false
-      }
-    })
-  );
-}
+const {optimizeMinimize} = yargs.alias('p', 'optimize-minimize').argv;
+const nodeEnv = optimizeMinimize ? 'production' : 'development';
 
 export default {
   entry: {
     'ReactRouterBootstrap': './src/index.js'
   },
-
   output: {
     path: './lib',
-    filename: process.env.COMPRESS ? '[name].min.js' : '[name].js',
+    filename: optimizeMinimize ? '[name].min.js' : '[name].js',
     library: 'ReactRouterBootstrap',
     libraryTarget: 'umd'
   },
-
   module: {
     loaders: [
-      {
-        test: /\.js/,
-        loaders: [
-          'babel',
-          path.join(__dirname, 'webpack/bower-imports-loader.js')
-        ],
-        exclude: /node_modules/ }
+      {test: /\.js$/, loader: 'babel', exclude: /node_modules/}
     ]
   },
-
-  devtool: process.env.COMPRESS && 'source-map',
-
   externals: [
     {
       'react': {
@@ -55,20 +35,12 @@ export default {
         commonjs: 'react-router',
         amd: 'react-router'
       }
-    },
-    {
-      'react-bootstrap': {
-        root: 'ReactBootstrap',
-        commonjs2: 'react-bootstrap',
-        commonjs: 'react-bootstrap',
-        amd: 'react-bootstrap'
-      }
     }
   ],
-
-  node: {
-    buffer: false
-  },
-
-  plugins
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {'NODE_ENV': JSON.stringify(nodeEnv)}
+    })
+  ],
+  devtool: optimizeMinimize ? 'source-map' : null
 };

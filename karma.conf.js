@@ -4,26 +4,28 @@ delete webpackConfig.entry;
 
 module.exports = function (config) {
   config.set({
-
     basePath: '',
 
-    frameworks: [ 'mocha' ],
+    frameworks: [
+      'mocha',
+      'sinon-chai'
+    ],
 
     files: [
       './tests/index.js'
     ],
 
-    exclude: [],
-
     preprocessors: {
-      './tests/index.js': [ 'webpack' ]
+      './tests/index.js': ['webpack', 'sourcemap']
     },
 
-    webpack: [ webpackConfig ],
+    webpack: webpackConfig,
 
-    webpackMiddleware: { },
+    webpackMiddleware: {
+      noInfo: true
+    },
 
-    reporters: [ 'mocha' ],
+    reporters: ['mocha'],
 
     port: 9876,
 
@@ -33,7 +35,7 @@ module.exports = function (config) {
 
     autoWatch: true,
 
-    browsers: [ 'PhantomJS' ],
+    browsers: ['PhantomJS'],
 
     captureTimeout: 60000,
     browserDisconnectTimeout: 7000,
