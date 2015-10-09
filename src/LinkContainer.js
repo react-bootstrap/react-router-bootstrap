@@ -16,6 +16,10 @@ export default class LinkContainer extends React.Component {
       return;
     }
 
+    if (this.props.children.props.onClick) {
+      this.props.children.props.onClick(event);
+    }
+
     Link.prototype.handleClick.call(this, event);
   }
 

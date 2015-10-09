@@ -104,14 +104,15 @@ describe('LinkContainer', () => {
           expect(target).to.exist;
         });
 
-        it('should call a user defined click handler', () => {
+        it('should call user defined click handlers', () => {
           const onClick = sinon.spy();
+          const childOnClick = sinon.spy();
 
           class LinkWrapper extends React.Component {
             render() {
               return (
                 <LinkContainer to="/foo" onClick={onClick}>
-                  <Component>Foo</Component>
+                  <Component onClick={childOnClick}>Foo</Component>
                 </LinkContainer>
               );
             }
@@ -128,7 +129,8 @@ describe('LinkContainer', () => {
           );
           ReactTestUtils.Simulate.click(ReactDOM.findDOMNode(component));
 
-          expect(onClick).to.have.been.called;
+          expect(onClick).to.have.been.calledOnce;
+          expect(childOnClick).to.have.been.calledOnce;
         });
       });
 
