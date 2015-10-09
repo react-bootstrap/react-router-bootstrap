@@ -16,6 +16,8 @@ Wrap your React-Bootstrap element in a `LinkContainer` to make it behave like a 
 
 To disable the element and the link, set the `disabled` prop on the `LinkContainer`. For the equivalent of `IndexLink`, use `IndexLinkContainer`.
 
+As with React Router's `Link`, returning `false` from an `onClick` handler on `LinkContainer` will prevent the transition. However, this behavior will not apply to any `onClick` on the child, which instead will have to call `event.preventDefault()` explicitly to prevent the transition.
+
 ## Installation
 
 ```
@@ -25,7 +27,7 @@ npm install react-router-bootstrap
 You will also want to have React Router and React-Bootstrap.
 
 ```
-npm install react-router react-bootstrap
+npm install react-router@latest react-bootstrap
 ```
 
 ## Contributing
