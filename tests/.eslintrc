@@ -11,6 +11,7 @@
     "mocha"
   ],
   "rules": {
+    "no-unused-expressions": 0,
     "mocha/no-exclusive-tests": 2,
     "react/no-multi-comp": 0
   }
