@@ -5,7 +5,7 @@
   "main": "./lib/index.js",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "babel src --out-dir=lib && webpack && webpack -p && npm run bower-prepare",
+    "build": "rimraf lib && babel src --out-dir=lib && webpack && webpack -p && npm run bower-prepare",
     "test": "npm run lint && karma start --single-run",
     "tdd": "karma start",
     "visual-test": "open http://localhost:8080/ && webpack-dev-server --config webpack.visual.config.babel.js",
