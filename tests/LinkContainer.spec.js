@@ -10,6 +10,7 @@ import LinkContainer from '../src/LinkContainer';
 describe('LinkContainer', () => {
   ['Button',
     'NavItem',
+    'MenuItem',
     'ListGroupItem'
   ].forEach(name => {
     describe(name, () => {

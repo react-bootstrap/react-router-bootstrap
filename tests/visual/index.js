@@ -6,6 +6,7 @@ import {IndexRoute, Route, Router} from 'react-router';
 import ButtonVisual from './ButtonVisual';
 import Home from './Home';
 import ListGroupItemVisual from './ListGroupItemVisual';
+import MenuItemVisual from './MenuItemVisual';
 import NavItemVisual from './NavItemVisual';
 
 import 'bootstrap/less/bootstrap.less';
@@ -28,6 +29,7 @@ ReactDOM.render(
 
       <Route path="button" component={ButtonVisual} />
       <Route path="nav-item" component={NavItemVisual} />
+      <Route path="menu-item" component={MenuItemVisual} />
       <Route path="list-group-item" component={ListGroupItemVisual} />
     </Route>
   </Router>,
