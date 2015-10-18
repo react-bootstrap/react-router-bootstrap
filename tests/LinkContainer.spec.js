@@ -8,7 +8,8 @@ import {Route, Router} from 'react-router';
 import LinkContainer from '../src/LinkContainer';
 
 describe('LinkContainer', () => {
-  ['Button',
+  [
+    'Button',
     'NavItem',
     'ListGroupItem'
   ].forEach(name => {
@@ -16,42 +17,36 @@ describe('LinkContainer', () => {
       const Component = ReactBootstrap[name];
 
       it('should make the correct href', () => {
-        class LinkWrapper extends React.Component {
-          render() {
-            return (
-              <LinkContainer to="/foo" query={{bar: 'baz'}}>
-                <Component>Foo</Component>
-              </LinkContainer>
-            );
-          }
-        }
-
         const router = ReactTestUtils.renderIntoDocument(
           <Router history={createMemoryHistory('/')}>
-            <Route path="/" component={LinkWrapper} />
+            <Route
+              path="/"
+              component={() => (
+                <LinkContainer to="/foo" query={{bar: 'baz'}} hash="#the-hash">
+                  <Component>Foo</Component>
+                </LinkContainer>
+              )}
+            />
           </Router>
         );
 
         const anchor = ReactTestUtils.findRenderedDOMComponentWithTag(
           router, 'A'
         );
-        expect(anchor.getAttribute('href')).to.equal('/foo?bar=baz');
+        expect(anchor.getAttribute('href')).to.equal('/foo?bar=baz#the-hash');
       });
 
       it('should not add extra DOM nodes', () => {
-        class LinkWrapper extends React.Component {
-          render() {
-            return (
-              <LinkContainer to="/foo" query={{bar: 'baz'}}>
-                <Component>Foo</Component>
-              </LinkContainer>
-            );
-          }
-        }
-
         const router = ReactTestUtils.renderIntoDocument(
           <Router history={createMemoryHistory('/')}>
-            <Route path="/" component={LinkWrapper} />
+            <Route
+              path="/"
+              component={() => (
+                <LinkContainer to="/foo" query={{bar: 'baz'}}>
+                  <Component>Foo</Component>
+                </LinkContainer>
+              )}
+            />
           </Router>
         );
 
@@ -68,35 +63,27 @@ describe('LinkContainer', () => {
 
       describe('when clicked', () => {
         it('should transition to the correct route', () => {
-          class LinkWrapper extends React.Component {
-            render() {
-              return (
-                <LinkContainer to="/target">
-                  <Component>Target</Component>
-                </LinkContainer>
-              );
-            }
-          }
-
-          class Target extends React.Component {
-            render() {
-              return <div className="target" />;
-            }
-          }
-
           const router = ReactTestUtils.renderIntoDocument(
             <Router history={createMemoryHistory('/')}>
-              <Route path="/" component={LinkWrapper} />
-              <Route path="/target" component={Target} />
+              <Route
+                path="/"
+                component={() => (
+                  <LinkContainer to="/target">
+                    <Component>Target</Component>
+                  </LinkContainer>
+                )}
+              />
+              <Route
+                path="/target"
+                component={() => <div className="target" />}
+              />
             </Router>
           );
 
-          const component = ReactTestUtils.findRenderedComponentWithType(
-            router, Component
+          const anchor = ReactTestUtils.findRenderedDOMComponentWithTag(
+            router, 'A'
           );
-          ReactTestUtils.Simulate.click(ReactDOM.findDOMNode(component),
-            {button: 0}
-          );
+          ReactTestUtils.Simulate.click(anchor, {button: 0});
 
           const target = ReactTestUtils.findRenderedDOMComponentWithClass(
             router, 'target'
@@ -108,26 +95,27 @@ describe('LinkContainer', () => {
           const onClick = sinon.spy();
           const childOnClick = sinon.spy();
 
-          class LinkWrapper extends React.Component {
-            render() {
-              return (
-                <LinkContainer to="/foo" onClick={onClick}>
-                  <Component onClick={childOnClick}>Foo</Component>
-                </LinkContainer>
-              );
-            }
-          }
-
           const router = ReactTestUtils.renderIntoDocument(
             <Router history={createMemoryHistory('/')}>
-              <Route path="/" component={LinkWrapper} />
+              <Route
+                path="/"
+                component={() => (
+                  <LinkContainer to="/target" onClick={onClick}>
+                    <Component onClick={childOnClick}>Foo</Component>
+                  </LinkContainer>
+                )}
+              />
+              <Route
+                path="/target"
+                component={() => <div className="target" />}
+              />
             </Router>
           );
 
-          const component = ReactTestUtils.findRenderedComponentWithType(
-            router, Component
+          const anchor = ReactTestUtils.findRenderedDOMComponentWithTag(
+            router, 'A'
           );
-          ReactTestUtils.Simulate.click(ReactDOM.findDOMNode(component));
+          ReactTestUtils.Simulate.click(anchor, {button: 0});
 
           expect(onClick).to.have.been.calledOnce;
           expect(childOnClick).to.have.been.calledOnce;
@@ -136,21 +124,18 @@ describe('LinkContainer', () => {
 
       describe('active state', () => {
         function renderComponent(location) {
-          class LinkWrapper extends React.Component {
-            render() {
-              return (
-                <LinkContainer to="/foo">
-                  <Component>Foo</Component>
-                </LinkContainer>
-              );
-            }
-          }
-
           const router = ReactTestUtils.renderIntoDocument(
             <Router history={createMemoryHistory(location)}>
-              <Route component={LinkWrapper}>
-                <Route path="/foo" />
-                <Route path="/bar" />
+              <Route
+                path="/"
+                component={() => (
+                  <LinkContainer to="/foo">
+                    <Component>Foo</Component>
+                  </LinkContainer>
+                )}
+              >
+                <Route path="foo" />
+                <Route path="bar" />
               </Route>
             </Router>
           );
@@ -174,26 +159,20 @@ describe('LinkContainer', () => {
         let router;
 
         beforeEach(() => {
-          class LinkWrapper extends React.Component {
-            render() {
-              return (
-                <LinkContainer to="/target" disabled>
-                  <Component>Target</Component>
-                </LinkContainer>
-              );
-            }
-          }
-
-          class Target extends React.Component {
-            render() {
-              return <div className="target" />;
-            }
-          }
-
           router = ReactTestUtils.renderIntoDocument(
             <Router history={createMemoryHistory('/')}>
-              <Route path="/" component={LinkWrapper} />
-              <Route path="/target" component={Target} />
+              <Route
+                path="/"
+                component={() => (
+                  <LinkContainer to="/target" disabled>
+                    <Component>Target</Component>
+                  </LinkContainer>
+                )}
+              />
+              <Route
+                path="/target"
+                component={() => <div className="target" />}
+              />
             </Router>
           );
         });
