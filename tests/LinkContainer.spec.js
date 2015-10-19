@@ -11,6 +11,7 @@ describe('LinkContainer', () => {
   [
     'Button',
     'NavItem',
+    'MenuItem',
     'ListGroupItem'
   ].forEach(name => {
     describe(name, () => {

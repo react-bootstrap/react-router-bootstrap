@@ -11,6 +11,7 @@ describe('IndexLinkContainer', () => {
   [
     'Button',
     'NavItem',
+    'MenuItem',
     'ListGroupItem'
   ].forEach(name => {
     describe(name, () => {
