@@ -30,8 +30,17 @@ export default class LinkContainer extends React.Component {
     delete props.state;
     delete props.onClick;
     props.onClick = this.onClick;
-    props.href = history.createHref(to, query);
-    props.active = history.isActive(to, query, onlyActiveOnIndex);
+
+    // Ignore if rendered outside the context of history, simplifies unit testing.
+    if (history) {
+      props.href = history.createHref(to, query);
+
+      if (hash) {
+        props.href += hash;
+      }
+
+      props.active = history.isActive(to, query, onlyActiveOnIndex);
+    }
 
     return React.cloneElement(React.Children.only(children), props);
   }
@@ -48,7 +57,7 @@ LinkContainer.propTypes = {
 };
 
 LinkContainer.contextTypes = {
-  history: React.PropTypes.object.isRequired
+  history: React.PropTypes.object
 };
 
 LinkContainer.defaultProps = {
