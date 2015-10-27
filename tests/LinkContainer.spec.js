@@ -27,7 +27,7 @@ describe('LinkContainer', () => {
         const anchor = ReactTestUtils.findRenderedDOMComponentWithTag(
           container, 'A'
         );
-        expect(anchor.getAttribute('href')).to.equal('/foo?bar=baz#the-hash');
+        expect(anchor.getAttribute('href')).to.equal('');
       });
 
       it('should make the correct href', () => {
