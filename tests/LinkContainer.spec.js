@@ -17,6 +17,19 @@ describe('LinkContainer', () => {
     describe(name, () => {
       const Component = ReactBootstrap[name];
 
+      it('should render without router history', () => {
+        const container = ReactTestUtils.renderIntoDocument(
+          <LinkContainer to="/foo" query={{bar: 'baz'}} hash="#the-hash">
+            <Component>Foo</Component>
+          </LinkContainer>
+        );
+
+        const anchor = ReactTestUtils.findRenderedDOMComponentWithTag(
+          container, 'A'
+        );
+        expect(anchor.getAttribute('href')).to.equal('/foo?bar=baz#the-hash');
+      });
+
       it('should make the correct href', () => {
         const router = ReactTestUtils.renderIntoDocument(
           <Router history={createMemoryHistory('/')}>
