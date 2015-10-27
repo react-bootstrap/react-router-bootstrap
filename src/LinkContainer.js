@@ -32,6 +32,7 @@ export default class LinkContainer extends React.Component {
 
     props.onClick = this.onClick;
 
+    // Ignore if rendered outside the context of history, simplifies unit testing.
     if (history) {
       props.href = history.createHref(to, query);
 
