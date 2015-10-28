@@ -25,10 +25,11 @@ export default class LinkContainer extends React.Component {
 
   render() {
     const {history} = this.context;
-    const {onlyActiveOnIndex, to, query, children, ...props} = this.props;
+    const {onlyActiveOnIndex, to, query, hash, children, ...props} =
+      this.props;
 
     delete props.state;
-    delete props.onClick;
+
     props.onClick = this.onClick;
 
     // Ignore if rendered outside the context of history, simplifies unit testing.
@@ -50,6 +51,7 @@ LinkContainer.propTypes = {
   onlyActiveOnIndex: React.PropTypes.bool.isRequired,
   to: React.PropTypes.string.isRequired,
   query: React.PropTypes.object,
+  hash: React.PropTypes.string,
   state: React.PropTypes.object,
   onClick: React.PropTypes.func,
   disabled: React.PropTypes.bool.isRequired,

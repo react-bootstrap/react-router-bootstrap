@@ -7,6 +7,7 @@ export default () => (
     <ul>
       <li><Link to="/button">Button</Link></li>
       <li><Link to="/nav-item">NavItem</Link></li>
+      <li><Link to="/menu-item">MenuItem</Link></li>
       <li><Link to="/list-group-item">ListGroupItem</Link></li>
     </ul>
   </div>
