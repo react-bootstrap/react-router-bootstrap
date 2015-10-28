@@ -1,3 +1,11 @@
+v0.19.3 - Wed, 28 Oct 2015 15:11:30 GMT
+---------------------------------------
+
+- [d1306b1](../../commit/d1306b1) [fixed] Support LinkContainer without history
+- [5ca61cf](../../commit/5ca61cf) [added] Support hash prop on LinkContainer
+
+
+
 v0.19.2 - Fri, 09 Oct 2015 18:02:47 GMT
 ---------------------------------------
 
