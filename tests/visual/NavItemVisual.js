@@ -1,6 +1,8 @@
 import React from 'react';
 import Nav from 'react-bootstrap/lib/Nav';
 import NavItem from 'react-bootstrap/lib/NavItem';
+import NavDropdown from 'react-bootstrap/lib/NavDropdown';
+import MenuItem from 'react-bootstrap/lib/MenuItem';
 import {Link} from 'react-router';
 
 import LinkContainer from '../../src/LinkContainer';
@@ -28,6 +30,17 @@ export default () => (
       <LinkContainer to="/home" disabled>
         <NavItem>NavItem 3 content</NavItem>
       </LinkContainer>
+      <NavDropdown>
+        <LinkContainer to="/button">
+          <MenuItem>Button</MenuItem>
+        </LinkContainer>
+        <LinkContainer to="/nav-item">
+          <MenuItem>NavItem</MenuItem>
+        </LinkContainer>
+        <LinkContainer to="/list-group-item">
+          <MenuItem>ListGroupItem</MenuItem>
+        </LinkContainer>
+      </NavDropdown>
     </Nav>
   </div>
 );
