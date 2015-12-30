@@ -59,7 +59,8 @@ LinkContainer.propTypes = {
 };
 
 LinkContainer.contextTypes = {
-  history: React.PropTypes.object
+  history: React.PropTypes.object,
+  router: React.PropTypes.object
 };
 
 LinkContainer.defaultProps = {
