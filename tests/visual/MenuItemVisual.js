@@ -2,7 +2,7 @@ import React from 'react';
 import ButtonToolbar from 'react-bootstrap/lib/ButtonToolbar';
 import MenuItem from 'react-bootstrap/lib/MenuItem';
 import SplitButton from 'react-bootstrap/lib/SplitButton';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 
 import LinkContainer from '../../src/LinkContainer';
 

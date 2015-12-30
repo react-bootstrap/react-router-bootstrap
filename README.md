@@ -9,7 +9,7 @@ Integration between [React Router](https://github.com/rackt/react-router) and [R
 Wrap your React-Bootstrap element in a `LinkContainer` to make it behave like a React Router `Link`:
 
 ```js
-<LinkContainer to="/foo" query={{bar: "baz"}}>
+<LinkContainer to={{ pathname: '/foo', query: { bar: 'baz' } }}>
   <Button>Foo</Button>
 </LinkContainer>
 ```
@@ -20,6 +20,8 @@ As with React Router's `Link`, returning `false` from an `onClick` handler on `L
 
 ## Installation
 
+**Note:** Releases from v0.20.0 onward only support React Router v2.x. For React Router 1.x support, use v0.19.3 or earlier.
+
 ```
 npm install react-router-bootstrap
 ```
@@ -27,7 +29,7 @@ npm install react-router-bootstrap
 You will also want to have React Router and React-Bootstrap.
 
 ```
-npm install react-router@latest react-bootstrap
+npm install react-router react-bootstrap
 ```
 
 ## Contributing
