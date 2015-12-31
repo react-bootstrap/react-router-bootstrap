@@ -3,7 +3,7 @@ import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
 import * as ReactBootstrap from 'react-bootstrap';
 import ReactDOM from 'react-dom';
-import {IndexRoute, Route, Router} from 'react-router';
+import { IndexRoute, Route, Router } from 'react-router';
 
 import IndexLinkContainer from '../src/IndexLinkContainer';
 

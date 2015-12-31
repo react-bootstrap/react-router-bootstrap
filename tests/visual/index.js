@@ -1,7 +1,8 @@
 import React from 'react';
 import Grid from 'react-bootstrap/lib/Grid';
 import ReactDOM from 'react-dom';
-import {IndexRoute, Route, Router} from 'react-router';
+import { IndexRedirect, Route, Router } from 'react-router';
+import hashHistory from 'react-router/lib/hashHistory';
 
 import ButtonVisual from './ButtonVisual';
 import Home from './Home';
@@ -11,7 +12,7 @@ import NavItemVisual from './NavItemVisual';
 
 import 'bootstrap/less/bootstrap.less';
 
-const App = ({children}) => (
+const App = ({ children }) => (
   <Grid>
     <h1>React-Router-Bootstrap Module Visual Test</h1>
     {children}
@@ -22,9 +23,9 @@ const mountNode = document.createElement('div');
 document.body.appendChild(mountNode);
 
 ReactDOM.render(
-  <Router>
+  <Router history={hashHistory}>
     <Route path="/" component={App}>
-      <IndexRoute onEnter={(_, replaceWith) => replaceWith(null, '/home')} />
+      <IndexRedirect to="/home" />
       <Route path="home" component={Home} />
 
       <Route path="button" component={ButtonVisual} />

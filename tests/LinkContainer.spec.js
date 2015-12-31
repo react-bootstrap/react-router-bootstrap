@@ -1,9 +1,9 @@
-import createMemoryHistory from 'history/lib/createMemoryHistory';
 import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
 import * as ReactBootstrap from 'react-bootstrap';
 import ReactDOM from 'react-dom';
-import {Route, Router} from 'react-router';
+import { Route, Router } from 'react-router';
+import createMemoryHistory from 'react-router/lib/createMemoryHistory';
 
 import LinkContainer from '../src/LinkContainer';
 
@@ -23,7 +23,13 @@ describe('LinkContainer', () => {
             <Route
               path="/"
               component={() => (
-                <LinkContainer to="/foo" query={{bar: 'baz'}} hash="#the-hash">
+                <LinkContainer
+                  to={{
+                    pathname: '/foo',
+                    query: { bar: 'baz' },
+                    hash: '#the-hash'
+                  }}
+                >
                   <Component>Foo</Component>
                 </LinkContainer>
               )}
@@ -43,7 +49,12 @@ describe('LinkContainer', () => {
             <Route
               path="/"
               component={() => (
-                <LinkContainer to="/foo" query={{bar: 'baz'}}>
+                <LinkContainer
+                  to={{
+                    pathname: '/foo',
+                    query: { bar: 'baz' }
+                  }}
+                >
                   <Component>Foo</Component>
                 </LinkContainer>
               )}
@@ -84,7 +95,7 @@ describe('LinkContainer', () => {
           const anchor = ReactTestUtils.findRenderedDOMComponentWithTag(
             router, 'A'
           );
-          ReactTestUtils.Simulate.click(anchor, {button: 0});
+          ReactTestUtils.Simulate.click(anchor, { button: 0 });
 
           const target = ReactTestUtils.findRenderedDOMComponentWithClass(
             router, 'target'
@@ -116,7 +127,7 @@ describe('LinkContainer', () => {
           const anchor = ReactTestUtils.findRenderedDOMComponentWithTag(
             router, 'A'
           );
-          ReactTestUtils.Simulate.click(anchor, {button: 0});
+          ReactTestUtils.Simulate.click(anchor, { button: 0 });
 
           expect(onClick).to.have.been.calledOnce;
           expect(childOnClick).to.have.been.calledOnce;
@@ -183,7 +194,7 @@ describe('LinkContainer', () => {
             router, Component
           );
           ReactTestUtils.Simulate.click(ReactDOM.findDOMNode(component),
-            {button: 0}
+            { button: 0 }
           );
 
           const target = ReactTestUtils.scryRenderedDOMComponentsWithClass(

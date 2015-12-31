@@ -1,7 +1,7 @@
 // This is largely taken from react-router/lib/Link.
 
 import React from 'react';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 
 export default class LinkContainer extends React.Component {
   constructor(props, context) {
@@ -24,23 +24,15 @@ export default class LinkContainer extends React.Component {
   }
 
   render() {
-    const {history} = this.context;
-    const {onlyActiveOnIndex, to, query, hash, children, ...props} =
-      this.props;
-
-    delete props.state;
+    const { router } = this.context;
+    const { onlyActiveOnIndex, to, children, ...props } = this.props;
 
     props.onClick = this.onClick;
 
-    // Ignore if rendered outside the context of history, simplifies unit testing.
-    if (history) {
-      props.href = history.createHref(to, query);
-
-      if (hash) {
-        props.href += hash;
-      }
-
-      props.active = history.isActive(to, query, onlyActiveOnIndex);
+    // Ignore if rendered outside Router context; simplifies unit testing.
+    if (router) {
+      props.href = router.createHref(to);
+      props.active = router.isActive(to, onlyActiveOnIndex);
     }
 
     return React.cloneElement(React.Children.only(children), props);
@@ -49,17 +41,17 @@ export default class LinkContainer extends React.Component {
 
 LinkContainer.propTypes = {
   onlyActiveOnIndex: React.PropTypes.bool.isRequired,
-  to: React.PropTypes.string.isRequired,
-  query: React.PropTypes.object,
-  hash: React.PropTypes.string,
-  state: React.PropTypes.object,
+  to: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.object,
+  ]).isRequired,
   onClick: React.PropTypes.func,
   disabled: React.PropTypes.bool.isRequired,
   children: React.PropTypes.node.isRequired
 };
 
 LinkContainer.contextTypes = {
-  history: React.PropTypes.object
+  router: React.PropTypes.object
 };
 
 LinkContainer.defaultProps = {
