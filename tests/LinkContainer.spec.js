@@ -165,6 +165,30 @@ describe('LinkContainer', () => {
         it('should not be active when on a different route', () => {
           expect(renderComponent('/bar').className).to.not.match(/\bactive\b/);
         });
+
+        it('should respect explicit active prop on container', () => {
+          const router = ReactTestUtils.renderIntoDocument(
+            <Router history={createMemoryHistory('/foo')}>
+              <Route
+                path="/"
+                component={() => (
+                  <LinkContainer to="/bar" active>
+                    <Component>Bar</Component>
+                  </LinkContainer>
+                )}
+              >
+                <Route path="foo" />
+                <Route path="bar" />
+              </Route>
+            </Router>
+          );
+
+          const component = ReactTestUtils.findRenderedComponentWithType(
+            router, Component
+          );
+          expect(ReactDOM.findDOMNode(component).className)
+            .to.match(/\bactive\b/);
+        });
       });
 
       describe('disabled state', () => {
