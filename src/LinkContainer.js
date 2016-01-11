@@ -32,7 +32,10 @@ export default class LinkContainer extends React.Component {
     // Ignore if rendered outside Router context; simplifies unit testing.
     if (router) {
       props.href = router.createHref(to);
-      props.active = router.isActive(to, onlyActiveOnIndex);
+
+      if (props.active == null) {
+        props.active = router.isActive(to, onlyActiveOnIndex);
+      }
     }
 
     return React.cloneElement(React.Children.only(children), props);
@@ -46,6 +49,7 @@ LinkContainer.propTypes = {
     React.PropTypes.object,
   ]).isRequired,
   onClick: React.PropTypes.func,
+  active: React.PropTypes.bool,
   disabled: React.PropTypes.bool.isRequired,
   children: React.PropTypes.node.isRequired
 };
