@@ -9,6 +9,8 @@ Integration between [React Router](https://github.com/rackt/react-router) and [R
 Wrap your React-Bootstrap element in a `LinkContainer` to make it behave like a React Router `Link`:
 
 ```js
+import { LinkContainer } from 'react-router-bootstrap';
+
 <LinkContainer to={{ pathname: '/foo', query: { bar: 'baz' } }}>
   <Button>Foo</Button>
 </LinkContainer>
