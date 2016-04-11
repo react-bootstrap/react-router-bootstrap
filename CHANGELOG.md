@@ -1,3 +1,12 @@
+## [v0.21.0]
+> 2016-04-11
+
+- **Breaking:** Move from React Router to rrtr ([#155])
+
+[v0.21.0]: https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.20.1...v0.21.0
+[#155]: https://github.com/react-bootstrap/react-router-bootstrap/pull/155
+
+
 v0.20.1 - Mon, 11 Jan 2016 16:55:18 GMT
 ---------------------------------------
 
