@@ -4,6 +4,8 @@ Integration between [rrtr](https://github.com/taion/rrtr) and [React-Bootstrap](
 [![Build Status](https://travis-ci.org/react-bootstrap/react-router-bootstrap.svg?branch=master)](https://travis-ci.org/react-bootstrap/react-router-bootstrap)
 [![npm version](https://badge.fury.io/js/react-router-bootstrap.svg)](http://badge.fury.io/js/react-router-bootstrap)
 
+**rrtr**? It's an actively-maintained fork of React Router. More details [here](https://medium.com/@taion/react-router-is-dead-long-live-rrtr-d229ca30e318).
+
 ## Usage
 
 Wrap your React-Bootstrap element in a `LinkContainer` to make it behave like a React Router `Link`:
