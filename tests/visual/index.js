@@ -1,8 +1,7 @@
 import React from 'react';
 import Grid from 'react-bootstrap/lib/Grid';
 import ReactDOM from 'react-dom';
-import { IndexRedirect, Route, Router } from 'react-router';
-import hashHistory from 'react-router/lib/hashHistory';
+import { hashHistory, IndexRedirect, Route, Router } from 'rrtr';
 
 import ButtonVisual from './ButtonVisual';
 import Home from './Home';

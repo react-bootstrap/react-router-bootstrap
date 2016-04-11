@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from 'react-bootstrap/lib/Nav';
 import NavItem from 'react-bootstrap/lib/NavItem';
-import { Link } from 'react-router';
+import { Link } from 'rrtr';
 
 import LinkContainer from '../../src/LinkContainer';
 

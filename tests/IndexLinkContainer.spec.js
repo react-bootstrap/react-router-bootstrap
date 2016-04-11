@@ -2,7 +2,7 @@ import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
 import * as ReactBootstrap from 'react-bootstrap';
 import ReactDOM from 'react-dom';
-import { createMemoryHistory, IndexRoute, Route, Router } from 'react-router';
+import { createMemoryHistory, IndexRoute, Route, Router } from 'rrtr';
 
 import IndexLinkContainer from '../src/IndexLinkContainer';
 
