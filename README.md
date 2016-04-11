@@ -1,5 +1,5 @@
 # react-router-bootstrap
-Integration between [React Router](https://github.com/rackt/react-router) and [React-Bootstrap](https://github.com/react-bootstrap/react-bootstrap).
+Integration between [rrtr](https://github.com/taion/rrtr) and [React-Bootstrap](https://github.com/react-bootstrap/react-bootstrap).
 
 [![Build Status](https://travis-ci.org/react-bootstrap/react-router-bootstrap.svg?branch=master)](https://travis-ci.org/react-bootstrap/react-router-bootstrap)
 [![npm version](https://badge.fury.io/js/react-router-bootstrap.svg)](http://badge.fury.io/js/react-router-bootstrap)
@@ -20,8 +20,6 @@ As with React Router's `Link`, returning `false` from an `onClick` handler on `L
 
 ## Installation
 
-**Note:** Releases from v0.20.0 onward only support React Router v2.x. For React Router 1.x support, use v0.19.3 or earlier.
-
 ```
 npm install react-router-bootstrap
 ```
@@ -29,7 +27,7 @@ npm install react-router-bootstrap
 You will also want to have React Router and React-Bootstrap.
 
 ```
-npm install react-router react-bootstrap
+npm install rrtr react-bootstrap
 ```
 
 ## Contributing

@@ -1,7 +1,7 @@
 import React from 'react';
 import ListGroup from 'react-bootstrap/lib/ListGroup';
 import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
-import { Link } from 'react-router';
+import { Link } from 'rrtr';
 
 import LinkContainer from '../../src/LinkContainer';
 
