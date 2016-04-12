@@ -29,11 +29,11 @@ export default {
       }
     },
     {
-      'rrtr': {
+      'react-router': {
         root: 'ReactRouter',
-        commonjs2: 'rrtr',
-        commonjs: 'rrtr',
-        amd: 'rrtr'
+        commonjs2: 'react-router',
+        commonjs: 'react-router',
+        amd: 'react-router'
       }
     }
   ],

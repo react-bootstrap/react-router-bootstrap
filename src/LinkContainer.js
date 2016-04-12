@@ -1,7 +1,7 @@
-// This is largely taken from rrtr/lib/Link.
+// This is largely taken from react-router/lib/Link.
 
 import React from 'react';
-import Link from 'rrtr/lib/Link';
+import Link from 'react-router/lib/Link';
 
 export default class LinkContainer extends React.Component {
   constructor(props, context) {

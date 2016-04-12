@@ -2,7 +2,7 @@ import React from 'react';
 import ReactTestUtils from 'react/lib/ReactTestUtils';
 import * as ReactBootstrap from 'react-bootstrap';
 import ReactDOM from 'react-dom';
-import { createMemoryHistory, Route, Router } from 'rrtr';
+import { createMemoryHistory, Route, Router } from 'react-router';
 
 import LinkContainer from '../src/LinkContainer';
 
