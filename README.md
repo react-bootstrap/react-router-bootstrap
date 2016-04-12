@@ -1,10 +1,10 @@
 # react-router-bootstrap
-Integration between [rrtr](https://github.com/taion/rrtr) and [React-Bootstrap](https://github.com/react-bootstrap/react-bootstrap).
+Integration between [React Router](https://github.com/rackt/react-router) and [React-Bootstrap](https://github.com/react-bootstrap/react-bootstrap).
 
 [![Build Status](https://travis-ci.org/react-bootstrap/react-router-bootstrap.svg?branch=master)](https://travis-ci.org/react-bootstrap/react-router-bootstrap)
 [![npm version](https://badge.fury.io/js/react-router-bootstrap.svg)](http://badge.fury.io/js/react-router-bootstrap)
 
-**rrtr**? It's an actively-maintained fork of React Router. More details [here](https://medium.com/@taion/react-router-is-dead-long-live-rrtr-d229ca30e318).
+Using rrtr instead of React Router? Use [rrtr-bootstrap](https://github.com/react-bootstrap/rrtr-bootstrap) instead.
 
 ## Usage
 
@@ -29,7 +29,7 @@ npm install react-router-bootstrap
 You will also want to have React Router and React-Bootstrap.
 
 ```
-npm install rrtr react-bootstrap
+npm install react-router react-bootstrap
 ```
 
 ## Contributing

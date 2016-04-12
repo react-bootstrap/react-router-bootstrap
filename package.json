@@ -33,7 +33,7 @@
   "homepage": "https://github.com/react-bootstrap/react-router-bootstrap",
   "peerDependencies": {
     "react": ">=0.14.0",
-    "rrtr": ">=2.1.2"
+    "react-router": ">=2.0.0"
   },
   "devDependencies": {
     "babel": "^5.8.38",
@@ -71,9 +71,9 @@
     "react": "^15.0.0",
     "react-bootstrap": "^0.28.5",
     "react-dom": "^15.0.0",
+    "react-router": "^2.0.1",
     "release-script": "^1.0.2",
     "rimraf": "^2.5.2",
-    "rrtr": "^2.1.2",
     "shelljs": "^0.6.0",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
@@ -84,8 +84,6 @@
     "yargs": "^4.4.0"
   },
   "files": [
-    "README",
-    "CHANGELOG.md",
     "lib"
   ],
   "release-script": {
