@@ -1,3 +1,11 @@
+## [v0.22.1]
+> 2016-04-13
+
+- **Minor:** Republish to update README on npm
+
+[v0.22.1]: https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.22.0...v0.22.1
+
+
 ## [v0.22.0]
 > 2016-04-12
 
