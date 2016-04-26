@@ -11,7 +11,7 @@ describe('LinkContainer', () => {
     'Button',
     'NavItem',
     'MenuItem',
-    'ListGroupItem'
+    'ListGroupItem',
   ].forEach(name => {
     describe(name, () => {
       const Component = ReactBootstrap[name];
@@ -26,7 +26,7 @@ describe('LinkContainer', () => {
                   to={{
                     pathname: '/foo',
                     query: { bar: 'baz' },
-                    hash: '#the-hash'
+                    hash: '#the-hash',
                   }}
                 >
                   <Component>Foo</Component>
@@ -51,7 +51,7 @@ describe('LinkContainer', () => {
                 <LinkContainer
                   to={{
                     pathname: '/foo',
-                    query: { bar: 'baz' }
+                    query: { bar: 'baz' },
                   }}
                 >
                   <Component>Foo</Component>
@@ -199,8 +199,8 @@ describe('LinkContainer', () => {
               <Route
                 path="/"
                 component={() => (
-                  <LinkContainer to="/target" disabled>
-                    <Component>Target</Component>
+                  <LinkContainer to="/target">
+                    <Component disabled>Target</Component>
                   </LinkContainer>
                 )}
               />
@@ -212,19 +212,22 @@ describe('LinkContainer', () => {
           );
         });
 
-        it('should not transition on click', () => {
-          const component = ReactTestUtils.findRenderedComponentWithType(
-            router, Component
-          );
-          ReactTestUtils.Simulate.click(ReactDOM.findDOMNode(component),
-            { button: 0 }
-          );
+        (name === 'ListGroupItem' ? it.skip : it)(
+          'should not transition on click',
+          () => {
+            const component = ReactTestUtils.findRenderedComponentWithType(
+              router, Component
+            );
+            ReactTestUtils.Simulate.click(ReactDOM.findDOMNode(component),
+              { button: 0 }
+            );
 
-          const target = ReactTestUtils.scryRenderedDOMComponentsWithClass(
-            router, 'target'
-          );
-          expect(target).to.be.empty;
-        });
+            const target = ReactTestUtils.scryRenderedDOMComponentsWithClass(
+              router, 'target'
+            );
+            expect(target).to.be.empty;
+          })
+        ;
 
         it('should render with disabled class', () => {
           const component = ReactTestUtils.findRenderedComponentWithType(
