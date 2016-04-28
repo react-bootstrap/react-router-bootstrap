@@ -1,3 +1,13 @@
+## [v0.23.0]
+> 2016-04-28
+
+- **Breaking:** Drop explicit handling of `disabled`, as React-Bootstrap now takes care of this ([#164])
+- **Minor:** Upgrade to Babel 6 ([#164])
+
+[v0.23.0]: https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.22.1...v0.23.0
+[#164]: https://github.com/react-bootstrap/react-router-bootstrap/pull/164
+
+
 ## [v0.22.1]
 > 2016-04-13
 
