@@ -12,7 +12,7 @@
   "dependencies": <%= JSON.stringify(pkg.peerDependencies) %>,
   "ignore": [
     "**/.*",
-    "tests",
+    "test",
     "src",
     "CONTRIBUTING.md",
     "karma.conf.js",

@@ -6,7 +6,7 @@ Integration between [React Router](https://github.com/rackt/react-router) and [R
 
 ## Usage
 
-Wrap your React-Bootstrap element in a `LinkContainer` to make it behave like a React Router `Link`:
+Wrap your React-Bootstrap element in a `<LinkContainer>` to make it behave like a React Router `<Link>`:
 
 ```js
 <LinkContainer to={{ pathname: '/foo', query: { bar: 'baz' } }}>
@@ -14,9 +14,7 @@ Wrap your React-Bootstrap element in a `LinkContainer` to make it behave like a 
 </LinkContainer>
 ```
 
-To disable the element and the link, set the `disabled` prop on the `LinkContainer`. For the equivalent of `IndexLink`, use `IndexLinkContainer`.
-
-As with React Router's `Link`, returning `false` from an `onClick` handler on `LinkContainer` will prevent the transition. However, this behavior will not apply to any `onClick` on the child, which instead will have to call `event.preventDefault()` explicitly to prevent the transition.
+For the equivalent of `<IndexLink>`, use `<IndexLinkContainer>`.
 
 ## Installation
 

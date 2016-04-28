@@ -11,7 +11,7 @@ describe('IndexLinkContainer', () => {
     'Button',
     'NavItem',
     'MenuItem',
-    'ListGroupItem'
+    'ListGroupItem',
   ].forEach(name => {
     describe(name, () => {
       const Component = ReactBootstrap[name];

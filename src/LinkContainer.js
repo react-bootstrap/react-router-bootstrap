@@ -3,25 +3,33 @@
 import React from 'react';
 import Link from 'react-router/lib/Link';
 
-export default class LinkContainer extends React.Component {
-  constructor(props, context) {
-    super(props, context);
+const propTypes = {
+  onlyActiveOnIndex: React.PropTypes.bool.isRequired,
+  to: React.PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.object,
+  ]).isRequired,
+  onClick: React.PropTypes.func,
+  active: React.PropTypes.bool,
+  children: React.PropTypes.node.isRequired,
+};
 
-    this.onClick = this.onClick.bind(this);
-  }
+const contextTypes = {
+  router: React.PropTypes.object,
+};
 
-  onClick(event) {
-    if (this.props.disabled) {
-      event.preventDefault();
-      return;
-    }
+const defaultProps = {
+  onlyActiveOnIndex: false,
+};
 
+class LinkContainer extends React.Component {
+  onClick = (event) => {
     if (this.props.children.props.onClick) {
       this.props.children.props.onClick(event);
     }
 
     Link.prototype.handleClick.call(this, event);
-  }
+  };
 
   render() {
     const { router } = this.context;
@@ -42,23 +50,8 @@ export default class LinkContainer extends React.Component {
   }
 }
 
-LinkContainer.propTypes = {
-  onlyActiveOnIndex: React.PropTypes.bool.isRequired,
-  to: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.object,
-  ]).isRequired,
-  onClick: React.PropTypes.func,
-  active: React.PropTypes.bool,
-  disabled: React.PropTypes.bool.isRequired,
-  children: React.PropTypes.node.isRequired
-};
+LinkContainer.propTypes = propTypes;
+LinkContainer.contextTypes = contextTypes;
+LinkContainer.defaultProps = defaultProps;
 
-LinkContainer.contextTypes = {
-  router: React.PropTypes.object
-};
-
-LinkContainer.defaultProps = {
-  onlyActiveOnIndex: false,
-  disabled: false
-};
+export default LinkContainer;

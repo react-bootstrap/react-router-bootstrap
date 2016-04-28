@@ -11,12 +11,18 @@ import NavItemVisual from './NavItemVisual';
 
 import 'bootstrap/less/bootstrap.less';
 
+const propTypes = {
+  children: React.PropTypes.node.isRequired,
+};
+
 const App = ({ children }) => (
   <Grid>
     <h1>React-Router-Bootstrap Module Visual Test</h1>
     {children}
   </Grid>
 );
+
+App.propTypes = propTypes;
 
 const mountNode = document.createElement('div');
 document.body.appendChild(mountNode);
