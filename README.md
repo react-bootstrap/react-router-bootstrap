@@ -1,8 +1,5 @@
-# react-router-bootstrap
-Integration between [React Router](https://github.com/rackt/react-router) and [React-Bootstrap](https://github.com/react-bootstrap/react-bootstrap).
-
-[![Build Status](https://travis-ci.org/react-bootstrap/react-router-bootstrap.svg?branch=master)](https://travis-ci.org/react-bootstrap/react-router-bootstrap)
-[![npm version](https://badge.fury.io/js/react-router-bootstrap.svg)](http://badge.fury.io/js/react-router-bootstrap)
+# react-router-bootstrap [![Travis][build-badge]][build] [![npm][npm-badge]][npm]
+Integration between [React Router](https://github.com/reactjs/react-router) and [React-Bootstrap](https://github.com/react-bootstrap/react-bootstrap).
 
 ## Usage
 
@@ -19,15 +16,16 @@ For the equivalent of `<IndexLink>`, use `<IndexLinkContainer>`.
 ## Installation
 
 ```
-npm install react-router-bootstrap
-```
-
-You will also want to have React Router and React-Bootstrap.
-
-```
-npm install react-router react-bootstrap
+$ npm i -S react react-dom react-router react-bootstrap
+$ npm i -S react-router-bootstrap
 ```
 
 ## Contributing
 
 See [CONTRIBUTING](CONTRIBUTING.md).
+
+[build-badge]: https://travis-ci.org/react-bootstrap/react-router-bootstrap.svg?branch=master
+[build]: https://travis-ci.org/react-bootstrap/react-router-bootstrap
+
+[npm-badge]: https://badge.fury.io/js/react-router-bootstrap.svg
+[npm]: http://badge.fury.io/js/react-router-bootstrap
