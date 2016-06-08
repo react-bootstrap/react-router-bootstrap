@@ -4,7 +4,7 @@ import MenuItem from 'react-bootstrap/lib/MenuItem';
 import SplitButton from 'react-bootstrap/lib/SplitButton';
 import { Link } from 'react-router';
 
-import LinkContainer from '../../src/LinkContainer';
+import MenuItemLink from '../../src/MenuItemLink';
 
 export default () => (
   <div>
@@ -22,22 +22,14 @@ export default () => (
       </SplitButton>
     </ButtonToolbar>
 
-    <h3>LinkContainer</h3>
+    <h3>MenuItemLink</h3>
     <ButtonToolbar>
       <SplitButton title="Dropdown">
-        <LinkContainer to="/home">
-          <MenuItem>Action</MenuItem>
-        </LinkContainer>
-        <LinkContainer to="/menu-item">
-          <MenuItem>Active action</MenuItem>
-        </LinkContainer>
-        <LinkContainer to="/home">
-          <MenuItem>Another action</MenuItem>
-        </LinkContainer>
+        <MenuItemLink to="/home">Action</MenuItemLink>
+        <MenuItemLink to="/menu-item">Active action</MenuItemLink>
+        <MenuItemLink to="/home">Another action</MenuItemLink>
         <MenuItem divider />
-        <LinkContainer to="/home">
-          <MenuItem>Separated link</MenuItem>
-        </LinkContainer>
+        <MenuItemLink to="/home">Separated link</MenuItemLink>
       </SplitButton>
     </ButtonToolbar>
   </div>
