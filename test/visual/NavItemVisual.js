@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/lib/Nav';
 import NavItem from 'react-bootstrap/lib/NavItem';
 import { Link } from 'react-router';
 
-import LinkContainer from '../../src/LinkContainer';
+import NavItemLink from '../../src/NavItemLink';
 
 export default () => (
   <div>
@@ -17,17 +17,11 @@ export default () => (
       <NavItem eventKey={3} disabled>NavItem 3 content</NavItem>
     </Nav>
 
-    <h3>LinkContainer</h3>
+    <h3>NavItemLink</h3>
     <Nav bsStyle="pills">
-      <LinkContainer to="/nav-item">
-        <NavItem>NavItem 1 content</NavItem>
-      </LinkContainer>
-      <LinkContainer to="/home">
-        <NavItem>NavItem 2 content</NavItem>
-      </LinkContainer>
-      <LinkContainer to="/home" disabled>
-        <NavItem>NavItem 3 content</NavItem>
-      </LinkContainer>
+      <NavItemLink to="/nav-item">NavItem 1 content</NavItemLink>
+      <NavItemLink to="/home">NavItem 2 content</NavItemLink>
+      <NavItemLink to="/home" disabled>NavItem 3 content</NavItemLink>
     </Nav>
   </div>
 );
