@@ -13,6 +13,23 @@ Wrap your React-Bootstrap element in a `<LinkContainer>` to make it behave like 
 
 For the equivalent of `<IndexLink>`, use `<IndexLinkContainer>`.
 
+## Pre-built components
+
+Common navigation components already have a prebuilt version to make usage easier. For example `ButtonLink`:
+
+```js
+<ButtonLink to={{ pathname: '/foo', query: { bar: 'baz' } }} />
+```
+
+Just add the property `onlyActiveOnIndex` to make it behave like a React Router `<IndexLink>`.
+
+Here is a list of the pre-built components:
+- `ButtonLink`
+- `NavItemLink`
+- `MenuItemLink`
+- `ListGroupItemLink`
+
+
 ## Installation
 
 ```
