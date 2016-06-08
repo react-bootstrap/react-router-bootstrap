@@ -22,6 +22,6 @@ class MenuItemLink extends React.Component {
 }
 /* eslint-enable react/prefer-stateless-function */
 
-MenuItemLink.propTypes = propTypes
+MenuItemLink.propTypes = propTypes;
 
 export default MenuItemLink;
