@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/lib/Navbar';
-import Nav from 'react-bootstrap/lib/Nav'
+import Nav from 'react-bootstrap/lib/Nav';
 import NavItem from 'react-bootstrap/lib/NavItem';
 import NavDropdown from 'react-bootstrap/lib/NavDropdown';
 import MenuItem from 'react-bootstrap/lib/MenuItem';
@@ -31,7 +31,7 @@ export default () => (
         <NavDropdown eventKey="1" title="Dropdown">
           <LinkContainer to="#">
             <MenuItem eventKey="1.1">Action</MenuItem>
-          </LinkContainer> 
+          </LinkContainer>
           <LinkContainer to="#">
             <MenuItem eventKey="1.2">Another action</MenuItem>
           </LinkContainer>
@@ -44,5 +44,5 @@ export default () => (
         </LinkContainer>
       </Nav>
     </Navbar>
-</div>
+  </div>
 );
