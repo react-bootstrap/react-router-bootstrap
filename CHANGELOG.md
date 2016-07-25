@@ -1,3 +1,10 @@
+## [v0.23.1]
+> 2016-07-25
+
+- **Minor:** Add support for navigation action action ([#179])
+
+[#179]: https://github.com/react-bootstrap/react-router-bootstrap/pull/179
+
 ## [v0.23.0]
 > 2016-04-28
 
