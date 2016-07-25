@@ -1,7 +1,7 @@
 ## [v0.23.1]
 > 2016-07-25
 
-- **Minor:** Add support for navigation action action ([#179])
+- **Feature:** Add support for navigation actions other than `PUSH` ([#179])
 
 [v0.23.1]: https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.23.0...v0.23.1
 [#179]: https://github.com/react-bootstrap/react-router-bootstrap/pull/179
