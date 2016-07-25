@@ -8,17 +8,20 @@ export default {
   entry: {
     ReactRouterBootstrap: './src/index.js',
   },
+
   output: {
     path: './lib',
     filename: optimizeMinimize ? '[name].min.js' : '[name].js',
     library: 'ReactRouterBootstrap',
     libraryTarget: 'umd',
   },
+
   module: {
     loaders: [
       { test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
     ],
   },
+
   externals: [
     {
       react: {
@@ -37,10 +40,12 @@ export default {
       },
     },
   ],
+
   plugins: [
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(nodeEnv) },
     }),
   ],
+
   devtool: optimizeMinimize ? 'source-map' : null,
 };
