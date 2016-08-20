@@ -1,5 +1,6 @@
+/* eslint-disable no-console */
 /* globals cat, config, cp, mkdir, rm, test */
-/* eslint curly: 0 */
+
 import 'colors';
 import 'shelljs/global';
 import path from 'path';
@@ -9,24 +10,19 @@ import yargs from 'yargs';
 // do not die on errors
 config.fatal = false;
 
-//------------------------------------------------------------------------------
-// constants
 const repoRoot = path.resolve(__dirname, '../');
 const libFolder = path.join(repoRoot, 'lib');
 const bowerRoot = path.join(repoRoot, 'amd');
 const bowerTemplate = path.join(repoRoot, 'bower.template.json');
 const license = path.join(repoRoot, 'LICENSE');
 
-
-//------------------------------------------------------------------------------
-// command line options
 const argv = yargs
   .usage('Usage: $0 [--verbose]')
   .example('$0', 'Prepare bower package for releasing')
   .option('verbose', {
     demand: false,
     default: false,
-    describe: 'Increased debug output'
+    describe: 'Increased debug output',
   })
   .argv;
 
@@ -34,9 +30,6 @@ if (argv.dryRun) console.log('DRY RUN'.magenta);
 
 config.silent = !argv.verbose;
 
-
-//------------------------------------------------------------------------------
-// functions
 function bower() {
   console.log('Creating: '.cyan + 'bower package'.green);
 
@@ -66,5 +59,4 @@ function bower() {
   console.log('Created: '.cyan + 'bower package'.green);
 }
 
-//------------------------------------------------------------------------------
 bower();

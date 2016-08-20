@@ -226,8 +226,8 @@ describe('LinkContainer', () => {
               router, 'target'
             );
             expect(target).to.be.empty;
-          })
-        ;
+          }
+        );
 
         it('should render with disabled class', () => {
           const component = ReactTestUtils.findRenderedComponentWithType(

@@ -7,7 +7,7 @@
   "main": "lib/ReactRouterBootstrap.js",
   "bugs": <%= JSON.stringify(pkg.bugs) %>,
   "keywords": [
-    <%= _.map(pkg.keywords, function(keyword) { return '"' + keyword + '"' }).join(',')%>
+    <%= pkg.keywords.map(keyword => `"${keyword}"`).join(',') %>
   ],
   "dependencies": <%= JSON.stringify(pkg.peerDependencies) %>,
   "ignore": [
