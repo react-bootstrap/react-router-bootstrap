@@ -1,6 +1,7 @@
 // This is largely taken from react-router/lib/Link.
 
 import React from 'react';
+import { ContextSubscriber } from 'react-router/lib/ContextUtils';
 
 function isLeftClickEvent(event) {
   return event.button === 0;
@@ -51,8 +52,13 @@ const defaultProps = {
   action: 'push',
 };
 
-class LinkContainer extends React.Component {
-  onClick = (event) => {
+const LinkContainer = React.createClass({ // eslint-disable-line react/prefer-es6-class
+  propTypes,
+  contextTypes,
+  mixins: [ContextSubscriber('router')], // eslint-disable-line new-cap
+  getDefaultProps: () => defaultProps,
+
+  onClick(event) {
     const {
       to, query, hash, state, children, onClick, target, action,
     } = this.props;
@@ -79,7 +85,7 @@ class LinkContainer extends React.Component {
     this.context.router[action](
       createLocationDescriptor(to, query, hash, state)
     );
-  };
+  },
 
   render() {
     const { router } = this.context;
@@ -97,11 +103,7 @@ class LinkContainer extends React.Component {
     }
 
     return React.cloneElement(React.Children.only(children), props);
-  }
-}
-
-LinkContainer.propTypes = propTypes;
-LinkContainer.contextTypes = contextTypes;
-LinkContainer.defaultProps = defaultProps;
+  },
+});
 
 export default LinkContainer;
