@@ -8,6 +8,7 @@ import Home from './Home';
 import ListGroupItemVisual from './ListGroupItemVisual';
 import MenuItemVisual from './MenuItemVisual';
 import NavItemVisual from './NavItemVisual';
+import NavDropdownVisual from './NavDropdownVisual';
 
 import 'bootstrap/less/bootstrap.less';
 
@@ -37,6 +38,7 @@ ReactDOM.render(
       <Route path="nav-item" component={NavItemVisual} />
       <Route path="menu-item" component={MenuItemVisual} />
       <Route path="list-group-item" component={ListGroupItemVisual} />
+      <Route path="nav-dropdown" component={NavDropdownVisual} />
     </Route>
   </Router>,
   mountNode

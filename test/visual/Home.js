@@ -9,6 +9,7 @@ export default () => (
       <li><Link to="/nav-item">NavItem</Link></li>
       <li><Link to="/menu-item">MenuItem</Link></li>
       <li><Link to="/list-group-item">ListGroupItem</Link></li>
+      <li><Link to="/nav-dropdown">NavDropdown</Link></li>
     </ul>
   </div>
 );
