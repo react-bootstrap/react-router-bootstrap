@@ -7,7 +7,7 @@ import LinkContainer from './LinkContainer';
 export default class IndexLinkContainer extends React.Component {
   render() {
     return (
-      <LinkContainer {...this.props} exact />
+      <LinkContainer {...this.props} exact={true} />
     );
   }
 }
