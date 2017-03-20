@@ -7,7 +7,7 @@ import LinkContainer from './LinkContainer';
 export default class IndexLinkContainer extends React.Component {
   render() {
     return (
-      <LinkContainer {...this.props} exact={true} /> // eslint-disable-line react/jsx-boolean-value
+      <LinkContainer {...this.props} exact />
     );
   }
 }
