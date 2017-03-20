@@ -10,8 +10,8 @@ export default class LinkContainer extends Component {
       history: PropTypes.shape({
         push: PropTypes.func.isRequired,
         replace: PropTypes.func.isRequired,
-        createHref: PropTypes.func.isRequired
-      }).isRequired
+        createHref: PropTypes.func.isRequired,
+      }).isRequired,
     }).isRequired,
   };
 
