@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Route } from 'react-router';
+import { Route } from 'react-router-dom';
 
 const isModifiedEvent = (event) =>
   !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
@@ -7,9 +7,11 @@ const isModifiedEvent = (event) =>
 export default class LinkContainer extends Component {
   static contextTypes = {
     router: PropTypes.shape({
-      push: PropTypes.func.isRequired,
-      replace: PropTypes.func.isRequired,
-      createHref: PropTypes.func.isRequired,
+      history: PropTypes.shape({
+        push: PropTypes.func.isRequired,
+        replace: PropTypes.func.isRequired,
+        createHref: PropTypes.func.isRequired
+      }).isRequired
     }).isRequired,
   };
 
@@ -50,18 +52,17 @@ export default class LinkContainer extends Component {
     if (
       !event.defaultPrevented && // onClick prevented default
       event.button === 0 && // ignore right clicks
-      !this.props.target && // let browser handle "target=_blank" etc.
       !isModifiedEvent(event) // ignore clicks with modifier keys
     ) {
       event.preventDefault();
 
-      const { router } = this.context;
+      const { history } = this.context.router;
       const { replace, to } = this.props;
 
       if (replace) {
-        router.replace(to);
+        history.replace(to);
       } else {
-        router.push(to);
+        history.push(to);
       }
     }
   }
@@ -81,7 +82,7 @@ export default class LinkContainer extends Component {
       ...props,
     } = this.props;
 
-    const href = this.context.router.createHref(
+    const href = this.context.router.history.createHref(
       typeof to === 'string' ? { pathname: to } : to
     );
 
@@ -97,7 +98,7 @@ export default class LinkContainer extends Component {
             React.Children.only(children),
             {
               ...props,
-              className: (className || '') + (isActive ? activeClassName : ''),
+              className: isActive ? [className, activeClassName].join(' ') : className,
               style: isActive ? { ...style, ...activeStyle } : style,
               href,
               onClick: this.handleClick,

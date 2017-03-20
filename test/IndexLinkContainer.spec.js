@@ -2,7 +2,7 @@ import React from 'react';
 import ReactTestUtils from 'react-addons-test-utils';
 import * as ReactBootstrap from 'react-bootstrap';
 import { findDOMNode } from 'react-dom';
-import { Route, MemoryRouter as Router } from 'react-router';
+import { Route, MemoryRouter as Router } from 'react-router-dom';
 
 import IndexLinkContainer from '../src/IndexLinkContainer';
 
