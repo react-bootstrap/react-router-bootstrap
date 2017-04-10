@@ -1,6 +1,9 @@
 # react-router-bootstrap [![Travis][build-badge]][build] [![npm][npm-badge]][npm]
 Integration between [React Router](https://github.com/reactjs/react-router) and [React-Bootstrap](https://github.com/react-bootstrap/react-bootstrap).
 
+> **IMPORTANT**: instructions below are for projects using React Router v3 and earlier.
+> To find the latest integration package for React Router v4 and later see [master](https://github.com/react-bootstrap/react-router-bootstrap/tree/master) branch. 
+
 ## Usage
 
 Wrap your React-Bootstrap element in a `<LinkContainer>` to make it behave like a React Router `<Link>`:
@@ -17,7 +20,7 @@ For the equivalent of `<IndexLink>`, use `<IndexLinkContainer>`.
 
 ```
 $ npm i -S react react-dom react-router react-bootstrap
-$ npm i -S react-router-bootstrap
+$ npm i -S react-router-bootstrap@rr-v3
 ```
 
 ## Contributing
