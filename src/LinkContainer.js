@@ -18,7 +18,6 @@ export default class LinkContainer extends Component {
   static propTypes = {
     children: PropTypes.element.isRequired,
     onClick: PropTypes.func,
-    target: PropTypes.string,
     replace: PropTypes.bool,
     to: PropTypes.oneOfType([
       PropTypes.string,
@@ -35,6 +34,8 @@ export default class LinkContainer extends Component {
 
   static defaultProps = {
     replace: false,
+    exact: false,
+    strict: false,
     activeClassName: 'active',
   };
 
