@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactTestUtils from 'react/lib/ReactTestUtils';
+import ReactTestUtils from 'react-addons-test-utils';
 import * as ReactBootstrap from 'react-bootstrap';
-import ReactDOM from 'react-dom';
-import { createMemoryHistory, IndexRoute, Route, Router } from 'react-router';
+import { findDOMNode } from 'react-dom';
+import { Route, MemoryRouter as Router } from 'react-router-dom';
 
 import IndexLinkContainer from '../src/IndexLinkContainer';
 
@@ -19,25 +19,24 @@ describe('IndexLinkContainer', () => {
       describe('active state', () => {
         function renderComponent(location) {
           const router = ReactTestUtils.renderIntoDocument(
-            <Router history={createMemoryHistory(location)}>
-              <Route
-                path="/"
-                component={() => (
-                  <IndexLinkContainer to="/">
-                    <Component>Root</Component>
-                  </IndexLinkContainer>
-                )}
-              >
-                <IndexRoute />
-                <Route path="foo" />
-              </Route>
+            <Router initialEntries={[location]}>
+              <div>
+                <Route
+                  path="/"
+                  render={() => (
+                    <IndexLinkContainer to="/">
+                      <Component>Root</Component>
+                    </IndexLinkContainer>
+                  )}
+                />
+              </div>
             </Router>
           );
 
           const component = ReactTestUtils.findRenderedComponentWithType(
             router, Component
           );
-          return ReactDOM.findDOMNode(component);
+          return findDOMNode(component);
         }
 
         it('should be active on the index route', () => {

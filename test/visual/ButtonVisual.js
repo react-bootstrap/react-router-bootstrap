@@ -1,13 +1,13 @@
 import React from 'react';
 import ButtonToolbar from 'react-bootstrap/lib/ButtonToolbar';
 import Button from 'react-bootstrap/lib/Button';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 import LinkContainer from '../../src/LinkContainer';
 
 export default () => (
   <div>
-    <Link to="home">Back to Index</Link>
+    <Link to="/home">Back to Index</Link>
     <h2>Button</h2>
 
     <h3>Baseline</h3>
