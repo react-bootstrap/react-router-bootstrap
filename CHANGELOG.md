@@ -2,6 +2,7 @@
 > 2017-04-15
 
 - **Feature** Add support for React Router v4 (#201)
+- **Misc**: Use `prop-types` instead of React.PropTypes since it's deprecated in React v15.5
 
 Please note that from now on latest release for React Router v3 (or lower) will be available on npm under `rr-v3` tag
 
