@@ -3,7 +3,7 @@ import ListGroup from 'react-bootstrap/lib/ListGroup';
 import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
 import { Link } from 'react-router-dom';
 
-import LinkContainer from '../../src/LinkContainer';
+import ListGroupItemLink from '../../src/ListGroupItemLink';
 
 export default () => (
   <div>
@@ -35,43 +35,29 @@ export default () => (
       </ListGroupItem>
     </ListGroup>
 
-    <h3>LinkContainer</h3>
+    <h3>ListGroupItemLink</h3>
     <ListGroup>
-      <LinkContainer to="/list-group-item">
-        <ListGroupItem header="ListGroupItem 1 Heading">
+      <ListGroupItemLink to="/list-group-item" header="ListGroupItem 1 Heading">
           ListGroupItem 1 content
-        </ListGroupItem>
-      </LinkContainer>
-      <LinkContainer to="/home">
-        <ListGroupItem header="ListGroupItem 2 Heading">
+      </ListGroupItemLink>
+      <ListGroupItemLink to="/home" header="ListGroupItem 2 Heading">
           ListGroupItem 2 content
-        </ListGroupItem>
-      </LinkContainer>
-      <LinkContainer to="/home" disabled>
-        <ListGroupItem>
+      </ListGroupItemLink>
+      <ListGroupItemLink to="/home" disabled>
           ListGroupItem 3 content disabled
-        </ListGroupItem>
-      </LinkContainer>
-      <LinkContainer to="/home">
-        <ListGroupItem bsStyle="success">
+      </ListGroupItemLink>
+      <ListGroupItemLink to="/home" bsStyle="success">
           ListGroupItem 4 content success
-        </ListGroupItem>
-      </LinkContainer>
-      <LinkContainer to="/home">
-        <ListGroupItem bsStyle="info">
+      </ListGroupItemLink>
+      <ListGroupItemLink to="/home" bsStyle="info">
           ListGroupItem 5 content info
-        </ListGroupItem>
-      </LinkContainer>
-      <LinkContainer to="/home">
-        <ListGroupItem bsStyle="warning">
+      </ListGroupItemLink>
+      <ListGroupItemLink to="/home" bsStyle="warning">
           ListGroupItem 6 content warning
-        </ListGroupItem>
-      </LinkContainer>
-      <LinkContainer to="/home">
-        <ListGroupItem bsStyle="danger">
+      </ListGroupItemLink>
+      <ListGroupItemLink to="/home" bsStyle="danger">
           ListGroupItem 7 content danger
-        </ListGroupItem>
-      </LinkContainer>
+      </ListGroupItemLink>
     </ListGroup>
   </div>
 );
