@@ -1,3 +1,12 @@
+## [v0.24.0]
+> 2017-04-15
+
+- **Feature** Add support for React Router v4 (#201)
+
+Please note that from now on latest release for React Router v3 (or lower) will be available on npm under `rr-v3` tag
+
+[v0.24.0]: https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.23.1...v0.24.0
+
 ## [v0.23.1]
 > 2016-07-25
 
