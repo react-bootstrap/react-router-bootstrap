@@ -11,7 +11,8 @@
     "build": "rimraf lib && babel src -d lib && webpack && webpack -p && npm run bower-prepare",
     "lint": "eslint scripts src test *.js",
     "release": "release",
-    "test": "npm run lint && karma start",
+    "tdd": "karma start",
+    "test": "npm run lint && karma start --single-run",
     "visual-test": "open http://localhost:8080/ && webpack-dev-server --config webpack.visual.config.babel.js"
   },
   "repository": {
