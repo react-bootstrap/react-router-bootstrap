@@ -1,12 +1,14 @@
-## [v0.24.0]
-> 2017-04-15
+## [v0.24.1]
+> 2017-04-18
 
-- **Feature** Add support for React Router v4 (#201)
-- **Misc**: Use `prop-types` instead of React.PropTypes since it's deprecated in React v15.5
+- **Breaking** Support React Router v4 ([#201])
+- **Chore**: Update for React v15.5 deprecations
 
-Please note that from now on latest release for React Router v3 (or lower) will be available on npm under `rr-v3` tag
+[v0.24.1]: https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.23.1...v0.24.1
+[#201]: https://github.com/react-bootstrap/react-router-bootstrap/pull/201
 
-[v0.24.0]: https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.23.1...v0.24.0
+## v0.24.0
+> This release was skipped.
 
 ## [v0.23.1]
 > 2016-07-25
