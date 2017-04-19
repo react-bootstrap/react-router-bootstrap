@@ -33,7 +33,8 @@
   },
   "homepage": "https://github.com/react-bootstrap/react-router-bootstrap",
   "peerDependencies": {
-    "react": ">=0.14.0"
+    "react": ">=0.14.0",
+    "react-router-dom": ">=4.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
