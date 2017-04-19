@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Grid from 'react-bootstrap/lib/Grid';
 import ReactDOM from 'react-dom';
@@ -12,7 +13,7 @@ import NavItemVisual from './NavItemVisual';
 import 'bootstrap/less/bootstrap.less';
 
 const propTypes = {
-  children: React.PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 const App = ({ children }) => (

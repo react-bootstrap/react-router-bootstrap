@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactTestUtils from 'react/lib/ReactTestUtils';
 import * as ReactBootstrap from 'react-bootstrap';
 import ReactDOM from 'react-dom';
+import ReactTestUtils from 'react-dom/test-utils';
 import { createMemoryHistory, Route, Router } from 'react-router';
 
 import LinkContainer from '../src/LinkContainer';

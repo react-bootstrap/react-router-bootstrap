@@ -1,5 +1,5 @@
 // This is largely taken from react-router/lib/Link.
-
+import PropTypes from 'prop-types';
 import React from 'react';
 
 function isLeftClickEvent(event) {
@@ -24,26 +24,26 @@ function createLocationDescriptor(to, query, hash, state) {
 }
 
 const propTypes = {
-  onlyActiveOnIndex: React.PropTypes.bool.isRequired,
-  to: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.object,
+  onlyActiveOnIndex: PropTypes.bool.isRequired,
+  to: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
   ]).isRequired,
-  query: React.PropTypes.string,
-  hash: React.PropTypes.string,
-  state: React.PropTypes.object,
-  action: React.PropTypes.oneOf([
+  query: PropTypes.string,
+  hash: PropTypes.string,
+  state: PropTypes.object,
+  action: PropTypes.oneOf([
     'push',
     'replace',
   ]).isRequired,
-  onClick: React.PropTypes.func,
-  active: React.PropTypes.bool,
-  target: React.PropTypes.string,
-  children: React.PropTypes.node.isRequired,
+  onClick: PropTypes.func,
+  active: PropTypes.bool,
+  target: PropTypes.string,
+  children: PropTypes.node.isRequired,
 };
 
 const contextTypes = {
-  router: React.PropTypes.object,
+  router: PropTypes.object,
 };
 
 const defaultProps = {
