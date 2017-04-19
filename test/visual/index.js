@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import Grid from 'react-bootstrap/lib/Grid';
 import ReactDOM from 'react-dom';
 import { hashHistory, IndexRedirect, Route, Router } from 'react-router';

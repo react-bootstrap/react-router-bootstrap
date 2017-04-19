@@ -20,3 +20,4 @@ before_install:
 branches:
   only:
     - master
+    - rr-v3

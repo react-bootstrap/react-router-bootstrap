@@ -1,6 +1,6 @@
 // This is largely taken from react-router/lib/Link.
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 function isLeftClickEvent(event) {
   return event.button === 0;
