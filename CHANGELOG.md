@@ -1,3 +1,12 @@
+## [v0.23.2]
+> 2017-04-19
+
+- **Chore**: Update for React v15.5 deprecations ([#207])
+
+[v0.23.2]: https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.23.1...v0.23.2
+[#207]: https://github.com/react-bootstrap/react-router-bootstrap/pull/207
+
+
 ## [v0.23.1]
 > 2016-07-25
 
