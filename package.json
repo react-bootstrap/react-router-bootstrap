@@ -75,7 +75,7 @@
     "react": "^15.5.4",
     "react-bootstrap": "^0.30.9",
     "react-dom": "^15.5.4",
-    "react-router": "^2.6.0",
+    "react-router": "^3.0.5",
     "release-script": "^1.0.2",
     "rimraf": "^2.6.1",
     "shelljs": "^0.7.7",

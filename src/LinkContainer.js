@@ -23,11 +23,16 @@ function createLocationDescriptor(to, query, hash, state) {
   return to;
 }
 
+function resolveToLocation(to, router) {
+  return typeof to === 'function' ? to(router.location) : to;
+}
+
 const propTypes = {
   onlyActiveOnIndex: PropTypes.bool.isRequired,
   to: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.object,
+    PropTypes.func,
   ]).isRequired,
   query: PropTypes.string,
   hash: PropTypes.string,
@@ -84,15 +89,16 @@ class LinkContainer extends React.Component {
   render() {
     const { router } = this.context;
     const { onlyActiveOnIndex, to, children, ...props } = this.props;
+    const toLocation = resolveToLocation(to, router);
 
     props.onClick = this.onClick;
 
     // Ignore if rendered outside Router context; simplifies unit testing.
     if (router) {
-      props.href = router.createHref(to);
+      props.href = router.createHref(toLocation);
 
       if (props.active == null) {
-        props.active = router.isActive(to, onlyActiveOnIndex);
+        props.active = router.isActive(toLocation, onlyActiveOnIndex);
       }
     }
 
