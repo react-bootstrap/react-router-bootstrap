@@ -42,6 +42,31 @@ describe('LinkContainer', () => {
         expect(anchor.getAttribute('href')).to.equal('/foo?bar=baz#the-hash');
       });
 
+      it('should support "to" prop as a function', () => {
+        const router = ReactTestUtils.renderIntoDocument(
+          <Router history={createMemoryHistory('/foo')}>
+            <Route
+              path="/foo"
+              component={() => (
+                <LinkContainer
+                  to={location => ({
+                    ...location,
+                    query: { bar: 'baz' },
+                  })}
+                >
+                  <Component>Foo</Component>
+                </LinkContainer>
+              )}
+            />
+          </Router>
+        );
+
+        const anchor = ReactTestUtils.findRenderedDOMComponentWithTag(
+          router, 'A'
+        );
+        expect(anchor.getAttribute('href')).to.equal('/foo?bar=baz');
+      });
+
       it('should not add extra DOM nodes', () => {
         const router = ReactTestUtils.renderIntoDocument(
           <Router history={createMemoryHistory('/')}>
