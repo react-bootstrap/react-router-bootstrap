@@ -1,7 +1,7 @@
 ## [v0.23.3]
 > 2017-04-25
 
-- **Feature**: Support `to` function ([#209], [#210])
+- **Feature:** Support `to` function ([#209], [#210])
 
 [v0.23.3]: https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.23.2...v0.23.3
 [#209]: https://github.com/react-bootstrap/react-router-bootstrap/pull/209
@@ -11,7 +11,7 @@
 ## [v0.23.2]
 > 2017-04-19
 
-- **Chore**: Update for React v15.5 deprecations ([#207])
+- **Chore:** Update for React v15.5 deprecations ([#207])
 
 [v0.23.2]: https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.23.1...v0.23.2
 [#207]: https://github.com/react-bootstrap/react-router-bootstrap/pull/207
