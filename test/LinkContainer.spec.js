@@ -127,6 +127,39 @@ describe('LinkContainer', () => {
           expect(target).to.exist;
         });
 
+        it('should transition to the correct route, with "to" prop as a function', () => {
+          const router = ReactTestUtils.renderIntoDocument(
+            <Router history={createMemoryHistory('/')}>
+              <Route
+                path="/"
+                component={() => (
+                  <LinkContainer
+                    to={() => ({
+                      pathname: '/target',
+                    })}
+                  >
+                    <Component>Target</Component>
+                  </LinkContainer>
+                )}
+              />
+              <Route
+                path="/target"
+                component={() => <div className="target" />}
+              />
+            </Router>
+          );
+
+          const anchor = ReactTestUtils.findRenderedDOMComponentWithTag(
+            router, 'A'
+          );
+          ReactTestUtils.Simulate.click(anchor, { button: 0 });
+
+          const target = ReactTestUtils.findRenderedDOMComponentWithClass(
+            router, 'target'
+          );
+          expect(target).to.exist;
+        });
+
         it('should call user defined click handlers', () => {
           const onClick = sinon.spy();
           const childOnClick = sinon.spy();
