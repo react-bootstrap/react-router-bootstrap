@@ -62,6 +62,10 @@ class LinkContainer extends React.Component {
       to, query, hash, state, children, onClick, target, action,
     } = this.props;
 
+    const { router } = this.context;
+
+    const toLocation = resolveToLocation(to, router);
+
     if (children.props.onClick) {
       children.props.onClick(event);
     }
@@ -81,8 +85,8 @@ class LinkContainer extends React.Component {
 
     event.preventDefault();
 
-    this.context.router[action](
-      createLocationDescriptor(to, query, hash, state)
+    router[action](
+      createLocationDescriptor(toLocation, query, hash, state)
     );
   };
 
