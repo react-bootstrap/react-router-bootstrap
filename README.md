@@ -26,11 +26,11 @@ instead.
 ## Example
 
 Following plain React Bootstrap component
-```js
+```jsx
 <Button href="/foo/bar">Foo</Button>
 ```
 becomes
-```js
+```jsx
 <LinkContainer to="/foo/bar">
   <Button>Foo</Button>
 </LinkContainer>
