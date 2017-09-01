@@ -1,3 +1,12 @@
+## [v0.24.3]
+> 2017-09-01
+
+- **Chore**: Fix UMD build to point at `react-router-dom` ([#225])
+
+[v0.24.3]: https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.24.2...v0.24.3
+[#225]: https://github.com/react-bootstrap/react-router-bootstrap/pull/225
+
+
 ## [v0.24.2]
 > 2017-04-19
 
