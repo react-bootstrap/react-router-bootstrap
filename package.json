@@ -94,6 +94,6 @@
     "bowerRepo": "git@github.com:react-bootstrap/react-router-bootstrap-bower.git"
   },
   "dependencies": {
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.10"
   }
 }
