@@ -72,6 +72,32 @@ describe('LinkContainer', () => {
           .to.equal(findDOMNode(component));
       });
 
+      it('should join child element className with the one from container', () => {
+        function renderComponent(location) {
+          const router = ReactTestUtils.renderIntoDocument(
+            <Router initialEntries={[location]}>
+              <Route
+                path="/"
+                render={() => (
+                  <LinkContainer to="/" className="container-css">
+                    <Component className="foo-css">Foo</Component>
+                  </LinkContainer>
+                )}
+              />
+            </Router>
+          );
+
+          const component = ReactTestUtils.findRenderedComponentWithType(
+            router, Component
+          );
+          return findDOMNode(component);
+        }
+
+        const { className } = renderComponent('/test');
+
+        expect(className.trim()).to.match(/\bcontainer-css foo-css\b/);
+      });
+
       describe('when clicked', () => {
         it('should transition to the correct route', () => {
           const router = ReactTestUtils.renderIntoDocument(
