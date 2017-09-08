@@ -102,7 +102,8 @@ export default class LinkContainer extends Component {
             child,
             {
               ...props,
-              className: [className, child.props.className, isActive && activeClassName].join(' '),
+              className: [className, child.props.className, isActive ? activeClassName : null]
+                .join(' ').trim(),
               style: isActive ? { ...style, ...activeStyle } : style,
               href,
               onClick: this.handleClick,
