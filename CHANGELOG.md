@@ -1,3 +1,13 @@
+## [v0.24.4]
+> 2017-09-08
+
+- **Bugfix**: Respect child element `className` ([#228], [#229])
+
+[v0.24.4]: https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.24.3...v0.24.4
+[#228]: https://github.com/react-bootstrap/react-router-bootstrap/pull/228
+[#229]: https://github.com/react-bootstrap/react-router-bootstrap/pull/229
+
+
 ## [v0.24.3]
 > 2017-09-01
 
