@@ -88,6 +88,8 @@ export default class LinkContainer extends Component {
       typeof to === 'string' ? { pathname: to } : to
     );
 
+    const child = React.Children.only(children);
+
     return (
       <Route
         path={typeof to === 'object' ? to.pathname : to}
@@ -97,10 +99,10 @@ export default class LinkContainer extends Component {
           const isActive = !!(getIsActive ? getIsActive(match, location) : match);
 
           return React.cloneElement(
-            React.Children.only(children),
+            child,
             {
               ...props,
-              className: isActive ? [className, activeClassName].join(' ') : className,
+              className: [className, child.props.className, isActive && activeClassName].join(' '),
               style: isActive ? { ...style, ...activeStyle } : style,
               href,
               onClick: this.handleClick,
