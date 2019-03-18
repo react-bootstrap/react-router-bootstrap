@@ -11,7 +11,10 @@ export class LinkContainer extends Component {
       push: PropTypes.func.isRequired,
       replace: PropTypes.func.isRequired,
       createHref: PropTypes.func.isRequired,
-    }),
+    }).isRequired,
+    location: PropTypes.object,
+    match: PropTypes.object,
+    staticContext: PropTypes.object,
     children: PropTypes.element.isRequired,
     onClick: PropTypes.func,
     replace: PropTypes.bool,
@@ -66,8 +69,11 @@ export class LinkContainer extends Component {
   render() {
     const {
       history,
+      location: _location,            // eslint-disable-line no-unused-vars
+      match: _match,                  // eslint-disable-line no-unused-vars
+      staticContext: _staticContext,  // eslint-disable-line no-unused-vars
       children,
-      replace, // eslint-disable-line no-unused-vars
+      replace,                          // eslint-disable-line no-unused-vars
       to,
       exact,
       strict,
