@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 
 const isModifiedEvent = (event) =>
   !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
 
-export default class LinkContainer extends Component {
-  static contextTypes = {
-    router: PropTypes.shape({
-      history: PropTypes.shape({
-        push: PropTypes.func.isRequired,
-        replace: PropTypes.func.isRequired,
-        createHref: PropTypes.func.isRequired,
-      }).isRequired,
-    }).isRequired,
-  };
-
+export class LinkContainer extends Component {
   static propTypes = {
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
+      replace: PropTypes.func.isRequired,
+      createHref: PropTypes.func.isRequired,
+    }),
     children: PropTypes.element.isRequired,
     onClick: PropTypes.func,
     replace: PropTypes.bool,
@@ -58,8 +53,7 @@ export default class LinkContainer extends Component {
     ) {
       event.preventDefault();
 
-      const { history } = this.context.router;
-      const { replace, to } = this.props;
+      const { replace, to, history } = this.props;
 
       if (replace) {
         history.replace(to);
@@ -67,10 +61,11 @@ export default class LinkContainer extends Component {
         history.push(to);
       }
     }
-  }
+  };
 
   render() {
     const {
+      history,
       children,
       replace, // eslint-disable-line no-unused-vars
       to,
@@ -84,7 +79,7 @@ export default class LinkContainer extends Component {
       ...props,
     } = this.props;
 
-    const href = this.context.router.history.createHref(
+    const href = history.createHref(
       typeof to === 'string' ? { pathname: to } : to
     );
 
@@ -114,3 +109,5 @@ export default class LinkContainer extends Component {
     );
   }
 }
+
+export default withRouter(LinkContainer);

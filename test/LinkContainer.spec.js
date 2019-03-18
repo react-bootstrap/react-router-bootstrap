@@ -4,7 +4,7 @@ import * as ReactBootstrap from 'react-bootstrap';
 import { findDOMNode } from 'react-dom';
 import { Route, MemoryRouter as Router } from 'react-router-dom';
 
-import LinkContainer from '../src/LinkContainer';
+import LinkContainer, { LinkContainer as RawLinkContainer } from '../src/LinkContainer';
 
 describe('LinkContainer', () => {
   [
@@ -62,7 +62,7 @@ describe('LinkContainer', () => {
         );
 
         const container = ReactTestUtils.findRenderedComponentWithType(
-          router, LinkContainer
+          router, RawLinkContainer
         );
         const component = ReactTestUtils.findRenderedComponentWithType(
           router, Component
