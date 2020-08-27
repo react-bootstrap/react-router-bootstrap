@@ -1,27 +1,31 @@
 import React from 'react';
-import ReactTestUtils from 'react-addons-test-utils';
-import * as ReactBootstrap from 'react-bootstrap';
-import { findDOMNode } from 'react-dom';
-import { Route, MemoryRouter as Router } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import NavItem from 'react-bootstrap/NavItem';
+import DropdownItem from 'react-bootstrap/DropdownItem';
+import ListGroupItem from 'react-bootstrap/ListGroupItem';
+import { Route, MemoryRouter as Router, Routes } from 'react-router-dom';
 
-import LinkContainer, { LinkContainer as RawLinkContainer } from '../src/LinkContainer';
+import { mount } from 'enzyme';
+import LinkContainer from '../src/LinkContainer';
+
+const elements = {
+  Button,
+  NavItem,
+  DropdownItem,
+  ListGroupItem,
+};
 
 describe('LinkContainer', () => {
-  [
-    'Button',
-    'NavItem',
-    'MenuItem',
-    'ListGroupItem',
-  ].forEach(name => {
+  Object.keys(elements).forEach((name) => {
     describe(name, () => {
-      const Component = ReactBootstrap[name];
+      const Component = elements[name];
 
       it('should make the correct href', () => {
-        const router = ReactTestUtils.renderIntoDocument(
+        const router = mount(
           <Router>
             <Route
               path="/"
-              render={() => (
+              element={(
                 <LinkContainer
                   to={{
                     pathname: '/foo',
@@ -31,23 +35,21 @@ describe('LinkContainer', () => {
                 >
                   <Component>Foo</Component>
                 </LinkContainer>
-              )}
+)}
             />
-          </Router>
+          </Router>,
         );
 
-        const anchor = ReactTestUtils.findRenderedDOMComponentWithTag(
-          router, 'A'
-        );
-        expect(anchor.getAttribute('href')).to.equal('/foo?bar=baz#the-hash');
+        const anchor = router.findWhere((el) => el.type() === 'div' || el.type() === 'a');
+        expect(anchor.getDOMNode().getAttribute('href')).toBe('/foo?bar=baz#the-hash');
       });
 
       it('should not add extra DOM nodes', () => {
-        const router = ReactTestUtils.renderIntoDocument(
+        const router = mount(
           <Router>
             <Route
               path="/"
-              render={() => (
+              element={(
                 <LinkContainer
                   to={{
                     pathname: '/foo',
@@ -56,90 +58,90 @@ describe('LinkContainer', () => {
                 >
                   <Component>Foo</Component>
                 </LinkContainer>
-              )}
+)}
             />
-          </Router>
+          </Router>,
         );
 
-        const container = ReactTestUtils.findRenderedComponentWithType(
-          router, RawLinkContainer
+        const container = router.find(
+          LinkContainer,
         );
-        const component = ReactTestUtils.findRenderedComponentWithType(
-          router, Component
+        const component = router.find(
+          Component,
         );
 
-        expect(findDOMNode(container))
-          .to.equal(findDOMNode(component));
+        expect(container.getDOMNode())
+          .toEqual(component.getDOMNode());
       });
 
       it('should join child element className with the one from container', () => {
         function renderComponent(location) {
-          const router = ReactTestUtils.renderIntoDocument(
+          const router = mount(
             <Router initialEntries={[location]}>
               <Route
                 path="/"
-                render={() => (
+                element={(
                   <LinkContainer to="/" className="container-css">
                     <Component className="foo-css">Foo</Component>
                   </LinkContainer>
-                )}
+)}
               />
-            </Router>
+            </Router>,
           );
 
-          const component = ReactTestUtils.findRenderedComponentWithType(
-            router, Component
+          const component = router.find(
+            Component,
           );
-          return findDOMNode(component);
+          return component.getDOMNode();
         }
 
         const { className } = renderComponent('/test');
 
-        expect(className.trim()).to.match(/\bcontainer-css foo-css\b/);
+        expect(className.trim()).toMatch(/\bcontainer-css foo-css\b/);
       });
 
       describe('when clicked', () => {
         it('should transition to the correct route', () => {
-          const router = ReactTestUtils.renderIntoDocument(
+          const router = mount(
             <Router>
               <div>
                 <Route
                   path="/"
-                  render={() => (
+                  element={(
                     <LinkContainer to="/target">
                       <Component>Target</Component>
                     </LinkContainer>
-                  )}
+)}
                 />
                 <Route
                   path="/target"
-                  render={() => <div className="target" />}
+                  element={<div className="target" />}
                 />
               </div>
-            </Router>
+            </Router>,
           );
 
-          const anchor = ReactTestUtils.findRenderedDOMComponentWithTag(
-            router, 'A'
+          const anchor = router.find(
+            Component,
           );
-          ReactTestUtils.Simulate.click(anchor, { button: 0 });
+          anchor.simulate('click', { button: 0 });
 
-          const target = ReactTestUtils.findRenderedDOMComponentWithClass(
-            router, 'target'
+          const target = router.find(
+            '.target',
           );
-          expect(target).to.exist;
+          expect(target).toBeTruthy();
         });
 
         it('should call user defined click handlers', () => {
-          const onClick = sinon.spy();
-          const childOnClick = sinon.spy();
+          const onClick = jest.fn();
+          const childOnClick = jest.fn();
 
-          const router = ReactTestUtils.renderIntoDocument(
+          const router = mount(
             <Router>
               <div>
                 <Route
                   path="/"
-                  render={() => (
+                  element={(
                     <LinkContainer to="/target" onClick={onClick}>
                       <Component onClick={childOnClick}>Foo</Component>
                     </LinkContainer>
@@ -147,120 +149,120 @@ describe('LinkContainer', () => {
                 />
                 <Route
                   path="/target"
-                  render={() => <div className="target" />}
+                  element={<div className="target" />}
                 />
               </div>
-            </Router>
+            </Router>,
           );
 
-          const anchor = ReactTestUtils.findRenderedDOMComponentWithTag(
-            router, 'A'
+          const anchor = router.find(
+            Component,
           );
-          ReactTestUtils.Simulate.click(anchor, { button: 0 });
+          anchor.simulate('click', { button: 0 });
 
-          expect(onClick).to.have.been.calledOnce;
-          expect(childOnClick).to.have.been.calledOnce;
+          expect(onClick).toHaveBeenCalledTimes(1);
+          expect(childOnClick).toHaveBeenCalledTimes(1);
         });
       });
 
       describe('active state', () => {
         function renderComponent(location) {
-          const router = ReactTestUtils.renderIntoDocument(
+          const router = mount(
             <Router initialEntries={[location]}>
               <Route
                 path="/"
-                render={() => (
+                element={(
                   <LinkContainer to="/foo">
                     <Component>Foo</Component>
                   </LinkContainer>
                 )}
               />
-            </Router>
+            </Router>,
           );
 
-          const component = ReactTestUtils.findRenderedComponentWithType(
-            router, Component
+          const component = router.find(
+            Component,
           );
-          return findDOMNode(component);
+          return component.getDOMNode();
         }
 
         it('should be active when on the target route', () => {
-          expect(renderComponent('/foo').className).to.match(/\bactive\b/);
+          expect(renderComponent('/foo').className).toMatch(/\bactive\b/);
         });
 
         it('should not be active when on a different route', () => {
-          expect(renderComponent('/bar').className).to.not.match(/\bactive\b/);
+          expect(renderComponent('/bar').className).not.toMatch(/\bactive\b/);
         });
 
         it('should respect explicit active prop on container', () => {
-          const router = ReactTestUtils.renderIntoDocument(
+          const router = mount(
             <Router>
               <Route
                 path="/"
-                render={() => (
-                  <LinkContainer to="/bar" active>
+                element={(
+                  <LinkContainer to="/bar" isActive>
                     <Component>Bar</Component>
                   </LinkContainer>
                 )}
               />
-            </Router>
+            </Router>,
           );
 
-          const component = ReactTestUtils.findRenderedComponentWithType(
-            router, Component
+          const component = router.find(
+            Component,
           );
-          expect(findDOMNode(component).className)
-            .to.match(/\bactive\b/);
+          expect(component.getDOMNode().className)
+            .toMatch(/\bactive\b/);
         });
       });
 
       describe('disabled state', () => {
+        /** @type {import('enzyme').ReactWrapper} */
         let router;
 
         beforeEach(() => {
-          router = ReactTestUtils.renderIntoDocument(
+          router = mount(
             <Router>
               <div>
-                <Route
-                  path="/"
-                  render={() => (
-                    <LinkContainer to="/target">
-                      <Component disabled>Target</Component>
-                    </LinkContainer>
+                <Routes>
+                  <Route
+                    path="/"
+                    element={(
+                      <LinkContainer to="/target">
+                        <Component disabled>Target</Component>
+                      </LinkContainer>
                   )}
-                />
-                <Route
-                  path="/target"
-                  render={() => <div className="target" />}
-                />
+                  />
+                  <Route
+                    path="/target"
+                    element={<div className="target" />}
+                  />
+                </Routes>
               </div>
-            </Router>
+            </Router>,
           );
         });
 
-        (name === 'ListGroupItem' ? it.skip : it)(
+        (['ListGroupItem', 'NavItem'].includes(name) ? it.skip : it)(
           'should not transition on click',
           () => {
-            const component = ReactTestUtils.findRenderedComponentWithType(
-              router, Component
+            const component = router.find(
+              Component,
             );
-            ReactTestUtils.Simulate.click(findDOMNode(component),
-              { button: 0 }
+            component.simulate('click', { button: 0 });
+            const target = router.find(
+              '.target',
             );
-
-            const target = ReactTestUtils.scryRenderedDOMComponentsWithClass(
-              router, 'target'
-            );
-            expect(target).to.be.empty;
-          }
+            expect(target.length).toBe(0);
+          },
         );
 
-        it('should render with disabled class', () => {
-          const component = ReactTestUtils.findRenderedComponentWithType(
-            router, Component
+        (name === 'NavItem' ? it.skip : it)('should render with disabled class', () => {
+          const component = router.find(
+            Component,
           );
-          expect(findDOMNode(component).className)
-            .to.match(/\bdisabled\b/);
+          expect(component.getDOMNode().className)
+            .toMatch(/\bdisabled\b/);
         });
       });
     });

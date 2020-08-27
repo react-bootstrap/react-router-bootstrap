@@ -1,6 +1,6 @@
 import React from 'react';
-import ListGroup from 'react-bootstrap/lib/ListGroup';
-import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
+import ListGroup from 'react-bootstrap/ListGroup';
+import ListGroupItem from 'react-bootstrap/ListGroupItem';
 import { Link } from 'react-router-dom';
 
 import LinkContainer from '../../src/LinkContainer';
@@ -21,16 +21,16 @@ export default () => (
       <ListGroupItem disabled>
         ListGroupItem 3 content disabled
       </ListGroupItem>
-      <ListGroupItem bsStyle="success">
+      <ListGroupItem variant="success">
         ListGroupItem 4 content success
       </ListGroupItem>
-      <ListGroupItem bsStyle="info">
+      <ListGroupItem variant="info">
         ListGroupItem 5 content info
       </ListGroupItem>
-      <ListGroupItem bsStyle="warning">
+      <ListGroupItem variant="warning">
         ListGroupItem 6 content warning
       </ListGroupItem>
-      <ListGroupItem bsStyle="danger">
+      <ListGroupItem variant="danger">
         ListGroupItem 7 content danger
       </ListGroupItem>
     </ListGroup>
@@ -53,22 +53,22 @@ export default () => (
         </ListGroupItem>
       </LinkContainer>
       <LinkContainer to="/home">
-        <ListGroupItem bsStyle="success">
+        <ListGroupItem variant="success">
           ListGroupItem 4 content success
         </ListGroupItem>
       </LinkContainer>
       <LinkContainer to="/home">
-        <ListGroupItem bsStyle="info">
+        <ListGroupItem variant="info">
           ListGroupItem 5 content info
         </ListGroupItem>
       </LinkContainer>
       <LinkContainer to="/home">
-        <ListGroupItem bsStyle="warning">
+        <ListGroupItem variant="warning">
           ListGroupItem 6 content warning
         </ListGroupItem>
       </LinkContainer>
       <LinkContainer to="/home">
-        <ListGroupItem bsStyle="danger">
+        <ListGroupItem variant="danger">
           ListGroupItem 7 content danger
         </ListGroupItem>
       </LinkContainer>

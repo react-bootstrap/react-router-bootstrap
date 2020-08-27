@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 
-module.exports = config => {
+module.exports = (config) => {
   const { env } = process;
 
   const isCi = env.CONTINUOUS_INTEGRATION === 'true';

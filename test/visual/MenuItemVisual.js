@@ -1,7 +1,7 @@
 import React from 'react';
-import ButtonToolbar from 'react-bootstrap/lib/ButtonToolbar';
-import MenuItem from 'react-bootstrap/lib/MenuItem';
-import SplitButton from 'react-bootstrap/lib/SplitButton';
+import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import DropdownItem from 'react-bootstrap/DropdownItem';
+import SplitButton from 'react-bootstrap/SplitButton';
 import { Link } from 'react-router-dom';
 
 import LinkContainer from '../../src/LinkContainer';
@@ -14,11 +14,11 @@ export default () => (
     <h3>Baseline</h3>
     <ButtonToolbar>
       <SplitButton title="Dropdown">
-        <MenuItem eventKey="1">Action</MenuItem>
-        <MenuItem eventKey="2" active>Active action</MenuItem>
-        <MenuItem eventKey="3">Another action</MenuItem>
-        <MenuItem divider />
-        <MenuItem eventKey="4">Separated link</MenuItem>
+        <DropdownItem>Action</DropdownItem>
+        <DropdownItem active>Active action</DropdownItem>
+        <DropdownItem>Another action</DropdownItem>
+        <DropdownItem divider />
+        <DropdownItem>Separated link</DropdownItem>
       </SplitButton>
     </ButtonToolbar>
 
@@ -26,17 +26,17 @@ export default () => (
     <ButtonToolbar>
       <SplitButton title="Dropdown">
         <LinkContainer to="/home">
-          <MenuItem>Action</MenuItem>
+          <DropdownItem>Action</DropdownItem>
         </LinkContainer>
         <LinkContainer to="/menu-item">
-          <MenuItem>Active action</MenuItem>
+          <DropdownItem>Active action</DropdownItem>
         </LinkContainer>
         <LinkContainer to="/home">
-          <MenuItem>Another action</MenuItem>
+          <DropdownItem>Another action</DropdownItem>
         </LinkContainer>
-        <MenuItem divider />
+        <DropdownItem divider />
         <LinkContainer to="/home">
-          <MenuItem>Separated link</MenuItem>
+          <DropdownItem>Separated link</DropdownItem>
         </LinkContainer>
       </SplitButton>
     </ButtonToolbar>

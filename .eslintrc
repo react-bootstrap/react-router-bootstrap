@@ -1,4 +1,15 @@
 {
   "extends": "airbnb",
-  "parser": "babel-eslint"
+  "parser": "babel-eslint",
+  "rules": {
+    "react/jsx-filename-extension": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/jsx-props-no-spreading": "off",
+    "max-len":"off",
+    "no-nested-ternary":"off"
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  }
 }

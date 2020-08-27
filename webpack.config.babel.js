@@ -1,24 +1,25 @@
-import webpack from 'webpack';
-import yargs from 'yargs';
+const path = require('path');
+const webpack = require('webpack');
+const yargs = require('yargs');
 
 const { optimizeMinimize } = yargs.alias('p', 'optimize-minimize').argv;
 const nodeEnv = optimizeMinimize ? 'production' : 'development';
 
-export default {
+module.exports = {
   entry: {
     ReactRouterBootstrap: './src/index.js',
   },
 
   output: {
-    path: './lib',
+    path: path.join(__dirname, 'lib'),
     filename: optimizeMinimize ? '[name].min.js' : '[name].js',
     library: 'ReactRouterBootstrap',
     libraryTarget: 'umd',
   },
 
   module: {
-    loaders: [
-      { test: /\.js$/, loader: 'babel', exclude: /node_modules/ },
+    rules: [
+      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
     ],
   },
 
@@ -47,5 +48,5 @@ export default {
     }),
   ],
 
-  devtool: optimizeMinimize ? 'source-map' : null,
+  devtool: optimizeMinimize ? 'source-map' : false,
 };
