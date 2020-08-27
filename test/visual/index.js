@@ -1,7 +1,8 @@
-import React from 'react';
-import Grid from 'react-bootstrap/lib/Grid';
+import React, { useEffect } from 'react';
+import Container from 'react-bootstrap/Container';
 import ReactDOM from 'react-dom';
-import { HashRouter as Router, Route, Redirect } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router';
+import { HashRouter as Router, Route } from 'react-router-dom';
 
 import ButtonVisual from './ButtonVisual';
 import Home from './Home';
@@ -9,24 +10,35 @@ import ListGroupItemVisual from './ListGroupItemVisual';
 import MenuItemVisual from './MenuItemVisual';
 import NavItemVisual from './NavItemVisual';
 
-import 'bootstrap/less/bootstrap.less';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const mountNode = document.createElement('div');
 document.body.appendChild(mountNode);
 
-ReactDOM.render(
-  <Router>
-    <Grid>
+const App = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (location.pathname === '/') {
+      navigate('/home');
+    }
+  }, [location]);
+  return (
+    <Container>
       <h1>React-Router-Bootstrap Module Visual Test</h1>
 
-      <Route path="/" render={() => <Redirect to="/home" />} />
-      <Route path="/home" component={Home} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/button" element={<ButtonVisual />} />
+      <Route path="/nav-item" element={<NavItemVisual />} />
+      <Route path="/menu-item" element={<MenuItemVisual />} />
+      <Route path="/list-group-item" element={<ListGroupItemVisual />} />
+    </Container>
+  );
+};
 
-      <Route path="/button" component={ButtonVisual} />
-      <Route path="/nav-item" component={NavItemVisual} />
-      <Route path="/menu-item" component={MenuItemVisual} />
-      <Route path="/list-group-item" component={ListGroupItemVisual} />
-    </Grid>
+ReactDOM.render(
+  <Router>
+    <App />
   </Router>,
-  mountNode
+  mountNode,
 );

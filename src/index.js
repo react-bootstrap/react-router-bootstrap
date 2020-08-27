@@ -1,2 +1,1 @@
-export IndexLinkContainer from './IndexLinkContainer';
-export LinkContainer from './LinkContainer';
+export * as LinkContainer from './LinkContainer';

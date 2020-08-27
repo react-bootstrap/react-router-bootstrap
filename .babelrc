@@ -1,4 +1,9 @@
 {
-  "presets": ["es2015-loose", "stage-1", "react"],
-  "plugins": ["add-module-exports"]
+  "presets": [
+    "@babel/env",
+    "@babel/react"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-object-rest-spread"
+  ]
 }

@@ -1,46 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Route, withRouter } from 'react-router-dom';
+import {
+  Route, useHref, useLocation, useMatch, useNavigate,
+} from 'react-router-dom';
+import { isFunction } from 'lodash';
 
-const isModifiedEvent = (event) =>
-  !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
+const isModifiedEvent = (event) => !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
 
-export class LinkContainer extends Component {
-  static propTypes = {
-    history: PropTypes.shape({
-      push: PropTypes.func.isRequired,
-      replace: PropTypes.func.isRequired,
-      createHref: PropTypes.func.isRequired,
-    }).isRequired,
-    location: PropTypes.object,
-    match: PropTypes.object,
-    staticContext: PropTypes.object,
-    children: PropTypes.element.isRequired,
-    onClick: PropTypes.func,
-    replace: PropTypes.bool,
-    to: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.object,
-    ]).isRequired,
-    exact: PropTypes.bool,
-    strict: PropTypes.bool,
-    className: PropTypes.string,
-    activeClassName: PropTypes.string,
-    style: PropTypes.object,
-    activeStyle: PropTypes.object,
-    isActive: PropTypes.func,
-  };
-
-  static defaultProps = {
-    replace: false,
-    exact: false,
-    strict: false,
-    activeClassName: 'active',
-  };
-
-  handleClick = (event) => {
-    const { children, onClick } = this.props;
-
+const LinkContainer = ({
+  children,
+  onClick,
+  replace, // eslint-disable-line no-unused-vars
+  to,
+  activeClassName,
+  className,
+  activeStyle,
+  style,
+  isActive: getIsActive,
+  // eslint-disable-next-line comma-dangle
+  ...props
+}) => {
+  const navigate = useNavigate();
+  const href = useHref(typeof to === 'string' ? { pathname: to } : to);
+  const handleClick = (event) => {
     if (children.props.onClick) {
       children.props.onClick(event);
     }
@@ -50,70 +32,78 @@ export class LinkContainer extends Component {
     }
 
     if (
-      !event.defaultPrevented && // onClick prevented default
-      event.button === 0 && // ignore right clicks
-      !isModifiedEvent(event) // ignore clicks with modifier keys
+      !event.defaultPrevented // onClick prevented default
+      && event.button === 0 // ignore right clicks
+      && !isModifiedEvent(event) // ignore clicks with modifier keys
     ) {
       event.preventDefault();
 
-      const { replace, to, history } = this.props;
-
-      if (replace) {
-        history.replace(to);
-      } else {
-        history.push(to);
-      }
+      navigate(to, {
+        replace,
+      });
     }
   };
 
-  render() {
-    const {
-      history,
-      location: _location,            // eslint-disable-line no-unused-vars
-      match: _match,                  // eslint-disable-line no-unused-vars
-      staticContext: _staticContext,  // eslint-disable-line no-unused-vars
-      children,
-      replace,                          // eslint-disable-line no-unused-vars
-      to,
-      exact,
-      strict,
-      activeClassName,
-      className,
-      activeStyle,
-      style,
-      isActive: getIsActive,
-      ...props,
-    } = this.props;
+  const child = React.Children.only(children);
+  const path = typeof to === 'object' ? to.pathname : to;
+  const InnerRouteElement = () => {
+    const match = useMatch(path);
+    const location = useLocation();
+    const isActive = !!(getIsActive ? (isFunction(getIsActive) ? getIsActive(match, location) : getIsActive) : match);
 
-    const href = history.createHref(
-      typeof to === 'string' ? { pathname: to } : to
+    return React.cloneElement(
+      child,
+      {
+        ...props,
+        className: [className, child.props.className, isActive ? activeClassName : null]
+          .join(' ').trim(),
+        style: isActive ? { ...style, ...activeStyle } : style,
+        href,
+        onClick: handleClick,
+      },
     );
+  };
 
-    const child = React.Children.only(children);
+  return (
+    <Route
+      path={path}
+      element={<InnerRouteElement />}
+    />
+  );
+};
 
-    return (
-      <Route
-        path={typeof to === 'object' ? to.pathname : to}
-        exact={exact}
-        strict={strict}
-        children={({ location, match }) => {
-          const isActive = !!(getIsActive ? getIsActive(match, location) : match);
+LinkContainer.propTypes = {
+  children: PropTypes.element.isRequired,
+  onClick: PropTypes.func,
+  replace: PropTypes.bool,
+  to: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]).isRequired,
+  className: PropTypes.string,
+  activeClassName: PropTypes.string,
+  style: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ])),
+  activeStyle: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ])),
+  isActive: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.bool,
+  ]),
+};
 
-          return React.cloneElement(
-            child,
-            {
-              ...props,
-              className: [className, child.props.className, isActive ? activeClassName : null]
-                .join(' ').trim(),
-              style: isActive ? { ...style, ...activeStyle } : style,
-              href,
-              onClick: this.handleClick,
-            }
-          );
-        }}
-      />
-    );
-  }
-}
+LinkContainer.defaultProps = {
+  replace: false,
+  activeClassName: 'active',
+  onClick: null,
+  className: null,
+  style: null,
+  activeStyle: null,
+  isActive: null,
+};
 
-export default withRouter(LinkContainer);
+export default LinkContainer;
