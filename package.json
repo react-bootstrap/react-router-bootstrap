@@ -7,7 +7,7 @@
   ],
   "main": "./lib/index.js",
   "scripts": {
-    "prepare": "not-working",
+    "prepare": "rimraf lib && babel src -d lib && webpack-cli",
     "bower-prepare": "babel-node scripts/bower-prepare.js",
     "build": "rimraf lib && babel src -d lib && webpack-cli",
     "lint": "eslint src test *.js",
