@@ -7,8 +7,9 @@
   ],
   "main": "./lib/index.js",
   "scripts": {
+    "prepare": "rimraf lib && babel src -d lib && webpack-cli",
     "bower-prepare": "babel-node scripts/bower-prepare.js",
-    "build": "rimraf lib && webpack-cli",
+    "build": "rimraf lib && babel src -d lib && webpack-cli",
     "lint": "eslint src test *.js",
     "release": "release",
     "tdd": "karma start",
@@ -38,6 +39,7 @@
     "react-router-dom": ">=6.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.1",
     "@babel/core": "^7.11.4",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
