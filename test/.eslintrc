@@ -1,18 +1,5 @@
 {
   "env": {
-    "mocha": true
-  },
-  "globals": {
-    "assert": true,
-    "expect": true,
-    "sinon": true
-  },
-  "plugins": [
-    "mocha"
-  ],
-  "rules": {
-    "no-unused-expressions": 0,
-    "mocha/no-exclusive-tests": 2,
-    "react/no-multi-comp": 0
+    "jest": true
   }
 }

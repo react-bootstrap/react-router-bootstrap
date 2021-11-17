@@ -1,6 +1,6 @@
 import React from 'react';
-import ButtonToolbar from 'react-bootstrap/lib/ButtonToolbar';
-import Button from 'react-bootstrap/lib/Button';
+import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
 import LinkContainer from '../../src/LinkContainer';
@@ -13,11 +13,11 @@ export default () => (
     <h3>Baseline</h3>
     <ButtonToolbar>
       <Button>Default</Button>
-      <Button bsStyle="success">Success</Button>
-      <Button bsStyle="info">Info</Button>
-      <Button bsStyle="warning">Warning</Button>
-      <Button bsStyle="danger">Danger</Button>
-      <Button bsStyle="link">Link</Button>
+      <Button variant="success">Success</Button>
+      <Button variant="info">Info</Button>
+      <Button variant="warning">Warning</Button>
+      <Button variant="danger">Danger</Button>
+      <Button variant="link">Link</Button>
     </ButtonToolbar>
 
     <h3>LinkContainer</h3>
@@ -26,19 +26,19 @@ export default () => (
         <Button>Default</Button>
       </LinkContainer>
       <LinkContainer to="/home">
-        <Button bsStyle="success">Success</Button>
+        <Button variant="success">Success</Button>
       </LinkContainer>
       <LinkContainer to="/home">
-        <Button bsStyle="info">Info</Button>
+        <Button variant="info">Info</Button>
       </LinkContainer>
       <LinkContainer to="/home">
-        <Button bsStyle="warning">Warning</Button>
+        <Button variant="warning">Warning</Button>
       </LinkContainer>
       <LinkContainer to="/home">
-        <Button bsStyle="danger">Danger</Button>
+        <Button variant="danger">Danger</Button>
       </LinkContainer>
       <LinkContainer to="/home">
-        <Button bsStyle="link">Link</Button>
+        <Button variant="link">Link</Button>
       </LinkContainer>
     </ButtonToolbar>
   </div>
