@@ -1,6 +1,6 @@
 {
-  "extends": "airbnb",
-  "parser": "babel-eslint",
+  "extends": ["@react-bootstrap", "prettier"],
+  "plugins": ["prettier"],
   "rules": {
     "react/jsx-filename-extension": "off",
     "import/no-extraneous-dependencies": "off",
