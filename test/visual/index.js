@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import ReactDOM from 'react-dom';
 import { useLocation, useNavigate } from 'react-router';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 
 import ButtonVisual from './ButtonVisual';
 import Home from './Home';
@@ -22,16 +22,18 @@ const App = () => {
     if (location.pathname === '/') {
       navigate('/home');
     }
-  }, [location]);
+  }, [location, navigate]);
   return (
     <Container>
       <h1>React-Router-Bootstrap Module Visual Test</h1>
 
-      <Route path="/home" element={<Home />} />
-      <Route path="/button" element={<ButtonVisual />} />
-      <Route path="/nav-item" element={<NavItemVisual />} />
-      <Route path="/menu-item" element={<MenuItemVisual />} />
-      <Route path="/list-group-item" element={<ListGroupItemVisual />} />
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/button" element={<ButtonVisual />} />
+        <Route path="/nav-item" element={<NavItemVisual />} />
+        <Route path="/menu-item" element={<MenuItemVisual />} />
+        <Route path="/list-group-item" element={<ListGroupItemVisual />} />
+      </Routes>
     </Container>
   );
 };
