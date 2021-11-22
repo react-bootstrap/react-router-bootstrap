@@ -1,6 +1,6 @@
 {
   "name": "react-router-bootstrap",
-  "version": "0.26.0-beta.0",
+  "version": "0.26.0-beta.1",
   "description": "Integration between React Router and React-Bootstrap",
   "files": [
     "lib"

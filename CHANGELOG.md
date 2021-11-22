@@ -1,3 +1,9 @@
+# [0.26.0-beta.1](https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.26.0-beta.0...v0.26.0-beta.1) (2021-11-22)
+
+
+
+
+
 ## [v0.24.4]
 > 2017-09-08
 
