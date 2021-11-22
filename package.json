@@ -93,5 +93,11 @@
     "transform": {
       "^.+\\.js$": "babel-jest"
     }
+  },
+  "publishConfig": {
+    "directory": "lib"
+  },
+  "release": {
+    "conventionalCommits": true
   }
 }
