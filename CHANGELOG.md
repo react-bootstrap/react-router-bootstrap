@@ -1,3 +1,14 @@
+# [0.26.0-beta.2](https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.26.0-beta.1...v0.26.0-beta.2) (2021-11-23)
+
+
+### Bug Fixes
+
+* fix LinkContainer export ([a550484](https://github.com/react-bootstrap/react-router-bootstrap/commit/a550484d596bcddb24237d4e6159d80fc9df93bd))
+
+
+
+
+
 # [0.26.0-beta.1](https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.26.0-beta.0...v0.26.0-beta.1) (2021-11-22)
 
 
