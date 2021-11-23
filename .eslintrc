@@ -5,8 +5,9 @@
     "react/jsx-filename-extension": "off",
     "import/no-extraneous-dependencies": "off",
     "react/jsx-props-no-spreading": "off",
-    "max-len":"off",
-    "no-nested-ternary":"off"
+    "max-len": "off",
+    "no-nested-ternary": "off",
+    "import/prefer-default-export": "off"
   },
   "env": {
     "browser": true,
