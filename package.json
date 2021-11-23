@@ -11,6 +11,7 @@
     "build": "rimraf lib && webpack-cli && npm run build-prod && babel src -d lib",
     "build-prod": "webpack-cli --mode production --optimization-minimize",
     "lint": "eslint src test *.js",
+    "prepublishOnly": "npm run build",
     "release": "rollout",
     "tdd": "jest --watch",
     "test": "npm run lint && jest",
