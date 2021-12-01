@@ -1,6 +1,8 @@
 # [0.26.0](https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.26.0-beta.2...v0.26.0) (2021-12-01)
 
+### Features
 
+* add support for React Router v6
 
 
 
