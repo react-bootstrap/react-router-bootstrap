@@ -6,7 +6,6 @@ import {
   useMatch,
   useNavigate,
 } from 'react-router-dom';
-import { isFunction } from 'lodash';
 
 const isModifiedEvent = (event) =>
   !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
@@ -32,7 +31,7 @@ const LinkContainer = ({
   const child = React.Children.only(children);
 
   const isActive = !!(getIsActive
-    ? isFunction(getIsActive)
+    ? typeof getIsActive === 'function'
       ? getIsActive(match, location)
       : getIsActive
     : match);

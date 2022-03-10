@@ -71,7 +71,6 @@
     "html-webpack-plugin": "^5.5.0",
     "jasmine-enzyme": "^7.1.2",
     "jest": "^26.6.3",
-    "lodash": "^4.17.21",
     "prettier": "^2.4.1",
     "react": "^16.14.0",
     "react-bootstrap": "^1.6.4",
