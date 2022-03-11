@@ -1,3 +1,14 @@
+## [0.26.1](https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.26.0...v0.26.1) (2022-03-11)
+
+
+### Bug Fixes
+
+* remove lodash dependency ([#277](https://github.com/react-bootstrap/react-router-bootstrap/issues/277)) ([3590bd9](https://github.com/react-bootstrap/react-router-bootstrap/commit/3590bd93b0275ee0e5cce183cac632a99de7aa61))
+
+
+
+
+
 # [0.26.0](https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.26.0-beta.2...v0.26.0) (2021-12-01)
 
 ### Features
