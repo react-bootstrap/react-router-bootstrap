@@ -3,7 +3,12 @@ import Button from 'react-bootstrap/Button';
 import NavItem from 'react-bootstrap/NavItem';
 import DropdownItem from 'react-bootstrap/DropdownItem';
 import ListGroupItem from 'react-bootstrap/ListGroupItem';
-import { Route, MemoryRouter as Router, Routes } from 'react-router-dom';
+import {
+  Route,
+  MemoryRouter as Router,
+  Routes,
+  useLocation,
+} from 'react-router-dom';
 
 import { mount } from 'enzyme';
 import LinkContainer from '../src/LinkContainer';
@@ -128,6 +133,72 @@ describe('LinkContainer', () => {
 
           const target = router.find('.target');
           expect(target).toBeTruthy();
+        });
+        it('should transition to the correct route when there is no pathname', () => {
+          const Target = () => {
+            const location = useLocation();
+            const search = new URLSearchParams(location.search);
+            return <div className="target">{search.get('q')}</div>;
+          };
+          const router = mount(
+            <Router>
+              <div>
+                <Routes>
+                  <Route
+                    path="/"
+                    element={
+                      <>
+                        <LinkContainer to={{ search: '?q=abc' }}>
+                          <Component>Target</Component>
+                        </LinkContainer>
+                        <Target />
+                      </>
+                    }
+                  />
+                </Routes>
+              </div>
+            </Router>,
+          );
+
+          const anchor = router.find(Component);
+          anchor.simulate('click', { button: 0 });
+
+          const target = router.find('.target');
+          expect(target.text()).toBe('abc');
+        });
+        it('should update state when provided', () => {
+          const Target = () => {
+            const location = useLocation();
+            return (
+              <div className="target">
+                {location.state.stateVar ? 'State works' : ''}
+              </div>
+            );
+          };
+          const router = mount(
+            <Router>
+              <div>
+                <Routes>
+                  <Route
+                    path="/"
+                    element={
+                      <LinkContainer to="/target" state={{ stateVar: true }}>
+                        <Component>Target</Component>
+                      </LinkContainer>
+                    }
+                  />
+                  <Route path="/target" element={<Target />} />
+                </Routes>
+              </div>
+            </Router>,
+          );
+
+          const anchor = router.find(Component);
+          anchor.simulate('click', { button: 0 });
+
+          const target = router.find('.target');
+          expect(target).toBeTruthy();
+          expect(target.text()).toBe('State works');
         });
 
         it('should call user defined click handlers', () => {

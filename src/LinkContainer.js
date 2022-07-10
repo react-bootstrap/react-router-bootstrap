@@ -1,11 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  useHref,
-  useLocation,
-  useMatch,
-  useNavigate,
-} from 'react-router-dom';
+import { useHref, useLocation, useMatch, useNavigate } from 'react-router-dom';
 
 const isModifiedEvent = (event) =>
   !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
@@ -15,6 +10,7 @@ const LinkContainer = ({
   onClick,
   replace, // eslint-disable-line no-unused-vars
   to,
+  state,
   activeClassName,
   className,
   activeStyle,
@@ -23,7 +19,7 @@ const LinkContainer = ({
   // eslint-disable-next-line comma-dangle
   ...props
 }) => {
-  const path = typeof to === 'object' ? to.pathname : to;
+  const path = typeof to === 'object' ? to.pathname || '' : to;
   const navigate = useNavigate();
   const href = useHref(typeof to === 'string' ? { pathname: to } : to);
   const match = useMatch(path);
@@ -54,6 +50,7 @@ const LinkContainer = ({
 
       navigate(to, {
         replace,
+        state,
       });
     }
   };
@@ -78,6 +75,7 @@ LinkContainer.propTypes = {
   onClick: PropTypes.func,
   replace: PropTypes.bool,
   to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+  state: PropTypes.object,
   className: PropTypes.string,
   activeClassName: PropTypes.string,
   style: PropTypes.objectOf(
