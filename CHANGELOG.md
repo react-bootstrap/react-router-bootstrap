@@ -1,3 +1,14 @@
+## [0.26.2](https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.26.1...v0.26.2) (2022-07-11)
+
+
+### Bug Fixes
+
+* enable empty pathname and state propagation ([#303](https://github.com/react-bootstrap/react-router-bootstrap/issues/303)) ([f85c697](https://github.com/react-bootstrap/react-router-bootstrap/commit/f85c697f192850bc5b1649b02789f8dca2123d46))
+
+
+
+
+
 ## [0.26.1](https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.26.0...v0.26.1) (2022-03-11)
 
 
