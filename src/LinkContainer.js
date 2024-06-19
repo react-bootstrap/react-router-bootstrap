@@ -8,10 +8,10 @@ const isModifiedEvent = (event) =>
 const LinkContainer = ({
   children,
   onClick,
-  replace, // eslint-disable-line no-unused-vars
+  replace = false, // eslint-disable-line no-unused-vars
   to,
   state,
-  activeClassName,
+  activeClassName = 'active',
   className,
   activeStyle,
   style,
@@ -85,16 +85,6 @@ LinkContainer.propTypes = {
     PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   ),
   isActive: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
-};
-
-LinkContainer.defaultProps = {
-  replace: false,
-  activeClassName: 'active',
-  onClick: null,
-  className: null,
-  style: null,
-  activeStyle: null,
-  isActive: null,
 };
 
 export default LinkContainer;
