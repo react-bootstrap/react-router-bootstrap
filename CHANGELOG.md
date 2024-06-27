@@ -1,3 +1,14 @@
+## [0.26.3](https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.26.2...v0.26.3) (2024-06-27)
+
+
+### Bug Fixes
+
+* Remove defaultProps from LinkContainer ([#318](https://github.com/react-bootstrap/react-router-bootstrap/issues/318)) ([a74003a](https://github.com/react-bootstrap/react-router-bootstrap/commit/a74003ad8969babc425f2a805ca4f550f985d2aa))
+
+
+
+
+
 ## [0.26.2](https://github.com/react-bootstrap/react-router-bootstrap/compare/v0.26.1...v0.26.2) (2022-07-11)
 
 
