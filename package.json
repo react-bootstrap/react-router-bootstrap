@@ -44,7 +44,7 @@
     "trailingComma": "all"
   },
   "devDependencies": {
-    "@4c/rollout": "^3.0.1",
+    "@4c/rollout": "^4.0.2",
     "@babel/cli": "^7.18.6",
     "@babel/core": "^7.18.6",
     "@babel/preset-env": "^7.18.6",
