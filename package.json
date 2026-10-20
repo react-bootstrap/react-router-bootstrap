@@ -57,7 +57,7 @@
     "bootstrap": "^4.6.1",
     "chai": "^4.3.6",
     "colors": "^1.4.0",
-    "css-loader": "^6.7.1",
+    "css-loader": "^7.1.5",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "eslint": "^7.32.0",
